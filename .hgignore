@@ -1,0 +1,4 @@
+syntax: glob
+
+credentials.ini
+.DS_Store
