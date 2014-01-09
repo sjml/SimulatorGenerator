@@ -71,7 +71,7 @@ def getImageFor(searchTerm):
         baseFile.close()
 
         # check our work
-        cmdLine = ['identify', '-format', '%[fx:w]x%[fx:h]', localFileName]
+        cmdLine = ['identify', '-format', '%wx%h', localFileName]
         dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
         dimensions = dimensionString.split("x")
         if (int(dimensions[0]) == img['w'] and int(dimensions[1]) == img['h']):
@@ -118,7 +118,7 @@ def createBoxArt(jobTitle, localImgFile, year):
             indent += " "
     jobTitle = "'%sSimulator %i\n'" % (jobTitle, year)
 
-    cmdLine = ['identify', '-format', '%[fx:w]x%[fx:h]', localImgFile]
+    cmdLine = ['identify', '-format', '%wx%h', localImgFile]
     dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
     dimensions = map(int, dimensionString.split("x"))
 
