@@ -158,7 +158,7 @@ def createBoxArt(jobTitle, localImgFile, year):
 
     exeLine = "convert %s %s" % (''.join('%s %s ' % o for o in options), "output.png")
     os.system(exeLine)
-    os.rename(localImgFile, "archive/%s" % localImgFile)
+    os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
 
 def tweet(job, year):
     if (os.path.exists("output.png")):
@@ -182,9 +182,17 @@ def tweet(job, year):
         archFile.write(title)
         archFile.close()
 
-random.seed()
-job = getJobTitle()
-image = getImageFor(job)
-year = random.randint(2007, datetime.date.today().year)
-createBoxArt(job, image, year)
-tweet(job, year)
+def main():
+    base = os.path.dirname(os.path.abspath( __file__ ))
+    os.chdir(base)
+    
+    random.seed()
+    job = getJobTitle()
+    image = getImageFor(job)
+    year = random.randint(2007, datetime.date.today().year)
+    createBoxArt(job, image, year)
+    tweet(job, year)
+
+if __name__ == '__main__':
+    main()
+
