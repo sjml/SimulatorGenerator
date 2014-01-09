@@ -7,6 +7,7 @@ import random
 import mimetypes
 import datetime
 import subprocess
+import twitter
 
 creds = ConfigParser.ConfigParser()
 creds.read("credentials.ini")
@@ -73,29 +74,101 @@ def getImageFor(searchTerm):
         cmdLine = ['identify', '-format', '%[fx:w]x%[fx:h]', localFileName]
         dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
         dimensions = dimensionString.split("x")
-        print dimensions
         if (int(dimensions[0]) == img['w'] and int(dimensions[1]) == img['h']):
             return localFileName
 
-def createBoxArt(jobTitle, localImgFile):
-    outputFile = "output-%s.png" % (datetime.datetime.now().strftime("%Y-%m-%d-%H%M"))
+def cap(value, maxVal):
+    if (value < maxVal):
+        return value
+    else:
+        return maxVal
+
+def wpl(totalwords, current=None):
+    if (current == None):
+        current = []
+
+    if (totalwords == 0):
+        return current
+    if (totalwords == 1):
+        current.append(1)
+        return current
+    if (totalwords % 3 == 0):
+        return current + [3]*(totalwords/3)
+    current.append(2)
+    return wpl(totalwords-2, current)
+
+def createBoxArt(jobTitle, localImgFile, year):
+    grav = random.choice(("NorthWest", "NorthEast", "SouthWest", "SouthEast"))
+    if grav[-4:] == "West":
+        align = "West"
+    else:
+        align = "East"
+
+    wordlist = jobTitle.split()
+    wordsPerLine = wpl(len(wordlist))
+    jobTitle = ""
+    indent = " "
+    for wordCount in wordsPerLine:
+        while wordCount > 0:
+            jobTitle += wordlist.pop(0) + " "
+            wordCount -= 1
+        jobTitle += "\n"
+        if (align == "West"):
+            jobTitle += indent
+            indent += " "
+    jobTitle = "'%sSimulator %i\n'" % (jobTitle, year)
+
+    cmdLine = ['identify', '-format', '%[fx:w]x%[fx:h]', localImgFile]
+    dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
+    dimensions = map(int, dimensionString.split("x"))
+
+    if (dimensions[0] > dimensions[1]):
+        widthMultiplier = 0.65
+    else:
+        widthMultiplier = 0.95
 
     options = [
-        ("-size", "%w%h"),
-        ("-font", "'./helvetica-ultra-compressed.ttf'"),
-        ("-pointsize", "100"),
+        ("-background", "none"),
         ("-fill", "white"),
-        ("-interline-spacing", "15"),
-        ("-stroke", "gray",),
-        ("-gravity", random.choice(("NorthWest", "NorthEast", "SouthWest", "SouthEast"))),
-        ("-annotate", "0x10+20+20 '%s\nSimulator 2014'" % (jobTitle))
+        ("-stroke", "gray"),
+        ("-strokewidth", "3"),
+        ("-kerning", "-5"),
+        ("-font", "./helvetica-ultra-compressed.ttf"),
+        ("-pointsize", "300"),
+        ("-gravity", align),
+        ("-interline-spacing", "75"),
+        ("label:%s" % jobTitle, ""),
+        ("-shear", "10x0"),
+        ("-trim", ""),
+        ("-resize", "%ix%i" % (dimensions[0] * widthMultiplier, dimensions[1] * .95)),
+        (localImgFile, "+swap"),
     ]
+    options.append(("-gravity", grav))
+    
+    offset = "+%i+%i" % (cap(dimensions[0] * .05, 20), cap(dimensions[1] * .05, 20))
 
-    exeLine = "convert %s %s %s" % (localImgFile, ''.join('%s %s ' % o for o in options), outputFile)
-    print(exeLine)
+    options.append(("-geometry", offset))
+    options.append(("-composite", ""))
+
+    exeLine = "convert %s %s" % (''.join('%s %s ' % o for o in options), "output.png")
     os.system(exeLine)
     os.system("rm %s" % (localImgFile))
 
+def tweet(job, year):
+    if (os.path.exists("output.png")):
+        consumer_key = creds.get("twitter", "consumerkey")
+        consumer_secret = creds.get("twitter", "consumersecret")
+        access_token = creds.get("twitter", "accesstoken")
+        access_token_secret = creds.get("twitter", "accesstokensecret")
+        api = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
+        api.PostMedia("%s Simulator %i" % (job, year), "output.png")
+        # os.remove("output.png")
+    else:
+        pass # do nothing; something's wrong. 
+
+random.seed()
 job = getJobTitle()
 image = getImageFor(job)
-createBoxArt(job, image)
+year = random.randint(2007, datetime.date.today().year)
+createBoxArt(job, image, year)
+tweet(job, year)
