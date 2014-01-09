@@ -9,8 +9,12 @@ import datetime
 import subprocess
 import twitter
 
+
 creds = ConfigParser.ConfigParser()
-creds.read("credentials.ini")
+
+def loadCredentials():
+    global creds
+    creds.read("credentials.ini")
 
 def getJobTitle():
     # TODO: store off the category, don't repeat job titles, rotate categories
@@ -185,6 +189,8 @@ def tweet(job, year):
 def main():
     base = os.path.dirname(os.path.abspath( __file__ ))
     os.chdir(base)
+    
+    loadCredentials()
     
     random.seed()
     job = getJobTitle()
