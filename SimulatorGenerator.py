@@ -33,7 +33,10 @@ def getJobTitle():
     jobs = []
     for node in dom.getElementsByTagName("JobTitle"):
         jobs.append(node.firstChild.nodeValue)
-    return random.choice(jobs)
+
+    job = random.choice(jobs)
+    job = job.replace("'", "\\'").replace('"', '\\"')
+    return job
 
 def getImageFor(searchTerm):
     is_params = {"v":"1.0", "q":searchTerm, "imgType":"photo"}
@@ -150,6 +153,9 @@ def createBoxArt(jobTitle, localImgFile, year):
     options.append(("-geometry", offset))
     options.append(("-composite", ""))
 
+    if (dimensions[0] > 1500 or dimensions[1] > 1500):
+        options.append(("-resize", "1500x1500"))
+
     exeLine = "convert %s %s" % (''.join('%s %s ' % o for o in options), "output.png")
     os.system(exeLine)
     os.system("rm %s" % (localImgFile))
@@ -160,11 +166,21 @@ def tweet(job, year):
         consumer_secret = creds.get("twitter", "consumersecret")
         access_token = creds.get("twitter", "accesstoken")
         access_token_secret = creds.get("twitter", "accesstokensecret")
+
+        title = "%s Simulator %i" % (job, year)
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
         api = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
-        api.PostMedia("%s Simulator %i" % (job, year), "output.png")
-        # os.remove("output.png")
+        api.PostMedia(title, "output.png")
+
+        os.rename("output.png", "archive/image-%s.png" % timestamp)
+        archFile = open("archive/text-%s.txt" % timestamp, "w")
+        archFile.write(title)
+        archFile.close()
     else:
-        pass # do nothing; something's wrong. 
+        # don't tweet; something's wrong. 
+        archFile = open("archive/failed-%s.txt" % timestamp, "w")
+        archFile.write(title)
+        archFile.close()
 
 random.seed()
 job = getJobTitle()
