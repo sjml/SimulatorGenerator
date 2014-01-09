@@ -158,7 +158,7 @@ def createBoxArt(jobTitle, localImgFile, year):
 
     exeLine = "convert %s %s" % (''.join('%s %s ' % o for o in options), "output.png")
     os.system(exeLine)
-    os.system("rm %s" % (localImgFile))
+    os.rename(localImgFile, "archive/%s" % localImgFile)
 
 def tweet(job, year):
     if (os.path.exists("output.png")):
