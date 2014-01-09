@@ -3,3 +3,4 @@ syntax: glob
 credentials.ini
 .DS_Store
 output.png
+helvetica-ultra-compressed.ttf
