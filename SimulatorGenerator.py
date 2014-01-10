@@ -68,7 +68,7 @@ def getImageFor(searchTerm):
 
     imageResults = requests.get(is_URL, params=is_params).json()
     # imageResults = json.load(open("sample_imagesearch.json"))
-    if ('responseData' not in imageResults):
+    if (imageResults == None or 'responseData' not in imageResults or imageResults['responseData'] == None):
         sys.stderr.write("No response data in image search for %s. JSON:\n%s\n" % (searchterm, imageResults))
         return
     imageData = []
@@ -85,9 +85,13 @@ def getImageFor(searchTerm):
 
     mimetypes.init()
     for img in imageData:
-        r = requests.head(img['url'])
-        if not r.ok:
-            # can't download for whatever reason
+        try:
+            r = requests.head(img['url'])
+            if not r.ok:
+                # can't download for whatever reason
+                continue
+        except:
+            # requests library puked
             continue
 
         try:
