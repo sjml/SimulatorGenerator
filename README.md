@@ -9,4 +9,4 @@ It can also take requests! Tweet at it using the phrase "make one about" and it 
 * "Hey, @SimGenerator, make one about a sweet ninja." 
 * _Et cetera_. 
 
-Note that it will silently ignore any requests featuring words from [Darius Kazemi's word filter](https://github.com/dariusk/wordfilter).
+Note that it will silently ignore any requests featuring words from [Darius Kazemi's word filter](https://github.com/dariusk/wordfilter). If something goes wrong, it just silently ignores the request. Alas. Tweet [@OptimistPanda](http://twitter.com/OptimistPanda) if you think it's broken. 

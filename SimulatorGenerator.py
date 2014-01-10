@@ -252,19 +252,20 @@ def respondToRequests():
     badwordsFile.close()
     badwords = badwordsData['badwords']
 
-    requestRegex = re.compile('make one about\b([^,\.\n@]*)', re.IGNORECASE)
+    requestRegex = re.compile('make one about ([^,\.\n@]*)', re.IGNORECASE)
+
     mentions = twitterApi.GetMentions(since_id=lastReply)
     mentions.reverse()
     for status in mentions:
         result = requestRegex.search(status.text)
         if (result):
-            job = result.groups()[1]
+            job = result.groups()[0]
             # because regex is annoying
             if (job.lower().startswith("a ")):
                 job = job[2:]
             elif (job.lower().startswith("an ")):
                 job = job[3:]
-            job = titlecase.titlecase()
+            job = titlecase.titlecase(job)
 
             earlyOut = False
             for word in job.split():
