@@ -215,7 +215,7 @@ def tweet(job, year, artFile, respondingTo=None):
             title = "@%s %s" % (userName, title)
         twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
 
-        os.rename("output.png", "archive/image-%s.png" % timestamp)
+        os.rename(artFile, "archive/image-%s.png" % timestamp)
         archFile = open("archive/text-%s.txt" % timestamp, "w")
         archFile.write(title.encode('utf8'))
         archFile.close()
