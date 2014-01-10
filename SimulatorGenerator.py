@@ -139,7 +139,7 @@ def createBoxArt(jobTitle, localImgFile, year):
         if (align == "West"):
             jobTitle += indent
             indent += " "
-    jobTitle = "'%sSimulator %i\n'" % (jobTitle, year)
+    jobTitle = "%sSimulator %i\n" % (jobTitle, year)
 
     cmdLine = ['identify', '-format', '%wx%h', localImgFile]
     dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
@@ -151,32 +151,34 @@ def createBoxArt(jobTitle, localImgFile, year):
         widthMultiplier = 0.95
 
     offset = "+%i+%i" % (cap(dimensions[0] * .05, 20), cap(dimensions[1] * .05, 20))
-    options = [
-        ("-background", "none"),
-        ("-fill", "white"),
-        ("-stroke", "gray"),
-        ("-strokewidth", "3"),
-        ("-kerning", "-5"),
-        ("-font", "./helvetica-ultra-compressed.ttf"),
-        ("-pointsize", "300"),
-        ("-gravity", align),
-        ("-interline-spacing", "75"),
-        ("label:%s" % jobTitle, ""),
-        ("-shear", "10x0"),
-        ("-trim", ""),
-        ("-resize", "%ix%i" % (dimensions[0] * widthMultiplier, dimensions[1] * .95)),
-        (localImgFile, "+swap"),
-        ("-gravity", grav),
-        ("-geometry", offset),
-        ("-composite", "")
+    command = [
+        "convert",
+        "-background", "none",
+        "-fill", "white",
+        "-stroke", "gray",
+        "-strokewidth", "3",
+        "-kerning", "-5",
+        "-font", "./helvetica-ultra-compressed.ttf",
+        "-pointsize", "300",
+        "-gravity", align,
+        "-interline-spacing", "75",
+        "label:%s" % jobTitle,
+        "-shear", "10x0",
+        "-trim",
+        "-resize", "%ix%i" % (dimensions[0] * widthMultiplier, dimensions[1] * .95),
+        localImgFile, "+swap",
+        "-gravity", grav,
+        "-geometry", offset,
+        "-composite",
     ]
 
     maxDim = 1500
     if (dimensions[0] > maxDim or dimensions[1] > maxDim):
-        options.append(("-resize", "%ix%i" % (maxDim, maxDim)))
+        command.extend(["-resize", "%ix%i" % (maxDim, maxDim)])
 
-    exeLine = "convert %s %s" % (''.join('%s %s ' % o for o in options), "output.png")
-    os.system(exeLine)
+    command.append("output.png")
+
+    subprocess.call(command)
     os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
 
 def tweet(job, year, respondingTo=None):
@@ -195,7 +197,7 @@ def tweet(job, year, respondingTo=None):
 
         os.rename("output.png", "archive/image-%s.png" % timestamp)
         archFile = open("archive/text-%s.txt" % timestamp, "w")
-        archFile.write(title)
+        archFile.write(title.encode('utf8'))
         archFile.close()
     else:
         # don't tweet; something's wrong. 
@@ -227,7 +229,7 @@ def respondToRequests():
         with open(lastReplyFile, "r") as f:
             lastReply = int(f.read())
 
-    requestRegex = re.compile('make one about a ([\w ]*)', re.IGNORECASE)
+    requestRegex = re.compile('make one about a ([^,\.]*)', re.IGNORECASE)
     mentions = twitterApi.GetMentions(since_id=lastReply)
     for status in mentions:
         result = requestRegex.search(status.text)
