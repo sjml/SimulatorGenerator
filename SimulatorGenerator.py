@@ -165,6 +165,8 @@ def createBoxArt(jobTitle, localImgFile, year):
     os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
 
 def tweet(job, year):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+    
     if (os.path.exists("output.png")):
         consumer_key = creds.get("twitter", "consumerkey")
         consumer_secret = creds.get("twitter", "consumersecret")
@@ -172,7 +174,6 @@ def tweet(job, year):
         access_token_secret = creds.get("twitter", "accesstokensecret")
 
         title = "%s Simulator %i" % (job, year)
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
         api = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
         api.PostMedia(title, "output.png")
 
