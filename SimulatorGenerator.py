@@ -229,7 +229,7 @@ def respondToRequests():
         with open(lastReplyFile, "r") as f:
             lastReply = int(f.read())
 
-    requestRegex = re.compile('make one about a ([^,\.]*)', re.IGNORECASE)
+    requestRegex = re.compile('make one about an? ([^,\.]*)', re.IGNORECASE)
     mentions = twitterApi.GetMentions(since_id=lastReply)
     for status in mentions:
         result = requestRegex.search(status.text)
