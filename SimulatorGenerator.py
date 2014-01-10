@@ -236,7 +236,7 @@ def respondToRequests():
     badwordsFile.close()
     badwords = badwordsData['badwords']
 
-    requestRegex = re.compile('make one about[ a|an]? ([^,\.\n]*)', re.IGNORECASE)
+    requestRegex = re.compile('make one about\s+(?:\ban?\b)?([^,\.\n]*)', re.IGNORECASE)
     mentions = twitterApi.GetMentions(since_id=lastReply)
     mentions.reverse()
     for status in mentions:
