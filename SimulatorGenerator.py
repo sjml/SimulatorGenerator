@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+import sys
 import os
 import ConfigParser
 import requests
@@ -8,30 +11,38 @@ import mimetypes
 import datetime
 import subprocess
 import twitter
-
+import re
 
 creds = ConfigParser.ConfigParser()
+twitterApi = None
 
-def loadCredentials():
+def setup():
     global creds
+    global twitterApi
+
+    random.seed()
+
     creds.read("credentials.ini")
+
+    consumer_key = creds.get("twitter", "consumerkey")
+    consumer_secret = creds.get("twitter", "consumersecret")
+    access_token = creds.get("twitter", "accesstoken")
+    access_token_secret = creds.get("twitter", "accesstokensecret")
+    twitterApi = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
 
 def getJobTitle():
     # TODO: store off the category, don't repeat job titles, rotate categories
     #   http://api.careerbuilder.com/CategoryCodes.aspx
 
     cb_apiKey = creds.get("careerbuilder", "apikey")
-    params = {
+    js_params = {
         "DeveloperKey" : cb_apiKey,
         "HostSite" : "US",
         "OrderBy" : "Date",
     }
     cb_URL = "http://api.careerbuilder.com/v1/jobsearch?"
-    for key, value in params.iteritems():
-        cb_URL += "%s=%s&" % (key, value)
-    cb_URL = cb_URL[:-1]
 
-    response = requests.get(cb_URL)
+    response = requests.get(cb_URL, params=js_params)
     dom = minidom.parseString(response.content)
     # dom = minidom.parse(open("sample_jobsearch.xml"))
     jobs = []
@@ -43,7 +54,12 @@ def getJobTitle():
     return job
 
 def getImageFor(searchTerm):
-    is_params = {"v":"1.0", "q":searchTerm, "imgType":"photo"}
+    is_params = {
+        "v" : "1.0", 
+        "q" : searchTerm, 
+        "imgType" : "photo",
+        "imgsz" : "small|medium|large|xlarge|xxlarge|huge"
+    }
     headers = {"Referer" : "https://twitter.com/SimGenerator"}
     is_URL = "https://ajax.googleapis.com/ajax/services/search/images"
 
@@ -134,6 +150,7 @@ def createBoxArt(jobTitle, localImgFile, year):
     else:
         widthMultiplier = 0.95
 
+    offset = "+%i+%i" % (cap(dimensions[0] * .05, 20), cap(dimensions[1] * .05, 20))
     options = [
         ("-background", "none"),
         ("-fill", "white"),
@@ -149,33 +166,32 @@ def createBoxArt(jobTitle, localImgFile, year):
         ("-trim", ""),
         ("-resize", "%ix%i" % (dimensions[0] * widthMultiplier, dimensions[1] * .95)),
         (localImgFile, "+swap"),
+        ("-gravity", grav),
+        ("-geometry", offset),
+        ("-composite", "")
     ]
-    options.append(("-gravity", grav))
-    
-    offset = "+%i+%i" % (cap(dimensions[0] * .05, 20), cap(dimensions[1] * .05, 20))
 
-    options.append(("-geometry", offset))
-    options.append(("-composite", ""))
-
-    if (dimensions[0] > 1500 or dimensions[1] > 1500):
-        options.append(("-resize", "1500x1500"))
+    maxDim = 1500
+    if (dimensions[0] > maxDim or dimensions[1] > maxDim):
+        options.append(("-resize", "%ix%i" % (maxDim, maxDim)))
 
     exeLine = "convert %s %s" % (''.join('%s %s ' % o for o in options), "output.png")
     os.system(exeLine)
     os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
 
-def tweet(job, year):
+def tweet(job, year, respondingTo=None):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
-    
-    if (os.path.exists("output.png")):
-        consumer_key = creds.get("twitter", "consumerkey")
-        consumer_secret = creds.get("twitter", "consumersecret")
-        access_token = creds.get("twitter", "accesstoken")
-        access_token_secret = creds.get("twitter", "accesstokensecret")
+    userName = None
+    requestId = None
+    if (respondingTo != None):
+        userName = respondingTo[0]
+        requestId = respondingTo[1]
 
+    if (os.path.exists("output.png")):
         title = "%s Simulator %i" % (job, year)
-        api = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
-        api.PostMedia(title, "output.png")
+        if (userName != None):
+            title = "@%s %s" % (userName, title)
+        twitterApi.PostMedia(title, "output.png", in_reply_to_status_id=requestId)
 
         os.rename("output.png", "archive/image-%s.png" % timestamp)
         archFile = open("archive/text-%s.txt" % timestamp, "w")
@@ -187,19 +203,53 @@ def tweet(job, year):
         archFile.write(title)
         archFile.close()
 
-def main():
-    base = os.path.dirname(os.path.abspath( __file__ ))
-    os.chdir(base)
-    
-    loadCredentials()
-    
-    random.seed()
+def checkTwitterLimits():
+    rateLimitData = twitterApi.GetRateLimitStatus()
+
+    rateLimitCallsLeft = rateLimitData['resources']['application']['/application/rate_limit_status']['remaining']
+    rateLimitReset = rateLimitData['resources']['application']['/application/rate_limit_status']['reset']
+    mentionsCallsLeft = rateLimitData['resources']['statuses']['/statuses/mentions_timeline']['remaining']
+    mentionsReset = rateLimitData['resources']['statuses']['/statuses/mentions_timeline']['reset']
+
+    print mentionsCallsLeft, "mentions calls left."
+
+def randomJobTweet():
     job = getJobTitle()
     image = getImageFor(job)
     year = random.randint(2007, datetime.date.today().year)
     createBoxArt(job, image, year)
     tweet(job, year)
 
+def respondToRequests():
+    lastReply = 0
+    lastReplyFile = "last_replied_to.txt"
+    if (os.path.exists(lastReplyFile)):
+        with open(lastReplyFile, "r") as f:
+            lastReply = int(f.read())
+
+    requestRegex = re.compile('make one about a ([\w ]*)', re.IGNORECASE)
+    mentions = twitterApi.GetMentions(since_id=lastReply)
+    for status in mentions:
+        result = requestRegex.search(status.text)
+        if (result):
+            job = result.groups()[0].title()
+            image = getImageFor(job)
+            year = random.randint(2007, datetime.date.today().year)
+            createBoxArt(job, image, year)
+            tweet( job, year, (status.user.screen_name, str(status.id)) )
+            lastReply = status.id
+
+    with open(lastReplyFile, "w") as f:
+        f.write(str(lastReply))
+
 if __name__ == '__main__':
-    main()
+    base = os.path.dirname(os.path.abspath( __file__ ))
+    os.chdir(base)
+    
+    setup()
+
+    if (len(sys.argv) > 1 and sys.argv[1] == "check"):
+        respondToRequests()
+    else:
+        randomJobTweet()
 
