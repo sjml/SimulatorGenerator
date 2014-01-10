@@ -231,6 +231,11 @@ def respondToRequests():
         with open(lastReplyFile, "r") as f:
             lastReply = int(f.read())
 
+    badwordsFile = open("badwords.json", "r")
+    badwordsData = json.load(badwordsFile)
+    badwordsFile.close()
+    badwords = badwordsData['badwords']
+
     requestRegex = re.compile('make one about[ a|an]? ([^,\.\n]*)', re.IGNORECASE)
     mentions = twitterApi.GetMentions(since_id=lastReply)
     mentions.reverse()
@@ -238,6 +243,13 @@ def respondToRequests():
         result = requestRegex.search(status.text)
         if (result):
             job = result.groups()[0].title()
+
+            earlyOut = False
+            for word in job.split():
+                if word in badwords:
+                    earlyOut = True
+            if earlyOut: continue
+
             image = getImageFor(job)
             year = random.randint(2007, datetime.date.today().year)
             createBoxArt(job, image, year)
