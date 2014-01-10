@@ -162,7 +162,7 @@ def createBoxArt(jobTitle, localImgFile, year):
         "-pointsize", "300",
         "-gravity", align,
         "-interline-spacing", "75",
-        "label:%s" % jobTitle,
+        ("label:%s" % jobTitle).encode("utf8"),
         "-shear", "10x0",
         "-trim",
         "-resize", "%ix%i" % (dimensions[0] * widthMultiplier, dimensions[1] * .95),
@@ -183,6 +183,8 @@ def createBoxArt(jobTitle, localImgFile, year):
 
 def tweet(job, year, respondingTo=None):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+    title = "%s Simulator %i" % (job, year)
+
     userName = None
     requestId = None
     if (respondingTo != None):
@@ -190,7 +192,6 @@ def tweet(job, year, respondingTo=None):
         requestId = respondingTo[1]
 
     if (os.path.exists("output.png")):
-        title = "%s Simulator %i" % (job, year)
         if (userName != None):
             title = "@%s %s" % (userName, title)
         twitterApi.PostMedia(title, "output.png", in_reply_to_status_id=requestId)
@@ -201,8 +202,9 @@ def tweet(job, year, respondingTo=None):
         archFile.close()
     else:
         # don't tweet; something's wrong. 
+        print("FAILURE: %s" % title.encode("utf8"))
         archFile = open("archive/failed-%s.txt" % timestamp, "w")
-        archFile.write(title)
+        archFile.write(title.encode('utf8'))
         archFile.close()
 
 def checkTwitterLimits():
@@ -229,7 +231,7 @@ def respondToRequests():
         with open(lastReplyFile, "r") as f:
             lastReply = int(f.read())
 
-    requestRegex = re.compile('make one about an? ([^,\.]*)', re.IGNORECASE)
+    requestRegex = re.compile('make one about[ a|an]? ([^,\.\n]*)', re.IGNORECASE)
     mentions = twitterApi.GetMentions(since_id=lastReply)
     for status in mentions:
         result = requestRegex.search(status.text)
