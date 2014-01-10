@@ -101,7 +101,7 @@ def getImageFor(searchTerm):
             extension = ""
         if (extension == ".jpe") : extension = ".jpg"
 
-        localFileName = "tmp/base_image-%s%s" % (datetime.datetime.now().strftime("%Y-%m-%d-%H%M"), extension)
+        localFileName = "tmp/base_image-%s%s" % (datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f"), extension)
         baseFile = open(localFileName, 'wb')
         imgResponse = requests.get(img['url'])
         baseFile.write(imgResponse.content)
@@ -171,6 +171,7 @@ def createBoxArt(jobTitle, localImgFile, year):
     else:
         widthMultiplier = 0.95
 
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
     offset = "+%i+%i" % (cap(dimensions[0] * .05, 20), cap(dimensions[1] * .05, 20))
     command = [
         "convert",
@@ -192,14 +193,15 @@ def createBoxArt(jobTitle, localImgFile, year):
         "-geometry", offset,
         "-composite",
         "-resize", "1500x1500>",
-        "output.png"
+        "output-%s.png" % timestamp
     ]
 
     subprocess.call(command)
     os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
+    return "output-%s.png" % timestamp
 
-def tweet(job, year, respondingTo=None):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+def tweet(job, year, artFile, respondingTo=None):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
     title = "%s Simulator %i" % (job, year)
 
     userName = None
@@ -208,10 +210,10 @@ def tweet(job, year, respondingTo=None):
         userName = respondingTo[0]
         requestId = respondingTo[1]
 
-    if (os.path.exists("output.png")):
+    if (artFile != None and os.path.exists(artFile)):
         if (userName != None):
             title = "@%s %s" % (userName, title)
-        twitterApi.PostMedia(title, "output.png", in_reply_to_status_id=requestId)
+        twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
 
         os.rename("output.png", "archive/image-%s.png" % timestamp)
         archFile = open("archive/text-%s.txt" % timestamp, "w")
@@ -238,8 +240,8 @@ def randomJobTweet():
     job = getJobTitle()
     image = getImageFor(job)
     year = random.randint(2007, datetime.date.today().year)
-    createBoxArt(job, image, year)
-    tweet(job, year)
+    art = createBoxArt(job, image, year)
+    tweet(job, year, art)
 
 def respondToRequests():
     lastReply = 0
@@ -277,8 +279,8 @@ def respondToRequests():
             try:
                 image = getImageFor(job)
                 year = random.randint(2007, datetime.date.today().year)
-                createBoxArt(job, image, year)
-                tweet( job, year, (status.user.screen_name, str(status.id)) )
+                art = createBoxArt(job, image, year)
+                tweet( job, year, art, (status.user.screen_name, str(status.id)) )
             except Exception, e:
                 sys.stderr.write("Couldn't respond to request: %s\n" % status.text.encode("utf8"))
                 traceback.print_exc(file=sys.stderr)
@@ -287,6 +289,7 @@ def respondToRequests():
 
     with open(lastReplyFile, "w") as f:
         f.write(str(lastReply))
+
 
 if __name__ == '__main__':
     base = os.path.dirname(os.path.abspath( __file__ ))
