@@ -69,7 +69,7 @@ def getImageFor(searchTerm):
     imageResults = requests.get(is_URL, params=is_params).json()
     # imageResults = json.load(open("sample_imagesearch.json"))
     if (imageResults == None or 'responseData' not in imageResults or imageResults['responseData'] == None):
-        sys.stderr.write("No response data in image search for %s. JSON:\n%s\n" % (searchterm, imageResults))
+        sys.stderr.write("No response data in image search for %s. JSON:\n%s\n" % (searchTerm, imageResults))
         return
     imageData = []
     for image in imageResults['responseData']['results']:
