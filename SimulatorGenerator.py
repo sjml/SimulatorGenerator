@@ -10,8 +10,10 @@ import random
 import mimetypes
 import datetime
 import subprocess
-import twitter
 import re
+
+import twitter
+import titlecase
 
 creds = ConfigParser.ConfigParser()
 twitterApi = None
@@ -65,6 +67,9 @@ def getImageFor(searchTerm):
 
     imageResults = requests.get(is_URL, params=is_params).json()
     # imageResults = json.load(open("sample_imagesearch.json"))
+    if ('responseData' not in imageResults):
+        sys.stderr.write("No response data in image search for %s. JSON:\n%s\n" % (searchterm, imageResults))
+        return
     imageData = []
     for image in imageResults['responseData']['results']:
         imageData.append(
@@ -84,7 +89,11 @@ def getImageFor(searchTerm):
             # can't download for whatever reason
             continue
 
-        extension = mimetypes.guess_extension(r.headers['Content-Type'])
+        try:
+            extension = mimetypes.guess_extension(r.headers['Content-Type'])
+        except KeyError, e:
+            sys.stderr.write("Couldn't find content-type header: %s" % str(r.headers))
+            extension = ""
         if (extension == ".jpe") : extension = ".jpg"
 
         localFileName = "tmp/base_image-%s%s" % (datetime.datetime.now().strftime("%Y-%m-%d-%H%M"), extension)
@@ -139,10 +148,17 @@ def createBoxArt(jobTitle, localImgFile, year):
         if (align == "West"):
             jobTitle += indent
             indent += " "
-    jobTitle = "%sSimulator %i\n" % (jobTitle, year)
+
+    # newlines to deal with the font overruning its rendering bounds; 
+    #   we trim the canvas in imagemagick anyway
+    jobTitle = "\n%sSimulator %i\n" % (jobTitle, year)
 
     cmdLine = ['identify', '-format', '%wx%h', localImgFile]
-    dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
+    try:
+        dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
+    except TypeError, e:
+        sys.stderr.write("Couldn't get dimensions for %s\n" % localImgFile)
+        return
     dimensions = map(int, dimensionString.split("x"))
 
     if (dimensions[0] > dimensions[1]):
@@ -236,13 +252,19 @@ def respondToRequests():
     badwordsFile.close()
     badwords = badwordsData['badwords']
 
-    requestRegex = re.compile('make one about\s+(?:\ban?\b)?([^,\.\n]*)', re.IGNORECASE)
+    requestRegex = re.compile('make one about\b([^,\.\n@]*)', re.IGNORECASE)
     mentions = twitterApi.GetMentions(since_id=lastReply)
     mentions.reverse()
     for status in mentions:
         result = requestRegex.search(status.text)
         if (result):
-            job = result.groups()[0].title()
+            job = result.groups()[1]
+            # because regex is annoying
+            if (job.lower().startswith("a ")):
+                job = job[2:]
+            elif (job.lower().startswith("an ")):
+                job = job[3:]
+            job = titlecase.titlecase()
 
             earlyOut = False
             for word in job.split():
@@ -250,11 +272,15 @@ def respondToRequests():
                     earlyOut = True
             if earlyOut: continue
 
-            image = getImageFor(job)
-            year = random.randint(2007, datetime.date.today().year)
-            createBoxArt(job, image, year)
-            tweet( job, year, (status.user.screen_name, str(status.id)) )
-            lastReply = status.id
+            try:
+                image = getImageFor(job)
+                year = random.randint(2007, datetime.date.today().year)
+                createBoxArt(job, image, year)
+                tweet( job, year, (status.user.screen_name, str(status.id)) )
+            except Exception, e:
+                sys.stderr.write("Couldn't respond to request: %s\n" % status.text.encode("utf8"))
+            finally:
+                lastReply = status.id
 
     with open(lastReplyFile, "w") as f:
         f.write(str(lastReply))
