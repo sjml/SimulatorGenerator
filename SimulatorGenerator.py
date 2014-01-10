@@ -11,6 +11,7 @@ import mimetypes
 import datetime
 import subprocess
 import re
+import traceback
 
 import twitter
 import titlecase
@@ -186,13 +187,9 @@ def createBoxArt(jobTitle, localImgFile, year):
         "-gravity", grav,
         "-geometry", offset,
         "-composite",
+        "-resize", "1500x1500>",
+        "output.png"
     ]
-
-    maxDim = 1500
-    if (dimensions[0] > maxDim or dimensions[1] > maxDim):
-        command.extend(["-resize", "%ix%i" % (maxDim, maxDim)])
-
-    command.append("output.png")
 
     subprocess.call(command)
     os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
@@ -280,6 +277,7 @@ def respondToRequests():
                 tweet( job, year, (status.user.screen_name, str(status.id)) )
             except Exception, e:
                 sys.stderr.write("Couldn't respond to request: %s\n" % status.text.encode("utf8"))
+                traceback.print_exc(file=sys.stderr)
             finally:
                 lastReply = status.id
 
