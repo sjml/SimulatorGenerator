@@ -7,3 +7,7 @@ last_replied_to.txt
 config/credentials.ini
 config/twitter_global_config.json
 data/helvetica-ultra-compressed.ttf
+data/persistence.sqlite3
+archive/base_image-*
+archive/text-*
+archive/output-*

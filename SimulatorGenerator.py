@@ -14,8 +14,9 @@ import subprocess
 import re
 import traceback
 import pickle
+import sqlite3
 
-# site packages
+# site-packages
 import requests
 import twitter 
 
@@ -27,41 +28,198 @@ import titlecase
 CONFIG_PATH = "config/config.ini"
 CREDENTIALS_PATH = "config/credentials.ini"
 TWITTERGC_PATH = "config/twitter_global_config.json"
-TWITTER_STATUS_LIMIT = 140
+PERSIST_PATH = "data/persistence.sqlite3"
+TWITTER_RESOURCES = "statuses,help,application"
+
 
 # globals
 config = ConfigParser.ConfigParser()
 creds = ConfigParser.ConfigParser()
 twitterApi = None
 twitterGlobalConfig = None
+persistenceConnection = None
+persistence = None
 
 def setup():
     global creds
     global config
     global twitterApi
     global twitterGlobalConfig
+    global persistenceConnection
+    global persistence
 
     random.seed()
 
     config.read(CONFIG_PATH)
     creds.read(CREDENTIALS_PATH)
 
-    consumer_key = creds.get("twitter", "consumer_key")
-    consumer_secret = creds.get("twitter", "consumer_secret")
-    access_token = creds.get("twitter", "access_token")
-    access_token_secret = creds.get("twitter", "access_token_secret")
-    twitterApi = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
+    if (config.getint("services", "twitter_live") == 1):
+        consumer_key = creds.get("twitter", "consumer_key")
+        consumer_secret = creds.get("twitter", "consumer_secret")
+        access_token = creds.get("twitter", "access_token")
+        access_token_secret = creds.get("twitter", "access_token_secret")
+        twitterApi = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
 
-    oneDayAgo = time.time() - 60*60*24
-    if (not os.path.exists(TWITTERGC_PATH) or os.path.getmtime(TWITTERGC_PATH) < oneDayAgo):
-        print("Getting configuration data from Twitter.")
-        twitterGlobalConfig = twitterApi.GetHelpConfiguration()
-        with open(TWITTERGC_PATH, "w") as tgcFile:
-            json.dump(twitterGlobalConfig, tgcFile)
+        # global config data
+        oneDayAgo = time.time() - 60*60*24
+        if (not os.path.exists(TWITTERGC_PATH) or os.path.getmtime(TWITTERGC_PATH) < oneDayAgo):
+            print("Getting configuration data from Twitter.")
+            # not checking twitter rate limits here since it will only get called once per day
+            twitterGlobalConfig = twitterApi.GetHelpConfiguration()
+            with open(TWITTERGC_PATH, "w") as tgcFile:
+                json.dump(twitterGlobalConfig, tgcFile)
+        else:
+            with open(TWITTERGC_PATH, "r") as tgcFile:
+                twitterGlobalConfig = json.load(tgcFile)
+
+        # our own rate limits
+        creatingDB = not os.path.exists(PERSIST_PATH)
+        persistenceConnection = sqlite3.connect(PERSIST_PATH)
+        persistence = persistenceConnection.cursor()
+        if (creatingDB):
+            persistence.execute("CREATE TABLE rateLimits (resource text unique, reset int, max int, remaining int)")
+            persistence.execute("CREATE TABLE intPrefs (name text unique, value int)")
+            persistence.execute("CREATE TABLE queuedRequests (tweet int unique, job text, user text)")
+            persistenceConnection.commit()
+            getTwitterRateLimits()
     else:
+        # cached values will do in a pinch
         with open(TWITTERGC_PATH, "r") as tgcFile:
             twitterGlobalConfig = json.load(tgcFile)
+        persistenceConnection = sqlite3.connect(PERSIST_PATH)
+        persistence = persistenceConnection.cursor()
+
+
+def getTwitterRateLimits():
+    persistence.execute("SELECT resource FROM rateLimits")
+    existingResources = map(lambda x: x[0], persistence.fetchall())
+
+    # not checking twitter rate limits here since it will only gets called when
+    #  one of the limits is ready to reset
+    limits = twitterApi.GetRateLimitStatus(TWITTER_RESOURCES)
+    for resourceGroup, resources in limits["resources"].items():
+        for resource, rateValues in resources.items():
+            if resource not in existingResources:
+                persistence.execute(
+                    "INSERT INTO rateLimits VALUES (?, ?, ?, ?)",
+                    [
+                        resource,
+                        int(rateValues["reset"]),
+                        int(rateValues["limit"]),
+                        int(rateValues["remaining"]),
+                    ]
+                )
+            else:
+                persistence.execute(
+                    "UPDATE rateLimits SET reset=?, max=?, remaining=? WHERE resource=?", 
+                    [
+                        int(rateValues["reset"]),
+                        int(rateValues["limit"]),
+                        int(rateValues["remaining"]),
+                        resource,
+                    ]
+                )
+    persistenceConnection.commit()
+
+    defaults = [
+        ("tweetHourlyReset",     int(time.time()) + 60*60),
+        ("tweetDailyReset",      int(time.time()) + 60*60*24),
+        ("tweetHourlyRemaining", config.getint("services", "twitter_hourly_limit")),
+        ("tweetDailyRemaining",  config.getint("services", "twitter_daily_limit")),
+    ]
+    for default in defaults:
+        if getIntPref(default[0]) == -1:
+            setIntPref(default[0], default[1])
+
+
+def getIntPref(name):
+    persistence.execute("SELECT value FROM intPrefs WHERE name=?", [name])
+    pref = persistence.fetchone()
+    if (pref == None):
+        return -1
+    return pref[0]
+
+
+def setIntPref(name, value):
+    if getIntPref(name) == -1:
+        persistence.execute("INSERT INTO intPrefs VALUES (?, ?)", [name, value])
+    else:
+        persistence.execute("UPDATE intPrefs SET value=? WHERE name=?", [value, name])
+    persistenceConnection.commit()
+
+
+def checkTwitterPostLimit():
+    currentTime = int(time.time())
+
+    hourlyReset = getIntPref("tweetHourlyReset")
+    if currentTime - hourlyReset > 0:
+        setIntPref("tweetHourlyReset", currentTime + 60*60)
+        setIntPref("tweetHourlyRemaining", config.getint("services", "twitter_hourly_limit"))
+        hourly = config.getint("services", "twitter_hourly_limit")
     
+    dailyReset = getIntPref("tweetDailyReset")
+    if currentTime - dailyReset > 0:
+        setIntPref("tweetDailyReset", currentTime + 60*60*24)
+        setIntPref("tweetDailyRemaining", config.getint("services", "twitter_daily_limit"))
+    
+    hourly = getIntPref("tweetHourlyRemaining")
+    daily = getIntPref("tweetDailyRemaining")
+
+    if hourly > 0 and daily > 0:
+        return True
+    else:
+        return False
+
+
+def useTweet():
+    for resource in ["tweetDailyRemaining", "tweetHourlyRemaining"]:
+        setIntPref(resource, getIntPref(resource) - 1)
+
+
+def checkTwitterResource(resourceKey, proposedUsage=1):
+    persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
+    resourceData = persistence.fetchone()
+    if (resourceData == None):
+        sys.stderr.write("Invalid Twitter resource: %s\n" % (resourceKey))
+        return False
+
+    if int(time.time()) - resourceData[1] > 0:
+        getTwitterRateLimits()
+        persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
+        resourceData = persistence.fetchone()
+
+    if (resourceData[3] - proposedUsage > 0):
+        return True
+    else:
+        return False
+
+
+def useTwitterResource(resourceKey, usage=1):
+    persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
+    resourceData = persistence.fetchone()
+    if (resourceData == None):
+        sys.stderr.write("Invalid Twitter resource: %s\n" % (resourceKey))
+        return
+
+    newVal = resourceData[3] - usage
+
+    persistence.execute("UPDATE rateLimits SET reset=?, max=?, remaining=? WHERE resource=?",
+        [
+            resourceData[1],
+            resourceData[2],
+            newVal,
+            resourceKey,
+        ]
+    )
+    persistenceConnection.commit()
+
+    return newVal
+
+
+def shutdown():
+    if (persistence != None):
+        persistence.close()
+
 
 def getRandomJobTitle():
     # TODO: store off the category, don't repeat job titles, rotate categories
@@ -76,11 +234,11 @@ def getRandomJobTitle():
     }
     cb_URL = "http://api.careerbuilder.com/v1/jobsearch?"
 
-    if (config.get("services", "careerbuilder_live") == 1):
+    if (config.getint("services", "careerbuilder_live") == 1):
         response = requests.get(cb_URL, params=js_params)
         dom = minidom.parseString(response.content)
     else:
-        with open("offline-samples/sample_jobsearch.xml") as jobFile:
+        with open("offline-samples/careerbuilder-jobsearch.xml") as jobFile:
             dom = minidom.parse(jobFile)
 
     jobs = []
@@ -88,7 +246,7 @@ def getRandomJobTitle():
         jobs.append(node.firstChild.nodeValue)
 
     # NOTE: in the year 10,000 AD, this will need to be updated
-    maxLength = TWITTER_STATUS_LIMIT - (len(" Simulator ") + 4 + twitterGlobalConfig["characters_reserved_per_media"])
+    maxLength = twitter.CHARACTER_LIMIT - (len(" Simulator ") + 4 + twitterGlobalConfig["characters_reserved_per_media"])
     job = ""
     count = 0
     while (len(job) == 0 or len(job) > maxLength):
@@ -103,6 +261,7 @@ def getRandomJobTitle():
     print("%i iteration(s) found random job title: %s" % (count, job))
     return job
 
+
 def getImageFor(searchTerm):
     is_params = {
         "v" : "1.0", 
@@ -113,10 +272,10 @@ def getImageFor(searchTerm):
     headers = {"Referer" : "https://twitter.com/SimGenerator"}
     is_URL = "https://ajax.googleapis.com/ajax/services/search/images"
 
-    if (config.get("services", "googleimage_live") == 1):
+    if (config.getint("services", "googleimage_live") == 1):
         imageResults = requests.get(is_URL, params=is_params).json()
     else:
-        with open("offline-samples/sample_imagesearch.json") as isFile:
+        with open("offline-samples/googleimage-lpnsearch.json") as isFile:
             imageResults = json.load(isFile)
 
     if (imageResults == None or 'responseData' not in imageResults or imageResults['responseData'] == None):
@@ -165,11 +324,13 @@ def getImageFor(searchTerm):
         if (int(dimensions[0]) == img['w'] and int(dimensions[1]) == img['h']):
             return localFileName
 
+
 def cap(value, maxVal):
     if (value < maxVal):
         return value
     else:
         return maxVal
+
 
 def wpl(totalwords, current=None):
     if (current == None):
@@ -184,6 +345,7 @@ def wpl(totalwords, current=None):
         return current + [3]*(totalwords/3)
     current.append(2)
     return wpl(totalwords-2, current)
+
 
 def createBoxArt(jobTitle, localImgFile, year):
     grav = random.choice(("NorthWest", "NorthEast", "SouthWest", "SouthEast"))
@@ -255,10 +417,12 @@ def createBoxArt(jobTitle, localImgFile, year):
         outputFile
     ]
 
-    print("ImageMagick command: %s", " ".join(command))
+    if (config.getint("settings", "log_imagemagick") == 1):
+        print("ImageMagick command: %s" % " ".join(command))
     subprocess.call(command)
     os.rename(localImgFile, "archive/%s" % os.path.basename(localImgFile))
     return outputFile
+
 
 def tweet(job, year, artFile, respondingTo=None):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
@@ -273,12 +437,25 @@ def tweet(job, year, artFile, respondingTo=None):
     if (artFile != None and os.path.exists(artFile)):
         if (userName != None):
             title = "@%s %s" % (userName, title)
-        if (config.get("services", "twitter_live") == 1):
-            twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
+
+        posting = True
+        if config.getint("services", "twitter_live") == 0:
+            print("Twitter support is current disabled; not posting.")
+            posting = False
+        if config.getint("services", "actively_tweet") == 0:
+            print("Tweeting is turned off; not posting.")
+            posting = False
+        if not checkTwitterPostLimit():
+            print("Over rate limit; not posting.")
+            posting = False
+
+        if posting:
+            useTweet()
+            # twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
         else:
             print("Would have posted '%s' to twitter with image: %s" % (title, artFile))
 
-        os.rename(artFile, "archive/image-%s.png" % timestamp)
+        os.rename(artFile, "archive/output-%s.png" % timestamp)
         with open("archive/text-%s.txt" % timestamp, "w") as archFile:
             archFile.write(title.encode('utf8'))
     else:
@@ -287,15 +464,6 @@ def tweet(job, year, artFile, respondingTo=None):
         with open("archive/failed-%s.txt" % timestamp, "w") as archFile:
             archFile.write(title.encode('utf8'))
 
-def checkTwitterLimits():
-    rateLimitData = twitterApi.GetRateLimitStatus()
-
-    rateLimitCallsLeft = rateLimitData['resources']['application']['/application/rate_limit_status']['remaining']
-    rateLimitReset = rateLimitData['resources']['application']['/application/rate_limit_status']['reset']
-    mentionsCallsLeft = rateLimitData['resources']['statuses']['/statuses/mentions_timeline']['remaining']
-    mentionsReset = rateLimitData['resources']['statuses']['/statuses/mentions_timeline']['reset']
-
-    print mentionsCallsLeft, "mentions calls left."
 
 
 def manualJobTweet(job, year=None):
@@ -306,6 +474,7 @@ def manualJobTweet(job, year=None):
     art = createBoxArt(job, image, year)
     tweet(job, year, art)
 
+
 def randomJobTweet():
     job = getRandomJobTitle()
     image = getImageFor(job)
@@ -313,16 +482,11 @@ def randomJobTweet():
     art = createBoxArt(job, image, year)
     tweet(job, year, art)
 
+
 def respondToRequests():
-    if (config.get("settings", "taking_requests") == 0):
+    if (config.getint("settings", "taking_requests") == 0):
         print("Not taking requests.")
         return
-
-    lastReply = 0
-    lastReplyFile = "last_replied_to.txt"
-    if (os.path.exists(lastReplyFile)):
-        with open(lastReplyFile, "r") as lpf:
-            lastReply = int(lpf.read())
 
     with open("data/badwords.json", "r") as badwordsFile:
         badwordsData = json.load(badwordsFile)
@@ -330,8 +494,15 @@ def respondToRequests():
 
     requestRegex = re.compile('make one about ([^,\.\n@]*)', re.IGNORECASE)
 
-    if (config.get("services", "twitter_live") == 1):
-        mentions = twitterApi.GetMentions(since_id=lastReply)
+    lastReply = getIntPref("lastReply")
+    if (lastReply == -1):
+        lastReply = 0
+    if (config.getint("services", "twitter_live") == 1):
+        if checkTwitterResource("/statuses/mentions_timeline"):
+            mentions = twitterApi.GetMentions(count=100, since_id=lastReply)
+            useTwitterResource("/statuses/mentions_timeline")
+        else:
+            mentions = []
     else:
         with open("offline-samples/twitter-mentions.pickle", "rb") as mentionArchive:
             mentions = pickle.load(mentionArchive)
@@ -352,7 +523,7 @@ def respondToRequests():
 
             earlyOut = False
             # check for derogatory speech
-            for word in job.split():
+            for word in job.lower().split():
                 if word in badwords:
                     earlyOut = True
                     break
@@ -361,25 +532,30 @@ def respondToRequests():
                     (status.user.screen_name, 
                      job, 
                      year)
-                    ) + twitterGlobalConfig["characters_reserved_per_media"] > TWITTER_STATUS_LIMIT:
+                    ) + twitterGlobalConfig["characters_reserved_per_media"] > twitter.CHARACTER_LIMIT:
                 earlyOut = True
 
             if earlyOut:
                 # TODO: consider tweeting back "no" at them? 
                 continue
 
-            try:
-                image = getImageFor(job)
-                art = createBoxArt(job, image, year)
-                tweet( job, year, art, (status.user.screen_name, str(status.id)) )
-            except Exception, e:
-                sys.stderr.write("Couldn't respond to request: %s\n" % status.text.encode("utf8"))
-                traceback.print_exc(file=sys.stderr)
-            finally:
-                lastReply = status.id
+            # put them in the queue
+            persistence.execute("INSERT INTO queuedRequests VALUES (?, ?, ?)", [status.id, job, status.user.screen_name])
+            persistenceConnection.commit()
+            setIntPref("lastReply", status.id)
 
-    with open(lastReplyFile, "w") as f:
-        f.write(str(lastReply))
+            # TODO: cycle through the queue
+
+            # 
+            # try:
+            #     image = getImageFor(job)
+            #     art = createBoxArt(job, image, year)
+            #     tweet( job, year, art, (status.user.screen_name, str(status.id)) )
+            # except Exception, e:
+            #     sys.stderr.write("Couldn't respond to request: %s\n" % status.text.encode("utf8"))
+            #     traceback.print_exc(file=sys.stderr)
+            # finally:
+            #     lastReply = status.id
 
 
 if __name__ == '__main__':
@@ -388,8 +564,9 @@ if __name__ == '__main__':
     
     setup()
 
-    if (len(sys.argv) > 1 and sys.argv[1] == "check"):
+    if (config.getint("settings", "faking_requests") == 1 or (len(sys.argv) > 1 and sys.argv[1] == "check")):
         respondToRequests()
     else:
         randomJobTweet()
 
+    shutdown()
