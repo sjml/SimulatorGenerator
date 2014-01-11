@@ -1,7 +1,9 @@
 syntax: glob
 
-credentials.ini
 .DS_Store
+*.pyc
 output.png
-helvetica-ultra-compressed.ttf
 last_replied_to.txt
+config/credentials.ini
+config/twitter_global_config.json
+data/helvetica-ultra-compressed.ttf

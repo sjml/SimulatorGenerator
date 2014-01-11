@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResponseJobSearch>
+  <Errors/>
+  <TimeResponseSent>1/8/2014 1:47:11 AM</TimeResponseSent>
+  <TimeElapsed>0.2808036</TimeElapsed>
+  <TotalPages>160</TotalPages>
+  <TotalCount>407437</TotalCount>
+  <FirstItemIndex>1</FirstItemIndex>
+  <LastItemIndex>25</LastItemIndex>
+  <Results>
+    <JobSearchResult>
+      <Company>Wildwood Forest Apts, TX 77380</Company>
+      <CompanyDID/>
+      <CompanyDetailsURL/>
+      <DID>J3G24K7697KGH5PXD26</DID>
+      <OnetCode>11-9141.00</OnetCode>
+      <ONetFriendlyTitle>Property, Real Estate, and Community Association Managers</ONetFriendlyTitle>
+      <DescriptionTeaser>Leasing Consultants are responsible for leasing vacant apartments available within the community and working with the General Manager to encourage...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3G24K7697KGH5PXD26</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3G24K7697KGH5PXD26&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>TX - Spring</Location>
+      <LocationLatitude>30.0396</LocationLatitude>
+      <LocationLongitude>-95.533</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3G24K7697KGH5PXD26</SimilarJobsURL>
+      <JobTitle>Leasing Consultant</JobTitle>
+      <CompanyImageURL/>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Lenovo</Company>
+      <CompanyDID>c8f66q6qpyvg95s694h</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8F66Q6QPYVG95S694H/Lenovo/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F4YY75NX9D4VL5NVZ</DID>
+      <OnetCode>15-1099.02</OnetCode>
+      <ONetFriendlyTitle>Computer Systems Engineers/Architects</ONetFriendlyTitle>
+      <DescriptionTeaser>Functional Area:   Engineering Facility:   Corporate Office Relocation Provided:   Yes Travel Percent:  25  We are seeking a senior software...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F4YY75NX9D4VL5NVZ</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F4YY75NX9D4VL5NVZ&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>NC - Raleigh</Location>
+      <LocationLatitude>35.78551</LocationLatitude>
+      <LocationLongitude>-78.64267</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F4YY75NX9D4VL5NVZ</SimilarJobsURL>
+      <JobTitle>Software Development Architect</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/s3/m0x2xk666khxtjgkls3.png</CompanyImageURL>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>D. E. Shaw &amp; Co., L.P.</Company>
+      <CompanyDID/>
+      <CompanyDetailsURL/>
+      <DID>JHS3M16XM890C2QK5PK</DID>
+      <OnetCode>13-2051.00</OnetCode>
+      <ONetFriendlyTitle>Financial Analysts</ONetFriendlyTitle>
+      <DescriptionTeaser>The D. E. Shaw group seeks a talented Associate to join its Corporate Development team, which develops new financial businesses and drives global...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=JHS3M16XM890C2QK5PK</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHS3M16XM890C2QK5PK&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>NY - New York</Location>
+      <LocationLatitude>40.7593</LocationLatitude>
+      <LocationLongitude>-73.9902</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHS3M16XM890C2QK5PK</SimilarJobsURL>
+      <JobTitle>Corporate Development Associate</JobTitle>
+      <CompanyImageURL/>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Wireless Lifestyle</Company>
+      <CompanyDID/>
+      <CompanyDetailsURL/>
+      <DID>J3F0L26MDTVKLP22QMR</DID>
+      <OnetCode>41-1011.00</OnetCode>
+      <ONetFriendlyTitle>Supervisors of Retail Sales Staff</ONetFriendlyTitle>
+      <DescriptionTeaser>Wireless Lifestyle is proud to be one of the largest Sprint Preferred Retailers in the nation, retail locations operating in California, Illinois,...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F0L26MDTVKLP22QMR</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F0L26MDTVKLP22QMR&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>CA - Valley Village</Location>
+      <LocationLatitude>34.1666</LocationLatitude>
+      <LocationLongitude>-118.3996</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F0L26MDTVKLP22QMR</SimilarJobsURL>
+      <JobTitle>Retail Sales-Market Floater</JobTitle>
+      <CompanyImageURL/>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Wireless Lifestyle</Company>
+      <CompanyDID/>
+      <CompanyDetailsURL/>
+      <DID>J3H4YP6LK1Z2QFY5HCQ</DID>
+      <OnetCode>41-2031.00</OnetCode>
+      <ONetFriendlyTitle>Retail Salespersons</ONetFriendlyTitle>
+      <DescriptionTeaser>Wireless Lifestyle is proud to be one of the largest Sprint Preferred Retailers in the nation, retail locations operating in California, Illinois,...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3H4YP6LK1Z2QFY5HCQ</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3H4YP6LK1Z2QFY5HCQ&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>CA - Sherman Oaks</Location>
+      <LocationLatitude>34.146</LocationLatitude>
+      <LocationLongitude>-118.4632</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3H4YP6LK1Z2QFY5HCQ</SimilarJobsURL>
+      <JobTitle>Retail Sales Associate</JobTitle>
+      <CompanyImageURL/>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Generac</Company>
+      <CompanyDID>chs76v76k1c47vb7071</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/CHS76V76K1C47VB7071/Generac/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3J52R67HF5DJ2Z04P4</DID>
+      <OnetCode>41-4012.00</OnetCode>
+      <ONetFriendlyTitle>Sales Reps (Wholesale and Manufacturing)</ONetFriendlyTitle>
+      <DescriptionTeaser>Generac Power Systems  – Join the leader in the power industry! Our office in Eagle, WI is seeking an  Inside Sales Representative  for our Commercial...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3J52R67HF5DJ2Z04P4</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3J52R67HF5DJ2Z04P4&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>WI - Eagle</Location>
+      <LocationLatitude>42.879</LocationLatitude>
+      <LocationLongitude>-88.474</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3J52R67HF5DJ2Z04P4</SimilarJobsURL>
+      <JobTitle>Inside Sales Representative - Industrial</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/s7/mxs0v26wrzzlhgfygs7.jpg</CompanyImageURL>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Kuehne + Nagel</Company>
+      <CompanyDID>c8f53463433xfr2hsdx</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8F53463433XFR2HSDX/Kuehne-Nagel/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3J10S71PRNC5FSXYMD</DID>
+      <OnetCode>43-5011.00</OnetCode>
+      <ONetFriendlyTitle>Cargo and Freight Agents</ONetFriendlyTitle>
+      <DescriptionTeaser>The Air Import Coordinator is responsible for coordination of all aspects of air import shipments worldwide.Duties and ResponsibilitiesVariety of...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3J10S71PRNC5FSXYMD</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3J10S71PRNC5FSXYMD&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>MA - South Boston</Location>
+      <LocationLatitude>42.3466</LocationLatitude>
+      <LocationLongitude>-71.0403</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3J10S71PRNC5FSXYMD</SimilarJobsURL>
+      <JobTitle>Air Import Coordinator</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/dv/mwt0kn7730jrbh8ppdv.png</CompanyImageURL>
+      <JobBrandingIcons>PIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Dairy Farmers of America</Company>
+      <CompanyDID/>
+      <CompanyDetailsURL/>
+      <DID>J3F21C61B7XDWJ5HTGR</DID>
+      <OnetCode>51-8092.00</OnetCode>
+      <ONetFriendlyTitle>Gas Plant Operators</ONetFriendlyTitle>
+      <DescriptionTeaser>Dairy Farmers of America is all about milk and the 16,000 dairy farm members who produce it. We are proud to be a cooperative, owned and operated by...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F21C61B7XDWJ5HTGR</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F21C61B7XDWJ5HTGR&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>MN - Zumbrota</Location>
+      <LocationLatitude>44.3245</LocationLatitude>
+      <LocationLongitude>-92.6687</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F21C61B7XDWJ5HTGR</SimilarJobsURL>
+      <JobTitle>Evaporator Relief Operator</JobTitle>
+      <CompanyImageURL/>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Dairy Farmers of America</Company>
+      <CompanyDID/>
+      <CompanyDetailsURL/>
+      <DID>J3G8GF71V5FS6962NM0</DID>
+      <OnetCode>11-9199.00</OnetCode>
+      <ONetFriendlyTitle>Managers</ONetFriendlyTitle>
+      <DescriptionTeaser>Dairy Farmers of America is all about milk and the 16,000 dairy farm members who produce it. We are proud to be a cooperative, owned and operated by...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3G8GF71V5FS6962NM0</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3G8GF71V5FS6962NM0&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>MO - Kansas City</Location>
+      <LocationLatitude>39.2806</LocationLatitude>
+      <LocationLongitude>-94.7299</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3G8GF71V5FS6962NM0</SimilarJobsURL>
+      <JobTitle>Dairy Price Risk Administrator</JobTitle>
+      <CompanyImageURL/>
+      <JobBrandingIcons/>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F1ZM61BSXHZM9XBFX</DID>
+      <OnetCode>25-1193.00</OnetCode>
+      <ONetFriendlyTitle>Recreation and Fitness Studies Teachers, Postsecondary</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Bachelor's Degree The Recreation Supervisor is responsible for the planning and supervising the total recreational program for the...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F1ZM61BSXHZM9XBFX</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F1ZM61BSXHZM9XBFX&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>OK - Holdenville</Location>
+      <LocationLatitude>35.07986</LocationLatitude>
+      <LocationLongitude>-96.39879</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F1ZM61BSXHZM9XBFX</SimilarJobsURL>
+      <JobTitle>Recreation Supervisor</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3J675780F29JPNN8ZR</DID>
+      <OnetCode>29-2061.00</OnetCode>
+      <ONetFriendlyTitle>Licensed Practical and Vocational Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Licensed Practical Nurse is responsible for the performances of basic nursing duties to...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3J675780F29JPNN8ZR</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3J675780F29JPNN8ZR&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>AZ - Eloy</Location>
+      <LocationLatitude>32.75242</LocationLatitude>
+      <LocationLongitude>-111.55555</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3J675780F29JPNN8ZR</SimilarJobsURL>
+      <JobTitle>Licensed Practical Nurse</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F1YB6WBDDP911QPJJ</DID>
+      <OnetCode>25-2032.00</OnetCode>
+      <ONetFriendlyTitle>Vocational Education Teachers, Secondary School</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED The Vocational Instructor performs instructional services of vocational and/or occupational subjects, such...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F1YB6WBDDP911QPJJ</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F1YB6WBDDP911QPJJ&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>ID - Boise</Location>
+      <LocationLatitude>43.60698</LocationLatitude>
+      <LocationLongitude>-116.19341</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F1YB6WBDDP911QPJJ</SimilarJobsURL>
+      <JobTitle>Vocational Instructor</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3H3675W7X1B3SFC0VR</DID>
+      <OnetCode>29-2061.00</OnetCode>
+      <ONetFriendlyTitle>Licensed Practical and Vocational Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Licensed Practical Nurse is responsible for the performances of basic nursing duties to...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3H3675W7X1B3SFC0VR</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3H3675W7X1B3SFC0VR&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>FL - Lake City</Location>
+      <LocationLatitude>30.19036</LocationLatitude>
+      <LocationLongitude>-82.63712</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3H3675W7X1B3SFC0VR</SimilarJobsURL>
+      <JobTitle>Licensed Practical Nurse</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3H7FN6PT4X93JY9M49</DID>
+      <OnetCode>33-3012.00</OnetCode>
+      <ONetFriendlyTitle>Correctional Officers and Jailers</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED The Senior Correctional Officer assists in the supervision of the administrative and operational security...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3H7FN6PT4X93JY9M49</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3H7FN6PT4X93JY9M49&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>TX - Henderson</Location>
+      <LocationLatitude>32.15326</LocationLatitude>
+      <LocationLongitude>-94.79927</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3H7FN6PT4X93JY9M49</SimilarJobsURL>
+      <JobTitle>Sr Correctional Officer</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3G80B6TSMS1RSSX0BQ</DID>
+      <OnetCode>43-9061.00</OnetCode>
+      <ONetFriendlyTitle>Office Clerks</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED The Administrative Clerk provides clerical and administrative support for various departments. Performs...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3G80B6TSMS1RSSX0BQ</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3G80B6TSMS1RSSX0BQ&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>GA - Nicholls</Location>
+      <LocationLatitude>31.51818</LocationLatitude>
+      <LocationLongitude>-82.63156</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3G80B6TSMS1RSSX0BQ</SimilarJobsURL>
+      <JobTitle>Administrative Clerk</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3G31Y6MQWL5ZMFKNJD</DID>
+      <OnetCode>29-2061.00</OnetCode>
+      <ONetFriendlyTitle>Licensed Practical and Vocational Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Licensed Practical Nurse (PRN) is responsible for the performances of basic nursing duties to...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3G31Y6MQWL5ZMFKNJD</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3G31Y6MQWL5ZMFKNJD&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>CO - Las Animas</Location>
+      <LocationLatitude>38.06728</LocationLatitude>
+      <LocationLongitude>-103.21996</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3G31Y6MQWL5ZMFKNJD</SimilarJobsURL>
+      <JobTitle>Licensed Practical Nurse (PRN)</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3H0KL6FP3ZKMLGRW9N</DID>
+      <OnetCode>25-2022.00</OnetCode>
+      <ONetFriendlyTitle>Middle School Teachers</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Bachelor's Degree  The Academic Instructor provides instruction in basic education subjects such as mathematics, science, social...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3H0KL6FP3ZKMLGRW9N</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3H0KL6FP3ZKMLGRW9N&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>OK - Sayre</Location>
+      <LocationLatitude>35.29129</LocationLatitude>
+      <LocationLongitude>-99.63923</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3H0KL6FP3ZKMLGRW9N</SimilarJobsURL>
+      <JobTitle>Academic Instructor</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3H78667P6QP2LBX7YJ</DID>
+      <OnetCode>29-2061.00</OnetCode>
+      <ONetFriendlyTitle>Licensed Practical and Vocational Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Licensed Practical Nurse (PRN) is responsible for the performances of basic nursing duties to...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3H78667P6QP2LBX7YJ</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3H78667P6QP2LBX7YJ&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>NV - Pahrump</Location>
+      <LocationLatitude>36.21356</LocationLatitude>
+      <LocationLongitude>-115.99142</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3H78667P6QP2LBX7YJ</SimilarJobsURL>
+      <JobTitle>Licensed Practical Nurse (PRN)</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3H14M60VW0JK03GHS0</DID>
+      <OnetCode>33-3012.00</OnetCode>
+      <ONetFriendlyTitle>Correctional Officers and Jailers</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED The Correctional Officer performs routine duties in accordance with established policies, regulations and...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3H14M60VW0JK03GHS0</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3H14M60VW0JK03GHS0&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>NM - Milan</Location>
+      <LocationLatitude>35.17131</LocationLatitude>
+      <LocationLongitude>-107.891</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3H14M60VW0JK03GHS0</SimilarJobsURL>
+      <JobTitle>Correctional Officer</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F0V170C0LYVRR63V9</DID>
+      <OnetCode>33-1099.00</OnetCode>
+      <ONetFriendlyTitle>Supervisors of Protective Service Workers</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED The Assistant Shift Supervisor assists in the supervision of the administrative and operational security...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F0V170C0LYVRR63V9</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F0V170C0LYVRR63V9&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>MS - Natchez</Location>
+      <LocationLatitude>31.55922</LocationLatitude>
+      <LocationLongitude>-91.39823</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F0V170C0LYVRR63V9</SimilarJobsURL>
+      <JobTitle>Asst Shift Supervisor</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F6S868DZPVJC4S9HH</DID>
+      <OnetCode>29-2061.00</OnetCode>
+      <ONetFriendlyTitle>Licensed Practical and Vocational Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Licensed Vocational Nurse is responsible for the performances of basic nursing duties to...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F6S868DZPVJC4S9HH</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F6S868DZPVJC4S9HH&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>TX - Laredo</Location>
+      <LocationLatitude>27.53092</LocationLatitude>
+      <LocationLongitude>-99.502</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F6S868DZPVJC4S9HH</SimilarJobsURL>
+      <JobTitle>Licensed Vocational Nurse</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F5Z071MCBCBGMJXGX</DID>
+      <OnetCode>43-9061.00</OnetCode>
+      <ONetFriendlyTitle>Office Clerks</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED The Administrative Clerk provides clerical and administrative support for various departments. Performs...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F5Z071MCBCBGMJXGX</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F5Z071MCBCBGMJXGX&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>CO - Olney Springs</Location>
+      <LocationLatitude>38.16543</LocationLatitude>
+      <LocationLongitude>-103.94614</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F5Z071MCBCBGMJXGX</SimilarJobsURL>
+      <JobTitle>Administrative Clerk</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3G7LT71CRG2SPZTVN0</DID>
+      <OnetCode>29-1111.00</OnetCode>
+      <ONetFriendlyTitle>Registered Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Registered Nurse (RN) plans and provides comprehensive nursing care including, but not...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3G7LT71CRG2SPZTVN0</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3G7LT71CRG2SPZTVN0&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>MT - Shelby</Location>
+      <LocationLatitude>48.50694</LocationLatitude>
+      <LocationLongitude>-111.85977</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3G7LT71CRG2SPZTVN0</SimilarJobsURL>
+      <JobTitle>Registered Nurse (Non-exempt)</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3G19V79P71H13GVKT3</DID>
+      <OnetCode>29-1111.00</OnetCode>
+      <ONetFriendlyTitle>Registered Nurses</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  Associate's Degree/College Diploma The Registered Nurse (PRN) plans and provides comprehensive nursing care including, but not...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3G19V79P71H13GVKT3</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3G19V79P71H13GVKT3&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>OH - Conneaut</Location>
+      <LocationLatitude>41.94388</LocationLatitude>
+      <LocationLongitude>-80.5596</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3G19V79P71H13GVKT3</SimilarJobsURL>
+      <JobTitle>Registered Nurse (PRN)</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Corrections Corporation of America</Company>
+      <CompanyDID>c8b6b26qjvr0lt7zv5n</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8B6B26QJVR0LT7ZV5N/Corrections-Corporation-of-America/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F2026GT0SRWNRTYWP</DID>
+      <OnetCode>21-1023.00</OnetCode>
+      <ONetFriendlyTitle>Mental Health and Substance Abuse Social Workers</ONetFriendlyTitle>
+      <DescriptionTeaser>Education Level:  High School Diploma/GED Using advanced treatment modalities, the Clinical Social Worker P/T provides comprehensive intervention and...</DescriptionTeaser>
+      <Distance/>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=UNTRKD&amp;HostSite=US&amp;DID=J3F2026GT0SRWNRTYWP</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F2026GT0SRWNRTYWP&amp;HostSite=US&amp;DeveloperKey=WDHP0BF6W3V1PT7H6BHP</JobServiceURL>
+      <Location>LA - Winnfield</Location>
+      <LocationLatitude>31.92586</LocationLatitude>
+      <LocationLongitude>-92.64014</LocationLongitude>
+      <PostedDate>1/8/2014</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F2026GT0SRWNRTYWP</SimilarJobsURL>
+      <JobTitle>Clinical Social Worker, P/T</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/mediamanagement/8n/mvk56g78n5smyj0xh8n.jpg</CompanyImageURL>
+      <JobBrandingIcons>VIcon</JobBrandingIcons>
+      <ApplyRequirements>
+        <ApplyRequirement>IsExternal</ApplyRequirement>
+      </ApplyRequirements>
+    </JobSearchResult>
+  </Results>
+  <SearchMetaData>
+    <ResultsAlteredByUsersSearchPreferences>false</ResultsAlteredByUsersSearchPreferences>
+    <SearchLocations>
+      <SearchLocation>
+        <City/>
+        <StateCode/>
+        <CountryCode>US</CountryCode>
+        <PostalCode/>
+        <Valid>True</Valid>
+      </SearchLocation>
+    </SearchLocations>
+  </SearchMetaData>
+</ResponseJobSearch>
