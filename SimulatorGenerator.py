@@ -18,10 +18,10 @@ import sqlite3
 
 # site-packages
 import requests
-import twitter 
 
 # local
 sys.path.insert(0, "./lib")
+import twitter 
 import titlecase
 
 # global constants
@@ -591,15 +591,28 @@ def respondToRequests():
     setIntPref("queueCount", persistence.fetchone()[0])
 
 
+def updateQueue():
+    # twitter documentation says this is rate-limited, doesn't appear
+    #  to actually count against any resources. hmmmmm. 
+    # resource should be "/account/update_profile", but that's not
+    #  in the resource list at all. 
+    locString = "Current queue: %i" % (getIntPref("queueCount"))
+    if len(locString) > 30:
+        locString = "Current queue: very, very long"
+    twitterApi.UpdateProfile(location=locString)
+
+
 
 if __name__ == '__main__':
     base = os.path.dirname(os.path.abspath( __file__ ))
     os.chdir(base)
-    
+
     setup()
 
     if (config.getint("settings", "faking_requests") == 1 or (len(sys.argv) > 1 and sys.argv[1] == "check")):
         respondToRequests()
+    elif (len(sys.argv) > 1 and sys.argv[1] == "updateQueue"):
+        updateQueue()
     else:
         randomJobTweet()
 
