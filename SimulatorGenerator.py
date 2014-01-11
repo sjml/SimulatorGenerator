@@ -29,7 +29,7 @@ CONFIG_PATH = "config/config.ini"
 CREDENTIALS_PATH = "config/credentials.ini"
 TWITTERGC_PATH = "config/twitter_global_config.json"
 PERSIST_PATH = "data/persistence.sqlite3"
-TWITTER_RESOURCES = "statuses,help,application"
+TWITTER_RESOURCES = "statuses,help,application,friendships,account"
 
 
 # globals
@@ -53,6 +53,16 @@ def setup():
     config.read(CONFIG_PATH)
     creds.read(CREDENTIALS_PATH)
 
+    creatingDB = not os.path.exists(PERSIST_PATH)
+    persistenceConnection = sqlite3.connect(PERSIST_PATH)
+    persistence = persistenceConnection.cursor()
+    if (creatingDB):
+        persistence.execute("CREATE TABLE rateLimits (resource text unique, reset int, max int, remaining int)")
+        persistence.execute("CREATE TABLE intPrefs (name text unique, value int)")
+        persistence.execute("CREATE TABLE queuedRequests (tweet int unique, job text, user text)")
+        persistence.execute("CREATE TABLE failedRequests (tweet int unique, job text, user text)")
+        persistenceConnection.commit()
+
     if (config.getint("services", "twitter_live") == 1):
         consumer_key = creds.get("twitter", "consumer_key")
         consumer_secret = creds.get("twitter", "consumer_secret")
@@ -72,22 +82,13 @@ def setup():
             with open(TWITTERGC_PATH, "r") as tgcFile:
                 twitterGlobalConfig = json.load(tgcFile)
 
-        # our own rate limits
-        creatingDB = not os.path.exists(PERSIST_PATH)
-        persistenceConnection = sqlite3.connect(PERSIST_PATH)
-        persistence = persistenceConnection.cursor()
-        if (creatingDB):
-            persistence.execute("CREATE TABLE rateLimits (resource text unique, reset int, max int, remaining int)")
-            persistence.execute("CREATE TABLE intPrefs (name text unique, value int)")
-            persistence.execute("CREATE TABLE queuedRequests (tweet int unique, job text, user text)")
-            persistenceConnection.commit()
+        # install the rate limits
+        if creatingDB:
             getTwitterRateLimits()
     else:
         # cached values will do in a pinch
         with open(TWITTERGC_PATH, "r") as tgcFile:
             twitterGlobalConfig = json.load(tgcFile)
-        persistenceConnection = sqlite3.connect(PERSIST_PATH)
-        persistence = persistenceConnection.cursor()
 
 
 def getTwitterRateLimits():
@@ -267,7 +268,9 @@ def getImageFor(searchTerm):
         "v" : "1.0", 
         "q" : searchTerm, 
         "imgType" : "photo",
-        "imgsz" : "small|medium|large|xlarge|xxlarge|huge"
+        "imgsz" : "small|medium|large|xlarge|xxlarge|huge",
+        "rsz": 8,
+        "safe" : config.get("services", "google_safesearch")
     }
     headers = {"Referer" : "https://twitter.com/SimGenerator"}
     is_URL = "https://ajax.googleapis.com/ajax/services/search/images"
@@ -439,13 +442,13 @@ def tweet(job, year, artFile, respondingTo=None):
             title = "@%s %s" % (userName, title)
 
         posting = True
-        if config.getint("services", "twitter_live") == 0:
-            print("Twitter support is current disabled; not posting.")
+        if   config.getint("services", "twitter_live") == 0:
+            print("Twitter support is disabled; not posting.")
             posting = False
-        if config.getint("services", "actively_tweet") == 0:
+        elif config.getint("services", "actively_tweet") == 0:
             print("Tweeting is turned off; not posting.")
             posting = False
-        if not checkTwitterPostLimit():
+        elif not checkTwitterPostLimit():
             print("Over rate limit; not posting.")
             posting = False
 
@@ -470,7 +473,7 @@ def manualJobTweet(job, year=None):
     job = titlecase.titlecase(job)
     image = getImageFor(job)
     if (year == None):
-        year = random.randomint(2007, datetime.date.today().year)
+        year = random.randint(config.get("settings", "minyear"), datetime.date.today().year)
     art = createBoxArt(job, image, year)
     tweet(job, year, art)
 
@@ -478,7 +481,7 @@ def manualJobTweet(job, year=None):
 def randomJobTweet():
     job = getRandomJobTitle()
     image = getImageFor(job)
-    year = random.randint(2007, datetime.date.today().year)
+    year = random.randint(config.get("settings", "minyear"), datetime.date.today().year)
     art = createBoxArt(job, image, year)
     tweet(job, year, art)
 
@@ -519,9 +522,12 @@ def respondToRequests():
                 job = job[3:]
             job = titlecase.titlecase(job)
 
-            year = random.randint(2007, datetime.date.today().year)
-
             earlyOut = False
+            # don't accept links 
+            #  (fine with it, but Twitter's aggressive URL parsing means it's
+            #   unexpected behavior in many instances)
+            if "http://" in job.lower():
+                earlyOut = True
             # check for derogatory speech
             for word in job.lower().split():
                 if word in badwords:
@@ -531,7 +537,7 @@ def respondToRequests():
             if len("@%s %s Simulator %i" % 
                     (status.user.screen_name, 
                      job, 
-                     year)
+                     datetime.date.today().year)
                     ) + twitterGlobalConfig["characters_reserved_per_media"] > twitter.CHARACTER_LIMIT:
                 earlyOut = True
 
@@ -540,22 +546,50 @@ def respondToRequests():
                 continue
 
             # put them in the queue
-            persistence.execute("INSERT INTO queuedRequests VALUES (?, ?, ?)", [status.id, job, status.user.screen_name])
-            persistenceConnection.commit()
+            try:
+                persistence.execute("INSERT INTO queuedRequests VALUES (?, ?, ?)", [status.id, job, status.user.screen_name])
+                persistenceConnection.commit()
+            except sqlite3.IntegrityError:
+                # already queued this tweet
+                pass
             setIntPref("lastReply", status.id)
 
-            # TODO: cycle through the queue
 
-            # 
-            # try:
-            #     image = getImageFor(job)
-            #     art = createBoxArt(job, image, year)
-            #     tweet( job, year, art, (status.user.screen_name, str(status.id)) )
-            # except Exception, e:
-            #     sys.stderr.write("Couldn't respond to request: %s\n" % status.text.encode("utf8"))
-            #     traceback.print_exc(file=sys.stderr)
-            # finally:
-            #     lastReply = status.id
+    # cycle through the queue
+    persistence.execute("SELECT * FROM queuedRequests LIMIT ?", [config.getint("settings", "requests_per_run")])
+    artRequests = persistence.fetchall()
+    for req in artRequests:
+        tweetID = req[0]
+        job = req[1]
+        user = req[2]
+        year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
+        try:
+            image = getImageFor(job)
+            art = createBoxArt(job, image, year)
+            tweet( job, year, art, (user, str(tweetID)) )
+        except Exception, e:
+            sys.stderr.write("Couldn't respond to request: '%s' from %s in %i\n" % 
+                (
+                    job.encode("utf8"),
+                    user.encode("utf8"),
+                    tweetID
+                )
+            )
+            traceback.print_exc(file=sys.stderr)
+            persistence.execute("INSERT INTO failedRequests VALUES (?, ?, ?)", 
+                [
+                    tweetID, job, user
+                ]
+            )
+            persistenceConnection.commit()
+        finally:
+            persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
+            persistenceConnection.commit()
+
+    # update our count
+    persistence.execute("SELECT COUNT(*) FROM queuedRequests")
+    setIntPref("queueCount", persistence.fetchone()[0])
+
 
 
 if __name__ == '__main__':
