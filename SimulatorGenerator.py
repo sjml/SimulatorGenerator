@@ -19,17 +19,18 @@ import sqlite3
 # site-packages
 import requests
 
-# local
-sys.path.insert(0, "./lib")
-import twitter 
-import titlecase
-
 # global constants
+BASE_PATH = os.path.dirname(os.path.abspath( __file__ ))
 CONFIG_PATH = "config/config.ini"
 CREDENTIALS_PATH = "config/credentials.ini"
 TWITTERGC_PATH = "config/twitter_global_config.json"
 PERSIST_PATH = "data/persistence.sqlite3"
 TWITTER_RESOURCES = "statuses,help,application,friendships,account"
+
+# local
+sys.path.insert(0, os.path.join(BASE_PATH, "lib"))
+import twitter 
+import titlecase
 
 
 # globals
@@ -506,11 +507,13 @@ def respondToRequests():
             mentions = twitterApi.GetMentions(count=100, since_id=lastReply)
             useTwitterResource("/statuses/mentions_timeline")
         else:
+            print("Hit the mentions rate limit. Empty mentions.")
             mentions = []
     else:
         with open("offline-samples/twitter-mentions.pickle", "rb") as mentionArchive:
             mentions = pickle.load(mentionArchive)
 
+    print("Processing %i mentions..." % (len(mentions)))
     mentions.reverse() # look at the newest one last and hold our place there
     for status in mentions:
         result = requestRegex.search(status.text)
@@ -553,10 +556,13 @@ def respondToRequests():
             except sqlite3.IntegrityError:
                 # already queued this tweet
                 pass
-            setIntPref("lastReply", status.id)
+
+        # even if we don't store it off, still mark the place here
+        setIntPref("lastReply", status.id)
 
 
     # cycle through the queue
+    print("Dequeueing %i request(s) from the backlog." % (config.getint("settings", "requests_per_run")))
     persistence.execute("SELECT * FROM queuedRequests LIMIT ?", [config.getint("settings", "requests_per_run")])
     artRequests = persistence.fetchall()
     for req in artRequests:
@@ -589,7 +595,9 @@ def respondToRequests():
 
     # update our count
     persistence.execute("SELECT COUNT(*) FROM queuedRequests")
-    setIntPref("queueCount", persistence.fetchone()[0])
+    queueCount = persistence.fetchone()[0]
+    setIntPref("queueCount", queueCount)
+    print("Backlog is currently %i items." % (queueCount))
 
 
 def updateQueue():
@@ -605,8 +613,7 @@ def updateQueue():
 
 
 if __name__ == '__main__':
-    base = os.path.dirname(os.path.abspath( __file__ ))
-    os.chdir(base)
+    os.chdir(BASE_PATH)
 
     setup()
 
