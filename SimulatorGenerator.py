@@ -455,10 +455,10 @@ def tweet(job, year, artFile, respondingTo=None):
 
         if posting:
             useTweet()
-            print("Tweeting '%s' to Twitter with image: %s" % (title, artFile))
+            print("Tweeting '%s' to Twitter with image: %s" % (title.encode("utf8"), artFile))
             twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
         else:
-            print("Would have posted '%s' to Twitter with image: %s" % (title, artFile))
+            print("Would have posted '%s' to Twitter with image: %s" % (title.encode("utf8"), artFile))
 
         os.rename(artFile, "archive/output-%s.png" % timestamp)
         with open("archive/text-%s.txt" % timestamp, "w") as archFile:
@@ -499,6 +499,9 @@ def respondToRequests():
     with open("data/avoidphrases.json", "r") as avoidphrasesFile:
         avoidphrasesData = json.load(avoidphrasesFile)
     avoidphrases = avoidphrasesData['avoidphrases']
+    with open("data/overit.json", "r") as overitphrasesFile:
+        overitphrasesData = json.load(overitphrasesFile)
+    overitphrases = overitphrasesData['overitphrases']
 
     requestRegex = re.compile('make one about ([^,\.\n@]*)', re.IGNORECASE)
 
@@ -530,19 +533,25 @@ def respondToRequests():
             job = titlecase.titlecase(job)
 
             earlyOut = False
+            jobCheck = job.lower()
             # don't accept links 
             #  (fine with it, but Twitter's aggressive URL parsing means it's
             #   unexpected behavior in many instances)
-            if "http://" in job.lower():
+            if "http://" in jobCheck:
                 earlyOut = True
             # check for derogatory speech
-            for word in job.lower().split():
+            for word in jobCheck.split():
                 if word in badwords:
                     earlyOut = True
                     break
             # make sure nobody's trolling with shock sites or anything
             for phrase in avoidphrases:
-                if phrase in job.lower():
+                if phrase in jobCheck:
+                    earlyOut = True
+                    break
+            # I'm over some jokes
+            for phrase in overitphrases:
+                if phrase in jobCheck:
                     earlyOut = True
                     break
             # see if we'll even be able to post back at them
