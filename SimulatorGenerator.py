@@ -579,6 +579,9 @@ def respondToRequests():
 
 
     # cycle through the queue
+    if (config.getint("settings", "making_requests") == 0):
+        print("Not processing requests.")
+        return
     print("Dequeueing %i request(s) from the backlog." % (config.getint("settings", "requests_per_run")))
     persistence.execute("SELECT * FROM queuedRequests LIMIT ?", [config.getint("settings", "requests_per_run")])
     artRequests = persistence.fetchall()
