@@ -496,6 +496,9 @@ def respondToRequests():
     with open("data/badwords.json", "r") as badwordsFile:
         badwordsData = json.load(badwordsFile)
     badwords = badwordsData['badwords']
+    with open("data/avoidphrases.json", "r") as avoidphrasesFile:
+        avoidphrasesData = json.load(avoidphrasesFile)
+    avoidphrases = avoidphrasesData['avoidphrases']
 
     requestRegex = re.compile('make one about ([^,\.\n@]*)', re.IGNORECASE)
 
@@ -535,6 +538,11 @@ def respondToRequests():
             # check for derogatory speech
             for word in job.lower().split():
                 if word in badwords:
+                    earlyOut = True
+                    break
+            # make sure nobody's trolling with shock sites or anything
+            for phrase in avoidphrases:
+                if phrase in job.lower():
                     earlyOut = True
                     break
             # see if we'll even be able to post back at them
