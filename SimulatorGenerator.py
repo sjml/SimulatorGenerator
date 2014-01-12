@@ -272,11 +272,11 @@ def getImageFor(searchTerm):
         "rsz": 8,
         "safe" : config.get("services", "google_safesearch")
     }
-    headers = {"Referer" : "https://twitter.com/SimGenerator"}
+    is_headers = {"Referer" : "https://twitter.com/SimGenerator"}
     is_URL = "https://ajax.googleapis.com/ajax/services/search/images"
 
     if (config.getint("services", "googleimage_live") == 1):
-        imageResults = requests.get(is_URL, params=is_params).json()
+        imageResults = requests.get(is_URL, params=is_params, headers=is_headers).json()
     else:
         with open("offline-samples/googleimage-lpnsearch.json") as isFile:
             imageResults = json.load(isFile)
@@ -454,9 +454,10 @@ def tweet(job, year, artFile, respondingTo=None):
 
         if posting:
             useTweet()
-            # twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
+            print("Tweeting '%s' to Twitter with image: %s" % (title, artFile))
+            twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
         else:
-            print("Would have posted '%s' to twitter with image: %s" % (title, artFile))
+            print("Would have posted '%s' to Twitter with image: %s" % (title, artFile))
 
         os.rename(artFile, "archive/output-%s.png" % timestamp)
         with open("archive/text-%s.txt" % timestamp, "w") as archFile:
@@ -473,7 +474,7 @@ def manualJobTweet(job, year=None):
     job = titlecase.titlecase(job)
     image = getImageFor(job)
     if (year == None):
-        year = random.randint(config.get("settings", "minyear"), datetime.date.today().year)
+        year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
     art = createBoxArt(job, image, year)
     tweet(job, year, art)
 
@@ -481,7 +482,7 @@ def manualJobTweet(job, year=None):
 def randomJobTweet():
     job = getRandomJobTitle()
     image = getImageFor(job)
-    year = random.randint(config.get("settings", "minyear"), datetime.date.today().year)
+    year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
     art = createBoxArt(job, image, year)
     tweet(job, year, art)
 
