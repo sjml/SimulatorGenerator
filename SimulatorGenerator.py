@@ -561,6 +561,11 @@ def respondToRequests():
                      datetime.date.today().year)
                     ) + twitterGlobalConfig["characters_reserved_per_media"] > twitter.CHARACTER_LIMIT:
                 earlyOut = True
+            # don't let people crowd the queue
+            persistence.execute("SELECT user FROM queuedRequests")
+            existingUsers = map(lambda x: x[0], persistence.fetchall())
+            if status.user.screen_name in existingUsers:
+                earlyOut = True
 
             if earlyOut:
                 # TODO: consider tweeting back "no" at them? 
