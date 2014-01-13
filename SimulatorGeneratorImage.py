@@ -208,7 +208,8 @@ if __name__ == '__main__':
 
     description = """This program makes super rad box art for video games in the 
     exciting job simulation genre. Note that you must install ImageMagick 
-    (http://www.imagemagick.org/) for this to work properly."""
+    (http://www.imagemagick.org/) and the Python Requests library 
+    (http://docs.python-requests.org/en/latest/) for this to work properly."""
 
     parser = argparse.ArgumentParser(
         description=description, 

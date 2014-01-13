@@ -3,7 +3,7 @@ SimulatorGenerator
 
 Inspired by [John Walker's review of Woodcutter Simulator](http://www.rockpapershotgun.com/2014/01/07/john-vs-the-trees-woodcutter-simulator-2013/), this bot procedurally generates box art for hot new games in the growing Job Simulator genre.
 
-You can either invoke it locally and directly by running the `SimulatorGeneratorImage.py` through Python. 
+You can either invoke it locally and directly by running the `SimulatorGeneratorImage.py` through Python. (You'll need to have the [Python Requests](http://docs.python-requests.org/en/latest/) library installed, as well as [ImageMagick](http://imagemagick.org/).)
 
 Or, you can see it in action [on twitter](http://twitter.com/SimulatorGenerator). 
 

@@ -512,11 +512,11 @@ def respondToRequests():
                 persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
                 persistenceConnection.commit()
 
-        # update our count
-        persistence.execute("SELECT COUNT(*) FROM queuedRequests")
-        queueCount = persistence.fetchone()[0]
-        setIntPref("queueCount", queueCount)
-        print("Backlog is currently %i items." % (queueCount))
+    # update our count
+    persistence.execute("SELECT COUNT(*) FROM queuedRequests")
+    queueCount = persistence.fetchone()[0]
+    setIntPref("queueCount", queueCount)
+    print("Backlog is currently %i items." % (queueCount))
 
 
 def updateQueue():
