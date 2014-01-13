@@ -32,8 +32,11 @@ Alternately, you can invoke it locally and directly by running the `SimulatorGen
 	~ $ sudo pip install requests
 	~ $ git clone https://github.com/sjml/SimulatorGenerator.git
 	~ $ cd SimulatorGenerator
-	~/SimulatorGenerator $ ./SimulatorGeneratorImage.py --output-file wizard.png --font-file helvetica-ultra-compressed.ttf wizard
-	~/SimulatorGenerator $ open wizard.png
+	~/SimulatorGenerator $ ./SimulatorGeneratorImage.py \
+		--output-file wizard-sim-boxart.png \
+		--font-file helvetica-ultra-compressed.ttf \
+		wizard
+	~/SimulatorGenerator $ open wizard-sim-boxart.png
 
 ### Instructions for Ubuntu; other Linux distributions should be similar:
 
@@ -41,8 +44,11 @@ Alternately, you can invoke it locally and directly by running the `SimulatorGen
 	~ $ sudo pip install requests
 	~ $ git clone https://github.com/sjml/SimulatorGenerator.git
 	~ $ cd SimulatorGenerator
-	~/SimulatorGenerator $ ./SimulatorGeneratorImage.py --output-file wizard.png --font-file helvetica-ultra-compressed.ttf wizard
-	~/SimulatorGenerator $ eog wizard.png
+	~/SimulatorGenerator $ ./SimulatorGeneratorImage.py \
+		--output-file wizard-sim-boxart.png \
+		--font-file helvetica-ultra-compressed.ttf \
+		wizard
+	~/SimulatorGenerator $ eog wizard-sim-boxart.png
 
 ### Instructions for Windows:
 
@@ -53,5 +59,11 @@ Alternately, you can invoke it locally and directly by running the `SimulatorGen
 
 In there:
 
-	C:\Users\Albus\Downloads\SimulatorGenerator> python SimulatorGeneratorImage.py --output-file wizard.png --font-file helvetica-ultra-compressed.ttf wizard
-	C:\Users\Albus\Downloads\SimulatorGenerator> wizard.png
+	C:\Users\Albus\Downloads\SimulatorGenerator> python SimulatorGeneratorImage.py ^
+		--output-file wizard-sim-boxart.png ^
+		--font-file helvetica-ultra-compressed.ttf ^
+		wizard
+	C:\Users\Albus\Downloads\SimulatorGenerator> wizard-sim-boxart.png
+
+### Usage
+Run `python ./SimulatorGeneratorImage.py --help` for additional flags you can pass it. 
