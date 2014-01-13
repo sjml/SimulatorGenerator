@@ -16,8 +16,13 @@ def findInList(needle, haystack):
         count += 1
     return None
 
+
 jobs = []
 lastMods = {}
+
+def addJob(jobString):
+    jobs.append(jobString)
+
 for job in rawJobsUnique:
     # split on commas
     jobSplit = map(str.strip, job.split(","))
