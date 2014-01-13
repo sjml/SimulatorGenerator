@@ -127,7 +127,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
     if font == None:
         font = os.path.join(BASE_PATH, "data", "helvetica-ultra-compressed.ttf")
     if not os.path.exists(font):
-        sys.stderr.write("WARNING: Couldn't find %s; text will probably look crappy." % (font))
+        sys.stderr.write("WARNING: Couldn't find %s; text will probably look crappy.\n" % (font))
 
     jobTitle = titlecase.titlecase(jobTitle)
     wordlist = jobTitle.split()
