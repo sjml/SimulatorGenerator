@@ -8,6 +8,7 @@ import datetime
 import subprocess
 import random
 import tempfile
+import platform
 
 # site-packages
 import requests
@@ -60,6 +61,7 @@ def getImageFor(searchTerm, safeSearchLevel="moderate", referer=None):
 
     if (imageResults == None or 'responseData' not in imageResults or imageResults['responseData'] == None):
         sys.stderr.write("No response data in image search for %s. JSON:\n%s\n" % (searchTerm, imageResults))
+        sys.stderr.write("Google is mad at you for searching too often. Chill out for a while and try again.\n")
         return None
 
     imageData = []
@@ -165,7 +167,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
         "convert",
 
         # generate large text that we'll scale down to fit the target image later
-        "-background", "none", 
+        "-background", "transparent", 
         "-fill", "white",
         "-stroke", "gray",
         "-strokewidth", "3",
@@ -174,7 +176,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
         "-pointsize", "300",
         "-gravity", align,
         "-interline-spacing", "75",
-        ("label:%s" % jobTitle).encode("utf8"),
+        "label:", ("\"%s\"" % jobTitle).encode("utf8"),
         "-shear", "10x0", # since this font doesn't have true oblique / italics
         "-trim", # remove the extra space added by the newline wrapping
 
@@ -196,7 +198,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
 
     if (log):
         print("ImageMagick command: %s" % " ".join(command))
-    subprocess.call(command)
+    subprocess.call(command, shell=True)
 
     if (deleteInputFile):
         os.remove(inputFile)
@@ -254,18 +256,18 @@ if __name__ == '__main__':
     else:
         max_size = None
 
-
-    createBoxArt(
-        titlecase.titlecase(args.simulatorSubject),
-        year,
-        img,
-        output,
-        maxSize=max_size,
-        textPosition=args.text_position,
-        font=args.font_file,
-        deleteInputFile=(args.input_file == None), # no input; working from Google Image Search; delete temp file
-        log=args.debug
-    )
+    if (img):
+        createBoxArt(
+            titlecase.titlecase(args.simulatorSubject),
+            year,
+            img,
+            output,
+            maxSize=max_size,
+            textPosition=args.text_position,
+            font=args.font_file,
+            deleteInputFile=(args.input_file == None), # no input; working from Google Image Search; delete temp file
+            log=args.debug
+        )
 
 
 
