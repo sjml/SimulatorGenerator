@@ -1,0 +1,544 @@
+#!/usr/bin/env python
+
+# built-ins
+import sys
+import os
+import ConfigParser
+from xml.dom import minidom
+import json
+import random
+import time
+import datetime
+import re
+import traceback
+import pickle
+import sqlite3
+import tempfile
+
+# site-packages
+import requests
+
+# global constants
+BASE_PATH = os.path.dirname(os.path.abspath( __file__ ))
+CONFIG_PATH = os.path.join("config", "config.ini")
+CREDENTIALS_PATH = os.path.join("config", "credentials.ini")
+TWITTERGC_PATH = os.path.join("config", "twitter_global_config.json")
+PERSIST_PATH = os.path.join("data", "persistence.sqlite3")
+TWITTER_RESOURCES = "statuses,help,application,friendships,account"
+
+# local
+sys.path.insert(0, os.path.join(BASE_PATH, "lib"))
+import twitter 
+import titlecase
+
+# package
+import SimulatorGeneratorImage
+
+
+# globals
+config = None
+creds = None
+twitterApi = None
+twitterGlobalConfig = None
+persistenceConnection = None
+persistence = None
+
+def setup():
+    global creds
+    global config
+    global twitterApi
+    global twitterGlobalConfig
+    global persistenceConnection
+    global persistence
+
+    os.chdir(BASE_PATH)
+
+    random.seed()
+
+    for crucial in (CONFIG_PATH, CREDENTIALS_PATH):
+        if not os.path.exists(crucial):
+            sys.stderr.write("Couldn't load %s; exiting.\n" % (crucial))
+    config = ConfigParser.ConfigParser()
+    creds = ConfigParser.ConfigParser()
+    config.read(CONFIG_PATH)
+    creds.read(CREDENTIALS_PATH)
+
+    creatingDB = not os.path.exists(PERSIST_PATH)
+    persistenceConnection = sqlite3.connect(PERSIST_PATH)
+    persistence = persistenceConnection.cursor()
+    if (creatingDB):
+        persistence.execute("CREATE TABLE rateLimits (resource text unique, reset int, max int, remaining int)")
+        persistence.execute("CREATE TABLE intPrefs (name text unique, value int)")
+        persistence.execute("CREATE TABLE queuedRequests (tweet int unique, job text, user text)")
+        persistence.execute("CREATE TABLE failedRequests (tweet int unique, job text, user text)")
+        persistenceConnection.commit()
+
+    if (config.getint("services", "twitter_live") == 1):
+        consumer_key = creds.get("twitter", "consumer_key")
+        consumer_secret = creds.get("twitter", "consumer_secret")
+        access_token = creds.get("twitter", "access_token")
+        access_token_secret = creds.get("twitter", "access_token_secret")
+        twitterApi = twitter.Api(consumer_key, consumer_secret, access_token, access_token_secret)
+
+        # global config data
+        oneDayAgo = time.time() - 60*60*24
+        if (not os.path.exists(TWITTERGC_PATH) or os.path.getmtime(TWITTERGC_PATH) < oneDayAgo):
+            print("Getting configuration data from Twitter.")
+            # not checking twitter rate limits here since it will only get called once per day
+            twitterGlobalConfig = twitterApi.GetHelpConfiguration()
+            with open(TWITTERGC_PATH, "w") as tgcFile:
+                json.dump(twitterGlobalConfig, tgcFile)
+        else:
+            with open(TWITTERGC_PATH, "r") as tgcFile:
+                twitterGlobalConfig = json.load(tgcFile)
+
+        # install the rate limits
+        if creatingDB:
+            getTwitterRateLimits()
+    else:
+        # cached values will do in a pinch
+        with open(TWITTERGC_PATH, "r") as tgcFile:
+            twitterGlobalConfig = json.load(tgcFile)
+
+
+def getTwitterRateLimits():
+    persistence.execute("SELECT resource FROM rateLimits")
+    existingResources = map(lambda x: x[0], persistence.fetchall())
+
+    # not checking twitter rate limits here since it will only gets called when
+    #  one of the limits is ready to reset
+    limits = twitterApi.GetRateLimitStatus(TWITTER_RESOURCES)
+    for resourceGroup, resources in limits["resources"].items():
+        for resource, rateValues in resources.items():
+            if resource not in existingResources:
+                persistence.execute(
+                    "INSERT INTO rateLimits VALUES (?, ?, ?, ?)",
+                    [
+                        resource,
+                        int(rateValues["reset"]),
+                        int(rateValues["limit"]),
+                        int(rateValues["remaining"]),
+                    ]
+                )
+            else:
+                persistence.execute(
+                    "UPDATE rateLimits SET reset=?, max=?, remaining=? WHERE resource=?", 
+                    [
+                        int(rateValues["reset"]),
+                        int(rateValues["limit"]),
+                        int(rateValues["remaining"]),
+                        resource,
+                    ]
+                )
+    persistenceConnection.commit()
+
+    defaults = [
+        ("tweetHourlyReset",     int(time.time()) + 60*60),
+        ("tweetDailyReset",      int(time.time()) + 60*60*24),
+        ("tweetHourlyRemaining", config.getint("services", "twitter_hourly_limit")),
+        ("tweetDailyRemaining",  config.getint("services", "twitter_daily_limit")),
+    ]
+    for default in defaults:
+        if getIntPref(default[0]) == -1:
+            setIntPref(default[0], default[1])
+
+
+def getIntPref(name):
+    persistence.execute("SELECT value FROM intPrefs WHERE name=?", [name])
+    pref = persistence.fetchone()
+    if (pref == None):
+        return -1
+    return pref[0]
+
+
+def setIntPref(name, value):
+    if getIntPref(name) == -1:
+        persistence.execute("INSERT INTO intPrefs VALUES (?, ?)", [name, value])
+    else:
+        persistence.execute("UPDATE intPrefs SET value=? WHERE name=?", [value, name])
+    persistenceConnection.commit()
+
+
+def checkTwitterPostLimit():
+    currentTime = int(time.time())
+
+    hourlyReset = getIntPref("tweetHourlyReset")
+    if currentTime - hourlyReset > 0:
+        setIntPref("tweetHourlyReset", currentTime + 60*60)
+        setIntPref("tweetHourlyRemaining", config.getint("services", "twitter_hourly_limit"))
+        hourly = config.getint("services", "twitter_hourly_limit")
+    
+    dailyReset = getIntPref("tweetDailyReset")
+    if currentTime - dailyReset > 0:
+        setIntPref("tweetDailyReset", currentTime + 60*60*24)
+        setIntPref("tweetDailyRemaining", config.getint("services", "twitter_daily_limit"))
+    
+    hourly = getIntPref("tweetHourlyRemaining")
+    daily = getIntPref("tweetDailyRemaining")
+
+    if hourly > 0 and daily > 0:
+        return True
+    else:
+        return False
+
+
+def useTweet():
+    for resource in ["tweetDailyRemaining", "tweetHourlyRemaining"]:
+        setIntPref(resource, getIntPref(resource) - 1)
+
+
+def checkTwitterResource(resourceKey, proposedUsage=1):
+    persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
+    resourceData = persistence.fetchone()
+    if (resourceData == None):
+        sys.stderr.write("Invalid Twitter resource: %s\n" % (resourceKey))
+        return False
+
+    if int(time.time()) - resourceData[1] > 0:
+        getTwitterRateLimits()
+        persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
+        resourceData = persistence.fetchone()
+
+    if (resourceData[3] - proposedUsage > 0):
+        return True
+    else:
+        return False
+
+
+def useTwitterResource(resourceKey, usage=1):
+    persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
+    resourceData = persistence.fetchone()
+    if (resourceData == None):
+        sys.stderr.write("Invalid Twitter resource: %s\n" % (resourceKey))
+        return
+
+    newVal = resourceData[3] - usage
+
+    persistence.execute("UPDATE rateLimits SET reset=?, max=?, remaining=? WHERE resource=?",
+        [
+            resourceData[1],
+            resourceData[2],
+            newVal,
+            resourceKey,
+        ]
+    )
+    persistenceConnection.commit()
+
+    return newVal
+
+
+def shutdown():
+    if (persistence != None):
+        persistence.close()
+
+
+def getRandomJobTitle():
+    # TODO: store off the category, don't repeat job titles, rotate categories
+    #   http://api.careerbuilder.com/CategoryCodes.aspx
+    # TODO: Alternately, forget CareerBuilder and have this use BLS job titles.
+
+    cb_apiKey = creds.get("careerbuilder", "apikey")
+    js_params = {
+        "DeveloperKey" : cb_apiKey,
+        "HostSite" : "US",
+        "OrderBy" : "Date",
+    }
+    cb_URL = "http://api.careerbuilder.com/v1/jobsearch?"
+
+    if (config.getint("services", "careerbuilder_live") == 1):
+        response = requests.get(cb_URL, params=js_params)
+        dom = minidom.parseString(response.content)
+    else:
+        with open(os.path.join("offline-samples", "careerbuilder-jobsearch.xml")) as jobFile:
+            dom = minidom.parse(jobFile)
+
+    jobs = []
+    for node in dom.getElementsByTagName("JobTitle"):
+        jobs.append(node.firstChild.nodeValue)
+
+    # NOTE: in the year 10,000 AD, this will need to be updated
+    maxLength = twitter.CHARACTER_LIMIT - (len(" Simulator ") + 4 + twitterGlobalConfig["characters_reserved_per_media"])
+    job = ""
+    count = 0
+    while (len(job) == 0 or len(job) > maxLength):
+        if (count >= 25):
+            # buncha really long job titles up in here
+            job = job[:maxLength-1] # (not great, but there are worse things)
+            break
+        job = random.choice(jobs)
+        count += 1
+    job = job.replace("'", "\\'").replace('"', '\\"')
+
+    print("%i iteration(s) found random job title: %s" % (count, job))
+    return job
+
+
+def tweet(job, year, artFile, respondingTo=None):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
+    title = "%s Simulator %i" % (job, year)
+
+    userName = None
+    requestId = None
+    if (respondingTo != None):
+        userName = respondingTo[0]
+        requestId = respondingTo[1]
+
+    if not os.path.exists("archive"):
+        os.makedirs("archive")
+    if (artFile != None and os.path.exists(artFile)):
+        if (userName != None):
+            title = "@%s %s" % (userName, title)
+
+        posting = True
+        if   config.getint("services", "twitter_live") == 0:
+            print("Twitter support is disabled; not posting.")
+            posting = False
+        elif config.getint("services", "actively_tweet") == 0:
+            print("Tweeting is turned off; not posting.")
+            posting = False
+        elif not checkTwitterPostLimit():
+            print("Over rate limit; not posting.")
+            posting = False
+
+        if posting:
+            useTweet()
+            print("Tweeting '%s' to Twitter with image: %s" % (title.encode("utf8"), artFile))
+            twitterApi.PostMedia(title, artFile, in_reply_to_status_id=requestId)
+        else:
+            print("Would have posted '%s' to Twitter with image: %s" % (title.encode("utf8"), artFile))
+
+        os.rename(artFile, os.path.join("archive", "output-%s.png" % timestamp))
+        with open(os.path.join("archive", "text-%s.txt" % timestamp), "w") as archFile:
+            archFile.write(title.encode('utf8'))
+    else:
+        # don't tweet; something's wrong. 
+        std.stderr.write("FAILURE: %s\n" % title.encode("utf8"))
+        with open(os.path.join("archive", "failed-%s.txt" % timestamp), "w") as archFile:
+            archFile.write(title.encode('utf8'))
+
+
+
+def manualJobTweet(job, year=None):
+    image = SimulatorGeneratorImage.getImageFor(
+        job, 
+        safeSearchLevel=config.get("services", "google_safesearch"), 
+        referer="http://twitter.com/SimGenerator"
+    )
+
+    if (year == None):
+        year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
+    artFile = "output-%s.png" % datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
+    artFile = os.path.join(tempfile.gettempdir(), artFile)
+    SimulatorGeneratorImage.createBoxArt(
+        job, 
+        year, 
+        image,
+        artFile,
+        maxSize=(
+            str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+        ),
+        deleteInputFile=True
+    )
+    tweet(titlecase.titlecase(job), year, artFile)
+
+
+def randomJobTweet():
+    job = getRandomJobTitle()
+    image = SimulatorGeneratorImage.getImageFor(
+        job,
+        safeSearchLevel=config.get("services", "google_safesearch"), 
+        referer="http://twitter.com/SimGenerator"
+    )
+    year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
+    artFile = "output-%s.png" % datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
+    artFile = os.path.join(tempfile.gettempdir(), artFile)
+    SimulatorGeneratorImage.createBoxArt(
+        job, 
+        year, 
+        image,
+        artFile,
+        maxSize=(
+            str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+        ),
+        deleteInputFile=True
+    )
+    tweet(titlecase.titlecase(job), year, artFile)
+
+
+def respondToRequests():
+    if (config.getint("settings", "taking_requests") == 0):
+        print("Not taking requests.")
+    else:
+        with open(os.path.join("data", "badwords.json"), "r") as badwordsFile:
+            badwordsData = json.load(badwordsFile)
+        badwords = badwordsData['badwords']
+        with open(os.path.join("data", "avoidphrases.json"), "r") as avoidphrasesFile:
+            avoidphrasesData = json.load(avoidphrasesFile)
+        avoidphrases = avoidphrasesData['avoidphrases']
+        with open(os.path.join("data", "overit.json"), "r") as overitphrasesFile:
+            overitphrasesData = json.load(overitphrasesFile)
+        overitphrases = overitphrasesData['overitphrases']
+
+        requestRegex = re.compile('make one about ([^,\.\n@]*)', re.IGNORECASE)
+
+        lastReply = getIntPref("lastReply")
+        if (lastReply == -1):
+            lastReply = 0
+        if (config.getint("services", "twitter_live") == 1):
+            if checkTwitterResource("/statuses/mentions_timeline"):
+                mentions = twitterApi.GetMentions(count=100, since_id=lastReply)
+                useTwitterResource("/statuses/mentions_timeline")
+            else:
+                print("Hit the mentions rate limit. Empty mentions.")
+                mentions = []
+        else:
+            with open(os.path.join("offline-samples", "twitter-mentions.pickle"), "rb") as mentionArchive:
+                mentions = pickle.load(mentionArchive)
+
+        print("Processing %i mentions..." % (len(mentions)))
+        mentions.reverse() # look at the newest one last and hold our place there
+        for status in mentions:
+            result = requestRegex.search(status.text)
+            if (result):
+                job = result.groups()[0]
+                # because regex is annoying
+                if (job.lower().startswith("a ")):
+                    job = job[2:]
+                elif (job.lower().startswith("an ")):
+                    job = job[3:]
+                job = titlecase.titlecase(job)
+
+                earlyOut = False
+                jobCheck = job.lower()
+                # don't accept links 
+                #  (fine with it, but Twitter's aggressive URL parsing means it's
+                #   unexpected behavior in many instances)
+                if "http://" in jobCheck:
+                    earlyOut = True
+                # check for derogatory speech
+                for phrase in badwords:
+                    if phrase in jobCheck:
+                        earlyOut = True
+                        break
+                # make sure nobody's trolling with shock sites or anything
+                for phrase in avoidphrases:
+                    if phrase in jobCheck:
+                        earlyOut = True
+                        break
+                # I'm over some jokes
+                for phrase in overitphrases:
+                    if phrase in jobCheck:
+                        earlyOut = True
+                        break
+                # see if we'll even be able to post back at them
+                if len("@%s %s Simulator %i" % 
+                        (status.user.screen_name, 
+                         job, 
+                         datetime.date.today().year)
+                        ) + twitterGlobalConfig["characters_reserved_per_media"] > twitter.CHARACTER_LIMIT:
+                    earlyOut = True
+                # don't let people crowd the queue
+                persistence.execute("SELECT user FROM queuedRequests")
+                existingUsers = map(lambda x: x[0], persistence.fetchall())
+                if status.user.screen_name in existingUsers:
+                    earlyOut = True
+
+                if earlyOut:
+                    # TODO: consider tweeting back "no" at them? 
+                    continue
+
+                # put them in the queue
+                try:
+                    persistence.execute("INSERT INTO queuedRequests VALUES (?, ?, ?)", [status.id, job, status.user.screen_name])
+                    persistenceConnection.commit()
+                except sqlite3.IntegrityError:
+                    # already queued this tweet
+                    pass
+
+            # even if we don't store it off, still mark the place here
+            setIntPref("lastReply", status.id)
+
+
+    # cycle through the queue
+    if (config.getint("settings", "making_requests") == 0):
+        print("Not processing requests.")
+    else:
+        print("Dequeueing %i request(s) from the backlog." % (config.getint("settings", "requests_per_run")))
+        persistence.execute("SELECT * FROM queuedRequests LIMIT ?", [config.getint("settings", "requests_per_run")])
+        artRequests = persistence.fetchall()
+        for req in artRequests:
+            tweetID = req[0]
+            job = req[1]
+            user = req[2]
+            try:
+                image = SimulatorGeneratorImage.getImageFor(
+                    job,
+                    safeSearchLevel=config.get("services", "google_safesearch"), 
+                    referer="http://twitter.com/SimGenerator"
+                )
+                year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
+                artFile = "output-%s.png" % datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
+                artFile = os.path.join(tempfile.gettempdir(), artFile)
+                SimulatorGeneratorImage.createBoxArt(
+                    job, 
+                    year, 
+                    image,
+                    artFile,
+                    maxSize=(
+                        str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
+                        str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+                    ),
+                    deleteInputFile=True
+                )
+                tweet( titlecase.titlecase(job), year, artFile, (user, str(tweetID)) )
+            except Exception, e:
+                sys.stderr.write("Couldn't respond to request: '%s' from %s in %i\n" % 
+                    (
+                        job.encode("utf8"),
+                        user.encode("utf8"),
+                        tweetID
+                    )
+                )
+                traceback.print_exc(file=sys.stderr)
+                persistence.execute("INSERT INTO failedRequests VALUES (?, ?, ?)", 
+                    [
+                        tweetID, job, user
+                    ]
+                )
+                persistenceConnection.commit()
+            finally:
+                persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
+                persistenceConnection.commit()
+
+        # update our count
+        persistence.execute("SELECT COUNT(*) FROM queuedRequests")
+        queueCount = persistence.fetchone()[0]
+        setIntPref("queueCount", queueCount)
+        print("Backlog is currently %i items." % (queueCount))
+
+
+def updateQueue():
+    # twitter documentation says this is rate-limited, doesn't appear
+    #  to actually count against any resources. hmmmmm. 
+    # resource should be "/account/update_profile", but that's not
+    #  in the resource list at all. 
+    locString = "Request queue: %i" % (getIntPref("queueCount"))
+    if len(locString) > 30:
+        locString = "Request queue: very, very long"
+    twitterApi.UpdateProfile(location=locString)
+
+
+
+if __name__ == '__main__':
+    setup()
+
+    if (config.getint("settings", "faking_requests") == 1 or (len(sys.argv) > 1 and sys.argv[1] == "check")):
+        respondToRequests()
+    elif (len(sys.argv) > 1 and sys.argv[1] == "updateQueue"):
+        updateQueue()
+    else:
+        randomJobTweet()
+
+    shutdown()
