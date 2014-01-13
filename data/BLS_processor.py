@@ -66,12 +66,10 @@ for job in rawJobsUnique:
         if len(modifiers) > 0:
             for mod in modifiers:
                 jobString = "%s (%s)" % (' '.join(jobSplit), mod)
-                print jobString
                 jobs.append(jobString)
         else:
             jobSplit.reverse()
             jobString = ' '.join(jobSplit)
-            print jobString
             jobs.append(jobString)
         continue
 
