@@ -52,6 +52,8 @@ Alternately, you can invoke it locally and directly by running the `SimulatorGen
 
 ### Instructions for Windows:
 
+(This doesn't seem to work right now -- Windows is more picky about command line stuff fed to ImageMagick. This is how the general gist *should* go, though.)
+
 1. [Install ImageMagick](http://www.imagemagick.org/script/binary-releases.php#windows). 
 2. [Install Python](http://docs.python-guide.org/en/latest/starting/install/win/). Make sure you're installing version 2.7 of Python, NOT version 3. Follow that page's instructions for installing pip as well. 
 3. Download the zip of [this repository](https://github.com/sjml/SimulatorGenerator). Unzip it.
@@ -59,6 +61,7 @@ Alternately, you can invoke it locally and directly by running the `SimulatorGen
 
 In there:
 
+	C:\Users\Albus\Downloads\SimulatorGenerator> pip install requests
 	C:\Users\Albus\Downloads\SimulatorGenerator> python SimulatorGeneratorImage.py ^
 		--output-file wizard-sim-boxart.png ^
 		--font-file helvetica-ultra-compressed.ttf ^
