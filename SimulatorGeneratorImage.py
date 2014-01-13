@@ -111,7 +111,7 @@ def getImageFor(searchTerm, safeSearchLevel="moderate", referer=None):
     return None
 
 
-def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPosition=None, deleteInputFile=False, log=False):
+def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPosition=None, font=None, deleteInputFile=False, log=False):
     if   textPosition == "TopRight": grav = "NorthEast"
     elif textPosition == "TopLeft": grav = "NorthWest"
     elif textPosition == "BottomRight": grav = "SouthEast"
@@ -123,6 +123,11 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
         align = "West"
     else:
         align = "East"
+
+    if font == None:
+        font = os.path.join(BASE_PATH, "data", "helvetica-ultra-compressed.ttf")
+    if not os.path.exists(font):
+        sys.stderr.write("WARNING: Couldn't find %s; text will probably look crappy." % (font))
 
     jobTitle = titlecase.titlecase(jobTitle)
     wordlist = jobTitle.split()
@@ -165,7 +170,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
         "-stroke", "gray",
         "-strokewidth", "3",
         "-kerning", "-5",
-        "-font", "./data/helvetica-ultra-compressed.ttf",
+        "-font", font,
         "-pointsize", "300",
         "-gravity", align,
         "-interline-spacing", "75",
@@ -194,9 +199,9 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
     subprocess.call(command)
 
     if (deleteInputFile):
-        print "Deleting", inputFile
         os.remove(inputFile)
     
+    print "Output: %s" % (outputFile)
     return outputFile
 
 
@@ -217,11 +222,12 @@ if __name__ == '__main__':
     )
 
     parser.add_argument("simulatorSubject", help="The topic for which you want to make simulator box art.")
-    parser.add_argument("-i", "--input-file", help="The image file to use for the box art. If not specified, we'll do a Google Image Search for the subject.")
+    parser.add_argument("-i", "--input-file", help="Path to the image file to use for the box art. If not specified, we'll do a Google Image Search for the subject.")
     parser.add_argument("-o", "--output-file", help="Path to the image file to store the box art. (defaults: an image named \"boxart-[timestamp].png\" in the current directory)")
     parser.add_argument("-w", "--max-width", help="Maximum width for the ouput image. Output images will be resized if they're wider than this.", type=int)
     parser.add_argument("-h", "--max-height", help="Maximum height for the ouput image. Output images will be resized if they're taller than this.", type=int)
     parser.add_argument("-p", "--text-position", help="Where the text should go on the image. Will pick randomly if not specified.", type=str, choices=["TopRight", "TopLeft", "BottomRight", "BottomLeft"])
+    parser.add_argument("-f", "--font-file", help="Path to the font file to use for the image text. Looks best with Helvetica Ultra Compressed, which you'll have to track down. :(")
     parser.add_argument("-s", "--safe-search", help="The type of SafeSearch to use for Google Image Search. (default: %(default)s)", type=str, choices=["active", "moderate", "off"], default="moderate")
     parser.add_argument("-y", "--year", help="The year to put in the box art. (default: random year)", type=int)
     parser.add_argument("-b", "--min-year", help="The lowest year that will get randomly chosen. (default: %(default)s)", type=int, default=2007)
@@ -256,6 +262,7 @@ if __name__ == '__main__':
         output,
         maxSize=max_size,
         textPosition=args.text_position,
+        font=args.font_file,
         deleteInputFile=(args.input_file == None), # no input; working from Google Image Search; delete temp file
         log=args.debug
     )
