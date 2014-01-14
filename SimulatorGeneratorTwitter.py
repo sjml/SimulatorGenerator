@@ -17,6 +17,7 @@ import tempfile
 
 # site-packages
 import requests
+import prettytable
 
 # global constants
 BASE_PATH = os.path.dirname(os.path.abspath( __file__ ))
@@ -463,60 +464,84 @@ def respondToRequests():
 
     # cycle through the queue
     if (config.getint("settings", "making_requests") == 0):
-        print("Not processing requests.")
+        print("Not automatically fulfilling requests.")
     else:
         print("Dequeueing %i request(s) from the backlog." % (config.getint("settings", "requests_per_run")))
         persistence.execute("SELECT * FROM queuedRequests LIMIT ?", [config.getint("settings", "requests_per_run")])
         artRequests = persistence.fetchall()
         for req in artRequests:
-            tweetID = req[0]
-            job = req[1]
-            user = req[2]
-            try:
-                image = SimulatorGeneratorImage.getImageFor(
-                    job,
-                    safeSearchLevel=config.get("services", "google_safesearch"), 
-                    referer="http://twitter.com/SimGenerator"
-                )
-                year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
-                artFile = "output-%s.png" % datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
-                artFile = os.path.join(tempfile.gettempdir(), artFile)
-                SimulatorGeneratorImage.createBoxArt(
-                    job, 
-                    year, 
-                    image,
-                    artFile,
-                    maxSize=(
-                        str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
-                        str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
-                    ),
-                    deleteInputFile=True
-                )
-                tweet( titlecase.titlecase(job), year, artFile, (user, str(tweetID)) )
-            except Exception, e:
-                sys.stderr.write("Couldn't respond to request: '%s' from %s in %i\n" % 
-                    (
-                        job.encode("utf8"),
-                        user.encode("utf8"),
-                        tweetID
-                    )
-                )
-                traceback.print_exc(file=sys.stderr)
-                persistence.execute("INSERT INTO failedRequests VALUES (?, ?, ?)", 
-                    [
-                        tweetID, job, user
-                    ]
-                )
-                persistenceConnection.commit()
-            finally:
-                persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
-                persistenceConnection.commit()
+            takeSpecificRequest(data=req)
 
     # update our count
     persistence.execute("SELECT COUNT(*) FROM queuedRequests")
     queueCount = persistence.fetchone()[0]
     setIntPref("queueCount", queueCount)
     print("Backlog is currently %i items." % (queueCount))
+
+
+def printQueue():
+    persistence.execute("SELECT * FROM queuedRequests")
+    tab = prettytable.from_db_cursor(persistence)
+    print(tab)
+
+
+def takeSpecificRequest(tweetID=None, data=None):
+    if (tweetID != None and type(tweetID) == int):
+        persistence.execute("SELECT * FROM queuedRequests WHERE tweet=?", [tweetID])
+        req = persistence.fetchone()
+        if req == None:
+            print "Tweet not queued."
+            return
+    elif (data != None and type(data) == tuple and len(data) >= 3):
+        req = data
+    else:
+        print type(data)
+        sys.stderr.write("Need to pass either tweet ID or data to this function.\n")
+        return
+
+    tweetID = req[0]
+    job = req[1]
+    user = req[2]
+    try:
+        image = SimulatorGeneratorImage.getImageFor(
+            job,
+            safeSearchLevel=config.get("services", "google_safesearch"), 
+            referer="http://twitter.com/SimGenerator"
+        )
+        year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
+        artFile = "output-%s.png" % datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
+        artFile = os.path.join(tempfile.gettempdir(), artFile)
+        SimulatorGeneratorImage.createBoxArt(
+            job, 
+            year, 
+            image,
+            artFile,
+            maxSize=(
+                str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
+                str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+            ),
+            deleteInputFile=True
+        )
+        tweet( titlecase.titlecase(job), year, artFile, (user, str(tweetID)) )
+    except Exception, e:
+        sys.stderr.write("Couldn't respond to request: '%s' from %s in %i\n" % 
+            (
+                job.encode("utf8"),
+                user.encode("utf8"),
+                tweetID
+            )
+        )
+        traceback.print_exc(file=sys.stderr)
+        persistence.execute("INSERT INTO failedRequests VALUES (?, ?, ?)", 
+            [
+                tweetID, job, user
+            ]
+        )
+        persistenceConnection.commit()
+    finally:
+        persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
+        persistenceConnection.commit()
+
 
 
 def updateQueue():
@@ -538,6 +563,10 @@ if __name__ == '__main__':
         respondToRequests()
     elif (len(sys.argv) > 1 and sys.argv[1] == "updateQueue"):
         updateQueue()
+    elif (len(sys.argv) > 2 and sys.argv[1] == "take"):
+        takeSpecificRequest(tweetID=int(sys.argv[2]))
+    elif (len(sys.argv) > 1 and sys.argv[1] == "pq"):
+        printQueue()
     else:
         randomJobTweet()
 

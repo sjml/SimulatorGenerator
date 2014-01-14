@@ -60,6 +60,7 @@ def getImageFor(searchTerm, safeSearchLevel="moderate", referer=None):
 
     if (imageResults == None or 'responseData' not in imageResults or imageResults['responseData'] == None):
         sys.stderr.write("No response data in image search for %s. JSON:\n%s\n" % (searchTerm, imageResults))
+        sys.stderr.write("Google is mad at you for searching too often. Chill out for a while and try again.\n")
         return None
 
     imageData = []
@@ -74,7 +75,8 @@ def getImageFor(searchTerm, safeSearchLevel="moderate", referer=None):
         )
     # find the largest image
     # imageData.sort(reverse=True, key=lambda img: img['size'])
-    # just pick a random one
+    # just pick a random one after throwing out anything smaller than 150x150
+    imageData = filter(lambda x: x["size"] > 22500, imageData)
     random.shuffle(imageData)
 
     mimetypes.init()
@@ -254,18 +256,19 @@ if __name__ == '__main__':
     else:
         max_size = None
 
+    if (img):
+        createBoxArt(
+            titlecase.titlecase(args.simulatorSubject),
+            year,
+            img,
+            output,
+            maxSize=max_size,
+            textPosition=args.text_position,
+            font=args.font_file,
+            deleteInputFile=(args.input_file == None), # no input; working from Google Image Search; delete temp file
+            log=args.debug
+        )
 
-    createBoxArt(
-        titlecase.titlecase(args.simulatorSubject),
-        year,
-        img,
-        output,
-        maxSize=max_size,
-        textPosition=args.text_position,
-        font=args.font_file,
-        deleteInputFile=(args.input_file == None), # no input; working from Google Image Search; delete temp file
-        log=args.debug
-    )
 
 
 
