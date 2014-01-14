@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+import inspect
 from collections import OrderedDict
 
 with open("bls_rawlist.txt", "r") as jobFile:
@@ -16,11 +17,16 @@ def findInList(needle, haystack):
         count += 1
     return None
 
+def lineNum():
+    return inspect.currentframe().f_back.f_lineno
 
 jobs = []
 lastMods = {}
+checkString = "Design"
 
-def addJob(jobString):
+def addJob(jobString, raw, context):
+    if (jobString == checkString):
+        print "%i: %s" % (context, raw)
     jobs.append(jobString)
 
 for job in rawJobsUnique:
@@ -32,7 +38,7 @@ for job in rawJobsUnique:
 
     # no commas! this one is easy
     if len(jobSplit) == 1:
-        jobs.append(job)
+        addJob(job, job, lineNum())
         continue
 
     # if any elements have "except", remove them and everything after
@@ -47,10 +53,11 @@ for job in rawJobsUnique:
         jobSplit.pop(-1)
 
     # if last element starts with "and" -- break into separate jobs
+    #  (THIS ONE IS BAD!)
     if jobSplit[-1].startswith("and "):
         jobSplit[-1] = jobSplit[-1][len("and "):]
         for j in jobSplit:
-            jobs.append(j)
+            addJob(j, job, lineNum())
         continue
 
     # if last element is modifier that doesn't make sense to invert, drop it
@@ -71,11 +78,11 @@ for job in rawJobsUnique:
         if len(modifiers) > 0:
             for mod in modifiers:
                 jobString = "%s (%s)" % (' '.join(jobSplit), mod)
-                jobs.append(jobString)
+                addJob(jobString, job, lineNum())
         else:
             jobSplit.reverse()
             jobString = ' '.join(jobSplit)
-            jobs.append(jobString)
+            addJob(jobString, job, lineNum())
         continue
 
     # special cases
@@ -93,7 +100,7 @@ for job in rawJobsUnique:
             "Teachers",
         )
 
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     materials = (
@@ -113,7 +120,7 @@ for job in rawJobsUnique:
         if (opIndex != None and opIndex == tendIndex):
             jobSplit.insert(0, jobSplit.pop(-1))
             jobString = ', '.join(jobSplit)
-            jobs.append(jobString)
+            addJob(jobString, job, lineNum())
             continue
         if (setIndex != None and opIndex != None and tendIndex != None):
             jobSplit[setIndex] = jobSplit[setIndex][:-len(" Setters")]
@@ -133,14 +140,14 @@ for job in rawJobsUnique:
                     ', '.join(jobSplit),
                     jobTitle
                 )
-                jobs.append(jobString)
+                addJob(jobString, job, lineNum())
             continue
 
         jobSplit.pop(-1)
         jobSplit.insert(0, jobSplit.pop(-1))
         jobSplit.insert(0, material)
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     if (jobSplit[0] == "Operators"):
@@ -148,7 +155,7 @@ for job in rawJobsUnique:
         jobSplit.insert(0, jobSplit.pop(-1))
         jobSplit.append("Operators")
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     if (jobSplit[0] == "Repairers"):
@@ -157,7 +164,7 @@ for job in rawJobsUnique:
             jobSplit.insert(1, "for")
         jobSplit.append("Repairers")
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     if (jobSplit[0] == "Installers"):
@@ -166,7 +173,7 @@ for job in rawJobsUnique:
             jobSplit.insert(1, "for")
         jobSplit.append("Installers")
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     if (jobSplit[0] == "Teachers"):
@@ -176,7 +183,7 @@ for job in rawJobsUnique:
             jobSplit.insert(0, jobSplit.pop(-1))
         jobSplit.append("Teachers")
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     if (jobSplit[0] == "Drivers"):
@@ -184,13 +191,13 @@ for job in rawJobsUnique:
         jobSplit.insert(0, jobSplit.pop(1))
         jobSplit.append("Drivers")
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
 
     if (jobSplit[-1].startswith("and ")):
         jobString = ', '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     if jobSplit[0] == "Sales Representatives":
@@ -208,7 +215,7 @@ for job in rawJobsUnique:
             jobSplit.append("for")
             jobSplit.append(' '.join(selling))
         jobString = ' '.join(jobSplit)
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     # hmmm, this feels someone defending a very specific job...
@@ -218,7 +225,7 @@ for job in rawJobsUnique:
             "Enhanced Operators/Maintainers",
             ', '.join(jobSplit)
         )
-        jobs.append(jobString)
+        addJob(jobString, job, lineNum())
         continue
 
     # if there's still an "and" in the last element, assume an Oxford comma was dropped
@@ -227,7 +234,7 @@ for job in rawJobsUnique:
         last = jobSplit.pop(-1)
         jobSplit = jobSplit + map(str.strip, last.split(" and "))
         for j in jobSplit:
-            jobs.append(j)
+            addJob(j, job, lineNum())
         continue
 
     # if there's an "and" in the penultimate slot, the last word is a modifier
@@ -240,13 +247,13 @@ for job in rawJobsUnique:
             jobSplit[0] = ' '.join(firstSplit[1:])
         for j in jobSplit:
             jobString = "%s %s" % (mod, j)
-            jobs.append(jobString)
+            addJob(jobString, job, lineNum())
         continue
 
     # finally down to some simple inversions
     jobSplit.reverse()
     jobString = ' '.join(jobSplit)
-    jobs.append(jobString)
+    addJob(jobString, job, lineNum())
 
 
 # unique-ify
