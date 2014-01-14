@@ -313,7 +313,7 @@ def tweet(job, year, artFile, respondingTo=None):
             archFile.write(title.encode('utf8'))
     else:
         # don't tweet; something's wrong. 
-        std.stderr.write("FAILURE: %s\n" % title.encode("utf8"))
+        sys.stderr.write("FAILURE: %s\n" % title.encode("utf8"))
         with open(os.path.join("archive", "failed-%s.txt" % timestamp), "w") as archFile:
             archFile.write(title.encode('utf8'))
 
