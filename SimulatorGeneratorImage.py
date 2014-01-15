@@ -96,6 +96,7 @@ def getImageFor(searchTerm, safeSearchLevel="moderate", referer=None):
             sys.stderr.write("Couldn't find content-type header: %s" % str(r.headers))
             extension = ""
         if (extension == ".jpe") : extension = ".jpg"
+        if (extension == None) : extension = ""
 
         localFileName = "base_image-%s%s" % (datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f"), extension)
         localFileName = os.path.join(tempfile.gettempdir(), localFileName)
@@ -104,11 +105,12 @@ def getImageFor(searchTerm, safeSearchLevel="moderate", referer=None):
             baseFile.write(imgResponse.content)
 
         # check our work
-        cmdLine = ['identify', '-format', '%wx%h', localFileName]
-        dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
-        dimensions = dimensionString.split("x")
-        if (int(dimensions[0]) == img['w'] and int(dimensions[1]) == img['h']):
-            return localFileName
+        if os.path.exists(localFileName):
+            cmdLine = ['identify', '-format', '%wx%h', localFileName]
+            dimensionString = subprocess.Popen(cmdLine, stdout=subprocess.PIPE).communicate()[0]
+            dimensions = dimensionString.split("x")
+            if (int(dimensions[0]) == img['w'] and int(dimensions[1]) == img['h']):
+                return localFileName
 
     return None
 
@@ -189,6 +191,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
         "-gravity", grav,
         "-geometry", offset,
         "-composite",
+        "-quiet",
         outputFile
     ]
 

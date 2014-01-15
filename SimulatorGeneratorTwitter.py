@@ -368,19 +368,20 @@ def randomJobTweet():
     tweet(titlecase.titlecase(job), year, artFile)
 
 
-def respondToRequests():
+def queueMentions():
     if (config.getint("settings", "taking_requests") == 0):
         print("Not taking requests.")
     else:
-        with open(os.path.join("data", "badwords.json"), "r") as badwordsFile:
-            badwordsData = json.load(badwordsFile)
-        badwords = badwordsData['badwords']
-        with open(os.path.join("data", "avoidphrases.json"), "r") as avoidphrasesFile:
-            avoidphrasesData = json.load(avoidphrasesFile)
-        avoidphrases = avoidphrasesData['avoidphrases']
-        with open(os.path.join("data", "overit.json"), "r") as overitphrasesFile:
-            overitphrasesData = json.load(overitphrasesFile)
-        overitphrases = overitphrasesData['overitphrases']
+        filterPath = os.path.join("data", "filters")
+        badWords = []
+        for filterFile in os.listdir(filterPath):
+            if filterFile[0] == ".":
+                continue
+            fp = os.path.join(filterPath, filterFile)
+            with open(fp, "r") as f:
+                loaded = json.load(f)
+                badWords += loaded['badwords']
+        print badWords
 
         requestRegex = re.compile('make one about ([^,\.\n@]*)', re.IGNORECASE)
 
@@ -418,18 +419,8 @@ def respondToRequests():
                 #   unexpected behavior in many instances)
                 if "http://" in jobCheck:
                     earlyOut = True
-                # check for derogatory speech
-                for phrase in badwords:
-                    if phrase in jobCheck:
-                        earlyOut = True
-                        break
-                # make sure nobody's trolling with shock sites or anything
-                for phrase in avoidphrases:
-                    if phrase in jobCheck:
-                        earlyOut = True
-                        break
-                # I'm over some jokes
-                for phrase in overitphrases:
+                # check for derogatory speech, shock sites, etc.
+                for phrase in badWords:
                     if phrase in jobCheck:
                         earlyOut = True
                         break
@@ -462,6 +453,7 @@ def respondToRequests():
             setIntPref("lastReply", status.id)
 
 
+def fulfillQueue():
     # cycle through the queue
     if (config.getint("settings", "making_requests") == 0):
         print("Not automatically fulfilling requests.")
@@ -471,12 +463,6 @@ def respondToRequests():
         artRequests = persistence.fetchall()
         for req in artRequests:
             takeSpecificRequest(data=req)
-
-    # update our count
-    persistence.execute("SELECT COUNT(*) FROM queuedRequests")
-    queueCount = persistence.fetchone()[0]
-    setIntPref("queueCount", queueCount)
-    print("Backlog is currently %i items." % (queueCount))
 
 
 def printQueue():
@@ -549,7 +535,11 @@ def updateQueue():
     #  to actually count against any resources. hmmmmm. 
     # resource should be "/account/update_profile", but that's not
     #  in the resource list at all. 
-    locString = "Request queue: %i" % (getIntPref("queueCount"))
+    persistence.execute("SELECT COUNT(*) FROM queuedRequests")
+    queueCount = persistence.fetchone()[0]
+    setIntPref("queueCount", queueCount)
+    print("Backlog is currently %i items." % (queueCount))
+    locString = "Request queue: %i" % queueCount
     if len(locString) > 30:
         locString = "Request queue: very, very long"
     twitterApi.UpdateProfile(location=locString)
@@ -560,7 +550,9 @@ if __name__ == '__main__':
     setup()
 
     if (config.getint("settings", "faking_requests") == 1 or (len(sys.argv) > 1 and sys.argv[1] == "check")):
-        respondToRequests()
+        queueMentions()
+    elif (len(sys.argv) > 1 and sys.argv[1] == "fulfill"):
+        fulfillQueue()
     elif (len(sys.argv) > 1 and sys.argv[1] == "updateQueue"):
         updateQueue()
     elif (len(sys.argv) > 2 and sys.argv[1] == "take"):
