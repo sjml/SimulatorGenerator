@@ -1,0 +1,4 @@
+['Electrical and Electronic Equipment Mechanics', 'Installers', 'and Repairers']
+['Power Plant Operators', 'Distributors', 'and Dispatchers']
+['Title Examiners', 'Abstractors', 'and Searchers']
+['Tool Grinders', 'Filers', 'and Sharpeners']

@@ -336,8 +336,8 @@ def manualJobTweet(job, year=None):
         image,
         artFile,
         maxSize=(
-            str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
-            str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["w"] - 1),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["h"] - 1),
         ),
         deleteInputFile=True
     )
@@ -360,8 +360,8 @@ def randomJobTweet():
         image,
         artFile,
         maxSize=(
-            str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
-            str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["w"] - 1),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["h"] - 1),
         ),
         deleteInputFile=True
     )
@@ -503,8 +503,8 @@ def takeSpecificRequest(tweetID=None, data=None):
             image,
             artFile,
             maxSize=(
-                str(twitterGlobalConfig["photo_sizes"]["large"]["w"]),
-                str(twitterGlobalConfig["photo_sizes"]["large"]["h"]),
+                str(twitterGlobalConfig["photo_sizes"]["large"]["w"] - 1),
+                str(twitterGlobalConfig["photo_sizes"]["large"]["h"] - 1),
             ),
             deleteInputFile=True
         )

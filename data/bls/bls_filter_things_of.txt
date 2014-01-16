@@ -1,0 +1,6 @@
+['Agents and Business Managers of Artists', 'Performers', 'and Athletes']
+['First-Line Supervisors of Farming', 'Fishing', 'and Forestry Workers']
+['First-Line Supervisors of Landscaping', 'Lawn Service', 'and Groundskeeping Workers']
+['First-Line Supervisors of Mechanics', 'Installers', 'and Repairers']
+['Supervisors of Farming', 'Fishing', 'and Forestry Workers']
+['Supervisors of Installation', 'Maintenance', 'and Repair Workers']

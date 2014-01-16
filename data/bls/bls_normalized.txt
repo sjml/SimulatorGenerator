@@ -4,11 +4,9 @@
 911 Operators
 ATM Servicers
 Able Seamen
-Abstractors
+Account
 Account Collectors
 Accountants
-Accountants and Auditors
-Accounting
 Accounting Clerks
 Accounting Professors
 Accounts Receivable Clerks
@@ -29,7 +27,6 @@ Acupuncturists
 Addiction Counselors
 Addiction Psychiatrists
 Adhesive Bonding Machine Operators
-Adhesive Bonding Machine Operators and Tenders
 Adhesive Bonding Machine Tenders
 Adjudicators
 Administrative Assistants
@@ -38,6 +35,7 @@ Administrative Law Adjudicators
 Administrative Law Hearing Officers
 Administrative Law Judges
 Administrative Services Managers
+Administrative Support
 Administrative Support Workers
 Adobe Layers
 Adult Basic Education Instructors
@@ -60,23 +58,25 @@ Advertising Editors
 Advertising Executives
 Advertising Managers
 Advertising Sales Agents
-Advertising and Promotions Managers
 Aerial Crop Dusters
 Aerial Photographers
 Aerobics Instructors
 Aeronautical Drafters
 Aeronautical Engineering Professors
 Aeronautical Engineers
+Aerospace Engineering
 Aerospace Engineering Technicians
-Aerospace Engineering and Operations Technicians
 Aerospace Engineers
 Aerospace Operations Technicians
 Aerospace Products Sales Engineers
 African History Professors
 Agents and Business Managers of Artists
+Agents and Business Managers of Athletes
+Agents and Business Managers of Performers
 Agents of Artists
 Agents of Athletes
 Agents of Performers
+Agricultural
 Agricultural Economics Professors
 Agricultural Engineering Technicians
 Agricultural Engineers
@@ -91,9 +91,8 @@ Agricultural Research Directors
 Agricultural Research Engineers
 Agricultural Science Technicians
 Agricultural Workers
-Agricultural and Food Science Technicians
-Agricultural and Food Scientists
 Agronomy Professors
+Air
 Air Ambulance Pilots
 Air Analysis Engineering Technicians
 Air Bag Builders
@@ -101,12 +100,6 @@ Air Battle Managers
 Air Cargo Ground Crew Supervisors
 Air Cargo Ground Operations Supervisors
 Air Conditioning
-Air Conditioning (HVAC)
-Air Conditioning (HVAC) Mechanic Boiler
-Air Conditioning (HVAC) Mechanic Boiler Operators
-Air Conditioning (HVAC) Mechanics
-Air Conditioning (HVAC) Sheet Metal
-Air Conditioning (HVAC) Sheet Metal Installers
 Air Conditioning Installers
 Air Conditioning Mechanics
 Air Crew Members
@@ -116,10 +109,10 @@ Air Hammer Operators
 Air Tour Pilots
 Air Traffic Control Operators
 Air Traffic Controllers
-Air Traffic Controllers and Airfield Operations Specialists
 Air Transportation Workers
 Air Valve Mechanics
 Air and Missile Defense (AMD) Crewmembers
+Airborne
 Airborne Mission Systems Superintendents
 Airborne and Air Delivery Specialists
 Aircraft Cargo Handling Supervisors
@@ -131,16 +124,14 @@ Aircraft Engine Specialists
 Aircraft Fuselage Framers
 Aircraft Inspectors
 Aircraft Instrument Mechanics
+Aircraft Launch
 Aircraft Launch Officers
 Aircraft Launch Specialists
 Aircraft Launch and Recovery Equipment Maintenance Technicians
-Aircraft Launch and Recovery Officers
-Aircraft Launch and Recovery Specialists
 Aircraft Mechanics
-Aircraft Mechanics and Service Technicians
 Aircraft Painters
 Aircraft Photographic Equipment Repairers
-Aircraft Pilots and Flight Engineers
+Aircraft Pilots
 Aircraft Recovery Officers
 Aircraft Recovery Specialists
 Aircraft Rigging Assemblers
@@ -148,7 +139,6 @@ Aircraft Riveters
 Aircraft Seat Upholsterers
 Aircraft Service Techicians
 Aircraft Service Technicians
-Aircraft Structure
 Aircraft Structure Assemblers
 Aircraft Surfaces Assemblers
 Aircraft Systems Assemblers
@@ -168,6 +158,7 @@ Airport Baggage Screeners
 Airport Ramp Supervisors
 Airport Security Screeners
 Airset Casters
+Alcohol
 Alcohol and Drug Counselors
 Algebraists
 All Other Protective Service Workers
@@ -186,16 +177,17 @@ Ambulance Drivers and Attendants
 American History Professors
 American Sign Language Interpreters
 American Sign Language Teachers
+Amusement
 Amusement Attendants
 Amusement Machine Repairers
 Amusement Machine Servicers
 Amusement Machine Servicers and Repairers
-Amusement and Recreation Attendants
+Analysis Specialists
 Anesthesiologist Assistants
 Anesthesiologists
 Anger Control Counselors
 Animal Breeders
-Animal Care and Service Workers
+Animal Care
 Animal Control Officers
 Animal Control Workers
 Animal Cruelty Investigation Supervisors
@@ -212,7 +204,6 @@ Announcers
 Anode Builders
 Anodizers
 Anthropologists
-Anthropologists and Archeologists
 Antique Clock Repairers
 Apartment Managers
 Apartment Rental Agents
@@ -230,8 +221,9 @@ Appointment Clerks
 Appraisers
 Appraisers and Assessors of Real Estate
 Appraisers of Real Estate
-Aquacultural Animals
 Aquacultural Animals Farmworkers
+Aquacultural Farmworkers
+Aquaculture
 Aquaculture and Fisheries Professors
 Arbitrators
 Arboreal Scientists
@@ -241,32 +233,29 @@ Arcade Games Mechanics
 Arch Cushion Press Operators
 Archeologists
 Architects
+Architectural
 Architectural Design Professors
 Architectural Drafters
 Architectural Engineers
 Architectural Managers
 Architectural Wood Model Makers
-Architectural and Civil Drafters
-Architectural and Engineering Managers
-Architecture and Engineering Occupations
+Architecture
 Archivists
 Armature Rewinders
 Armor Senior Sergeants
 Armored Assault Vehicle Crew Members
 Armored Assault Vehicle Officers
 Arson Investigators
+Art
 Art Directors
-Art and Design Workers
 Artificial Limb Fitters
+Artillery
 Artillery Crew Members
 Artillery Officers
-Artillery and Missile Crew Members
-Artillery and Missile Officers
 Artists
 Artists Agents
 Artists Business Managers
-Artists and Related Workers
-Arts
+Arts Occupations
 Asbestos Abatement Workers
 Asphalt Blenders
 Asphalt Paving Machine Operators
@@ -278,21 +267,22 @@ Assayers
 Assemblers
 Assemblers and Fabricators
 Assembly Line Supervisors
+Assessment
 Assessors of Real Estate
 Assistant Wholesale and Retail Buyers
+Association Managers
 Astronomers
-Astronomers and Physicists
 Astrophysicists
 Astrophysics Professors
 Athletes
 Athletes Agents
-Athletes and Sports Competitors
 Athletic Events Scorers
 Athletic Trainers
+Atmospheric
 Atmospheric Chemists
 Atmospheric Scientists
-Atmospheric and Space Scientists
 Atomic Process Engineers
+Attendance
 Attorneys
 Au Pairs
 Auctioneers
@@ -300,9 +290,9 @@ Audio Engineers
 Audio Equipment Technicians
 Audio Recording Engineers
 Audio and Video Equipment Technicians
+Audio-Visual
 Audio-Visual Collections Coordinators
 Audio-Visual Collections Specialists
-Audio-Visual and Multimedia Collections Specialists
 Audiologists
 Auditing Clerks
 Auditors
@@ -318,10 +308,11 @@ Auto Painters
 Auto Parts Salespersons
 Auto Tire Recappers
 Auto Transmission Specialists
-Automated Teller
 Automated Teller Machine Repairers
+Automated Teller Repairers
 Automatic Door Mechanics
 Automatic Pilot Mechanics
+Automobile
 Automobile Body Repair Supervisors
 Automobile Body Repairer Helpers
 Automobile Damage Appraisers
@@ -334,16 +325,16 @@ Automotive Design Drafters
 Automotive Electricians
 Automotive Fuel Injection Servicers
 Automotive Glass Installers
-Automotive Glass Installers and Repairers
 Automotive Glass Repairers
 Automotive Glaziers
 Automotive Machinists
+Automotive Mechanics
+Automotive Repairers
 Automotive Service Attendants
 Automotive Service Mechanics
 Automotive Service Technicians
-Automotive Service Technicians and Mechanics
 Automotive Sheet Metal Engineers
-Automotive Technicians and Repairers
+Automotive Technicians
 Automotive and Watercraft Service Attendants
 Aviation Electronic Warfare Operators
 Aviation Operations Specialists
@@ -355,12 +346,10 @@ Bacteriology Technicians
 Bagel Makers
 Baggage Bellhops
 Baggage Porters
-Baggage Porters and Bellhops
 Bail Bondsmen
 Bailiffs
 Bakers
 Bakery Deliverers
-Baking
 Ballast Cleaning Machine Operators
 Ballerinas
 Ballet Professors
@@ -392,6 +381,7 @@ Battery Builders
 Beach Lifeguards
 Beauticians
 Bed and Breakfast Innkeepers
+Behavioral Disorder
 Behavioral Disorder Counselors
 Behavioral Health Technicians
 Bellhops
@@ -401,23 +391,23 @@ Benefits
 Benefits Managers
 Benefits Specialists
 Betting Clerks
+Beveling
 Beveling and Edging Machine Operators
+Beverage
 Bicycle Mechanics
 Bicycle Messengers
 Bicycle Repairers
 Bicycle Service Technicians
 Bilingual Kindergarten Teachers
+Bill
 Bill Collectors
-Bill and Account Collectors
 Billboard Posters
+Billing
 Billing Clerks
-Billing and Posting Clerks
 Bio-Mechanical Engineers
 Biochemistry Professors
 Biochemists
-Biochemists and Biophysicists
 Biodiesel Engine Specialists
-Biological
 Biological Chemists
 Biological Scientists
 Biological Technicians
@@ -464,7 +454,6 @@ Book Conservators
 Bookbinders
 Bookbinding Machine Operators
 Bookkeepers
-Bookkeeping
 Bookkeeping Clerks
 Boom Crane Operators
 Booth Cashiers
@@ -481,6 +470,7 @@ Brace Makers
 Bradley Linebacker Crewmembers
 Braille Proofreaders
 Braille and Talking Books Clerks
+Brass
 Brass Rollers
 Brass and Wind Instrument Repairers
 Brazers
@@ -497,13 +487,12 @@ Brick Makers
 Brick Washers
 Brickmasons
 Brickmasons Helpers
-Brickmasons and Blockmasons
+Bridge
 Bridge Engineers
 Bridge Ironworkers
 Bridge Painter Helpers
 Bridge Painters
 Bridge Tenders
-Bridge and Lock Tenders
 Broadcast Engineers
 Broadcast News Analysts
 Broadcast Technicians
@@ -513,12 +502,13 @@ Budget Analysts
 Budget Examiners
 Budget Officers
 Buffers
+Building
 Building Architects
 Building Architectural Designers
 Building Carpenters
+Building Cleaning
 Building Cleaning Supervisors
 Building Cleaning Workers
-Building Cleaning and Pest Control Workers
 Building Drafters
 Building Inspectors
 Building Maintenance Mechanics
@@ -533,6 +523,7 @@ Burglar Alarm Installers
 Bus Drivers
 Bus Mechanics
 Bus and Truck Mechanics and Diesel Engine Specialists
+Business
 Business Management Analysts
 Business Managers of Artists
 Business Managers of Athletes
@@ -540,28 +531,22 @@ Business Managers of Performers
 Business Operations Specialists
 Business Process Consultants
 Business Services Sales Representatives
-Business and Financial Operations Occupations
 Bussers
 Butane Compressor Operators
 Butcher Apprentices
 Butchers
-Butchers and Meat Cutters
-Butchers and Other Meat
 Butlers
 Button Sewing Machine Operators
 Buyers
 Buyers Farm Products
-Buyers and Purchasing Agents
 Buzzsaw Operators
 C-13 Catapult Operators
 C2 Tactical Analysis Technicians
 Cab Drivers
 Cabinet Builders
 Cabinetmakers
-Cabinetmakers and Bench Carpenters
 Cable Television Installers
 Caddy Masters
-Cafeteria
 Cafeteria Attendants
 Cafeteria Cooks
 Cafeteria Counter Attendants
@@ -569,9 +554,8 @@ Cafeteria Servers
 Cage Cashiers
 Calculus Professors
 Calligraphers
-Camera Operators
+Camera
 Camera Repairers
-Camera and Photographic Equipment Repairers
 Camp Cooks
 Camp Counselors
 Campaign Fundraisers
@@ -590,24 +574,22 @@ Cardiology Nurse Practitioners
 Cardiovascular Surgeons
 Cardiovascular Technicians
 Cardiovascular Technologists
-Cardiovascular Technologists and Technicians
 Cardroom Supervisors
 Career Counselors
 Career Technical Counselors
+Cargo
 Cargo Agents
 Cargo Handlers
 Cargo Routers
-Cargo and Freight Agents
 Carpenter Assistants
 Carpenter Supervisors
 Carpenters
 Carpenters Helpers
 Carpentry Managers
-Carpet
+Carpet Finishers
 Carpet Installers
 Carpet Layers
 Cartographers
-Cartographers and Photogrammetrists
 Cartographic Technicians
 Cartography Professors
 Carton Making Machine Operators
@@ -630,16 +612,15 @@ Catapult and Arresting Gear Officers
 Cattle Branders
 Cattle Examiners
 Cavalry Officers
-Ceiling
 Ceiling Insulation Blowers
 Ceiling Insulation Workers
+Ceiling Tile
 Ceiling Tile Installers
-Cellular
 Cellular Equipment Installers
 Cellular Equipment Repairers
+Cellular Tower Equipment Repairers
 Cellulose Insulation Helpers
 Cement Masons
-Cement Masons and Concrete Finishers
 Cement Patchers
 Cement Truck Drivers
 Census Takers
@@ -649,7 +630,7 @@ Ceramic Painters
 Ceramic Scientists
 Ceramic Tile Installers
 Certified Athletic Trainers
-Certified Children
+Certified Children Social Workers
 Certified Dental Assistants
 Certified Detention Deputies
 Certified Marine Mechanics
@@ -687,23 +668,22 @@ Checkers
 Cheese Makers
 Cheese Weighers
 Chefs
-Chefs and Head Cooks
-Chemical
 Chemical Dependency Counselors
 Chemical Engineering Teachers
 Chemical Engineers
 Chemical Equipment Operators
-Chemical Equipment Operators and Tenders
 Chemical Equipment Tenders
 Chemical Laboratory Technicians
+Chemical Plant
 Chemical Plant Operators
-Chemical Plant and System Operators
 Chemical Process Equipment Operators
+Chemical Processing Machine Operators
 Chemical Processing Machine Setters
+Chemical Processing Machine Tenders
 Chemical System Operators
 Chemical Technicians
+Chemical, Biological, Radiological, and Nuclear (CBRN) Officers
 Chemists
-Chemists and Materials Scientists
 Cherry Picker Operators
 Chief Executives
 Chief Technology Officers
@@ -742,6 +722,7 @@ Citizenship Teachers
 City Council Members
 City Planners
 City Planning Aides
+Civil
 Civil Computer-Aided Design and Drafting Technicians
 Civil Drafters
 Civil Engineering Professors
@@ -751,7 +732,6 @@ Civil Engineers
 Claims Adjusters
 Claims Examiners
 Claims Investigators
-Clarifying
 Clarifying Machine Operators
 Clarifying Machine Setters
 Clarifying Machine Tenders
@@ -764,10 +744,11 @@ Cleaners Vehicles
 Cleaners of Equipment
 Cleaners of Vehicles
 Cleaners of Vehicles and Equipment
-Cleaning
 Cleaning Equipment Operators
 Cleaning Equipment Tenders
 Cleaning Staff Supervisors
+Cleaning, Washing, and Metal Pickling Equipment Operators
+Cleaning, Washing, and Metal Pickling Equipment Tenders
 Clergy
 Clerical Library Assistants
 Clerical Supervisors
@@ -784,7 +765,6 @@ Clinical Dietitians
 Clinical Exercise Physiologists
 Clinical Laboratory Technicians
 Clinical Laboratory Technologists
-Clinical Laboratory Technologists and Technicians
 Clinical Nurse Specialists
 Clinical Nursing Professors
 Clinical Psychologists
@@ -795,26 +775,26 @@ Clothes Ironers
 Clothing Patternmakers
 Clowns
 Coaches
-Coaches and Scouts
 Coal Hauler Operators
 Coal Tower Operators
 Coal Tram Drivers
 Coat Checkers
 Coat Makers
-Coating
 Coating Machine Operators
 Coating Machine Setters
 Coating Machine Tenders
 Coating Workers
-Coatroom
+Coating, Painting, and Spraying Machine Operators
+Coating, Painting, and Spraying Machine Setters
+Coating, Painting, and Spraying Machine Tenders
 Coatroom Attendants
 Cobblers
 Cocktail Servers
 Coffee Roasters
-Coffee Shop
 Coffee Shop Counter Attendants
 Coffee Shop Hostesses
 Coffee Shop Hosts
+Coffee Shop Hosts and Hostesses
 Coil Builders
 Coil Finishers
 Coil Tapers
@@ -859,21 +839,23 @@ Commercial and Industrial Designers
 Commercial and Industrial Equipment Electrical Repairers
 Commercial and Industrial Equipment Electrical and Electronics Repairers
 Commercial and Industrial Equipment Electronics Repairers
-Commodities
+Commodities Agents
 Commodities Clerks
 Commodities Sales Agents
+Communication
 Communication Equipment Workers
 Communication Workers
 Communications Equipment Operators
+Community
 Community Association Managers
 Community Development Planners
 Community Health Education Coordinators
 Community Health Workers
+Community Managers
 Community Mental Health Social Workers
 Community Organization Workers
 Community Service Managers
 Community Service Specialists
-Community and Social Service Occupations
 Community and Social Service Specialists
 Compacting Machine Operators
 Compacting Machine Setters
@@ -883,7 +865,6 @@ Compensation
 Compensation Directors
 Compensation Managers
 Compensation Specialists
-Compensation and Benefits Managers
 Competition Judges
 Compliance Officers
 Composers
@@ -895,7 +876,8 @@ Computed Tomography (CT) Scanner Operators
 Computed Tomography/Magnetic Resonance Imaging (CT/MRI) Technologists
 Computer
 Computer Applications Engineers
-Computer Control Programmers and Operators
+Computer Control Operators
+Computer Control Programmers
 Computer Hardware Designers
 Computer Hardware Developers
 Computer Hardware Engineers
@@ -914,6 +896,7 @@ Computer Repairers
 Computer Research Scientists
 Computer Security Specialists
 Computer Support Specialists
+Computer Systems
 Computer Systems Administrators
 Computer Systems Analysts
 Computer Systems Managers
@@ -921,9 +904,6 @@ Computer Systems Software Architects
 Computer Training Specialists
 Computer User Support Specialists
 Computer and Information Analysts
-Computer and Information Research Scientists
-Computer and Information Systems Managers
-Computer and Mathematical Occupations
 Concierges
 Conciliators
 Concrete Batch Plant Operators
@@ -937,11 +917,12 @@ Conference Planners
 Conservation
 Conservation Enforcement Officers
 Conservation Scientists
-Conservation Scientists and Foresters
 Conservation Technicians
 Conservation Workers
+Conservators
 Console Operators
 Constitutional Law Professors
+Construction
 Construction Coordinators
 Construction Craft Laborers
 Construction Engineers
@@ -958,10 +939,9 @@ Construction Superintendents
 Construction Trades Helpers
 Construction Trades Workers
 Construction Trench Diggers
-Construction and Building Inspectors
-Construction and Extraction Occupations
 Construction and Maintenance Painters
 Construction and Related Workers
+Consumer Sciences
 Contact Lens Fitters
 Contact Lens Opticians
 Contemporary English Literature Professors
@@ -976,25 +956,23 @@ Control Tower Operators
 Control and Valve Installers
 Control and Valve Installers and Repairers
 Control and Valve Repairers
-Convention
 Convention Planners
 Conveyor Belt Operators
 Conveyor Operators
-Conveyor Operators and Tenders
 Conveyor Tenders
 Conveyors Tenders
 Cooks
-Cooks and Food Preparation Workers
+Cooling
 Cooling Equipment Operators
 Cooling Equipment Tenders
-Cooling and Freezing Equipment Operators and Tenders
+Cooling and Freezing Equipment Operators
+Cooling and Freezing Equipment Tenders
 Copilots
 Copy Editors
 Copy Machine Operators
 Copy Markers
 Copy Readers
 Coremakers
-Coremaking
 Cork Floor Installers
 Coronary Care Unit Nurses
 Corporate Counsels
@@ -1005,7 +983,6 @@ Corporate Trainers
 Corporate Travel Experts
 Corral Bosses
 Correctional Officers
-Correctional Officers and Jailers
 Correctional Treatment Specialists
 Corrections Sergeants
 Correspondence Clerks
@@ -1020,18 +997,14 @@ Costume Attendants
 Costume Designers
 Cotton Brokers
 Cotton Graders
-Counseling
 Counseling Psychologists
 Counselors
-Counter Attendants
+Counter
 Counter Clerks
-Counter and Rental Clerks
 Counter and Rental Clerks and Parts Salespersons
 County Agricultural Agents
 Couples Therapists
 Couriers
-Couriers and Messengers
-Court
 Court Bailiffs
 Court Clerks
 Court Interpreters
@@ -1042,12 +1015,13 @@ Court Transcribers
 Courtesy Van Drivers
 Craft Artists
 Cranberry Bog Supervisors
+Crane
 Crane Oilers
 Crane Operators
 Crane Riggers
-Crane and Tower Operators
 Craps Dealers
 Crate Builders
+Crating
 Crating and Moving Estimators
 Creative Writing English Professors
 Credit Analysts
@@ -1056,7 +1030,6 @@ Credit Authorizers
 Credit Checkers
 Credit Clerks
 Credit Counselors
-Credit Counselors and Loan Officers
 Credit Rating Checkers
 Credit Risk Analysts
 Crime Scene Technicians
@@ -1066,16 +1039,22 @@ Criminologists
 Criminology Professors
 Crimping Machine Operators for Metal
 Crochet Machine Operators
-Crop
+Crop Farmworkers
+Crop Farmworkers and Laborers
+Crop Laborers
 Crop Scouts
 Crossing Guards
+Crown
 Crown and Bridge Technicians
 Crude Testers
 Cruise Directors
-Crushing
 Crushing Machine Operators
 Crushing Machine Setters
 Crushing Machine Tenders
+Crushing Workers
+Crushing, Grinding, and Polishing Machine Operators
+Crushing, Grinding, and Polishing Machine Setters
+Crushing, Grinding, and Polishing Machine Tenders
 Cryptographers
 Cryptographic Vulnerability Analysts
 Crystallographers
@@ -1084,6 +1063,7 @@ Cultural Anthropology Professors
 Cupola Repairers
 Curators
 Curbstone Setters
+Curriculum
 Curriculum Specialists
 Curriculum and Assessment Directors
 Custodial Supervisors
@@ -1100,7 +1080,9 @@ Cutting Machine Setters
 Cutting Machine Tenders
 Cutting Torch Operators
 Cutting Workers
+Cutting and Slicing Machine Operators
 Cutting and Slicing Machine Setters
+Cutting and Slicing Machine Tenders
 Cytogenetic Technologists
 Dairy Bacteriologists
 Dairy Equipment Repairers
@@ -1109,13 +1091,13 @@ Dairy Husbandry Workers
 Dairy Processing Equipment Operators
 Dairy Scientists
 Dairy Technologists
+Dam
 Dance Artists
 Dance Directors
 Dance Masters
 Dancers
-Dancers and Choreographers
+Data Entry
 Data Entry Keyers
-Data Entry and Information Processing Workers
 Data Input Clerks
 Data Processing Equipment Repairers
 Data Processing Systems Analysts
@@ -1138,38 +1120,40 @@ Delicatessen Department Managers
 Delivery Services Drivers
 Demographers
 Demonstrators
-Demonstrators and Product Promoters
-Dental
 Dental Assistants
 Dental Ceramists
 Dental Hygienists
 Dental Laboratory Technicians
 Dental Secretaries
 Dental Surgeons
+Dental Technicians
 Dentists
 Dentofacial Orthopedics Dentists
 Deposition Reporters
 Deputy Bailiffs
 Deputy United States Marshals
 Dermatologists
-Derrick
 Design
+Design Occupations
 Designers
+Desk Clerks
 Desktop Publishers
 Desktop Publishing Specialists
 Desktop Support Specialists
 Detective Lieutenants
 Detectives
-Detectives and Criminal Investigators
+Development
 Development Managers
 Development Specialists
 Diabetes Educators
 Diagnostic Medical Sonographers
-Diagnostic Related Technologists and Technicians
+Diagnostic Related Technicians
+Diagnostic Related Technologists
 Dialysis Engineers
 Dialysis Technicians
 Diamond Polishers
 Diamond Setters
+Die
 Die Makers
 Diesel Engine Specialists
 Diesel Locomotive Firers
@@ -1177,7 +1161,6 @@ Dietary Technicians
 Dietetic Technicians
 Dietetics Technicians
 Dietitians
-Dietitians and Nutritionists
 Digital Cartographers
 Digital Photo Printers
 Digital Proofing
@@ -1198,14 +1181,13 @@ Disaster Response Directors
 Dish Room Workers
 Dishwashers
 Dispatchers
-Dispatching
+Dispatching Workers
 Dispensing Opticians
 Display Advertising Sales Representatives
 Display Artists
 Distributing Workers
 Distribution Center Managers
 Distribution Managers
-Distributors
 District Sales Managers
 Dividend Clerks
 Divinity Professors
@@ -1230,30 +1212,29 @@ Drama Therapists
 Dramatic Readers
 Drawbridge Operators
 Drawing Frame Operators
-Dredge
 Dredge Operators
 Dredgers
 Dress Designers
+Dressing Attendants
 Dressing Room Attendants
 Dressmakers
-Drier
 Drier Operators
 Drier Tenders
 Drill Press Operators for Metal
 Driver's License Examiners
 Driver/Sales Workers
-Driver/Sales Workers and Truck Drivers
+Drug
 Drug Abuse Social Workers
 Dry Cleaning Counter Clerks
 Dry Placer Machine Operators
 Dry Plasterer Helpers
+Dry-Cleaning
 Dry-Cleaning Workers
-Drying Machine Operators and Tenders
+Drywall
 Drywall Finishers
 Drywall Hanger Helpers
 Drywall Installers
 Drywall Tapers
-Drywall and Ceiling Tile Installers
 Dumpling Machine Operators
 Dynamiters
 E-Learning Managers
@@ -1271,13 +1252,14 @@ Economic Geographers
 Economic Research Analysts
 Economic Research Assistants
 Economists
+Edging Machine
 Editorial Assistants
 Editors
 Education
 Education Administrators
+Education Occupations
 Education Workers
 Education, Training, and Library Workers
-Educational
 Educational Consultants
 Educational Counselors
 Educational Psychology Professors
@@ -1289,7 +1271,6 @@ Elderly Companions
 Election Clerks
 Electric Arc Furnace Operators
 Electric Meter Readers
-Electric Motor
 Electric Motor Controls Assemblers
 Electric Motor Repairers
 Electric Motors Repairers
@@ -1297,6 +1278,7 @@ Electric Powerline Examiners
 Electric Sewer Cleaning Machine Operators
 Electric Utility Lineworkers
 Electrical
+Electrical Assemblers
 Electrical Commercial and Industrial Equipment Repairers
 Electrical Computer-Aided Design and Drafting Technicians
 Electrical Design Technicians
@@ -1312,7 +1294,6 @@ Electrical Inspectors
 Electrical Lineworkers
 Electrical Parts Reconditioners
 Electrical Power-Line Installers
-Electrical Power-Line Installers and Repairers
 Electrical Power-Line Repairers
 Electrical Powerhouse Repairers
 Electrical Relay Repairers
@@ -1323,13 +1304,10 @@ Electrical Systems Engineers
 Electrical Timing Device Calibrators
 Electrical Transportation Equipment Installers
 Electrical Transportation Equipment Repairers
-Electrical and Electronic Equipment Assemblers
+Electrical and Electronic Equipment Installers
 Electrical and Electronic Equipment Mechanics
 Electrical and Electronic Equipment Mechanics, Installers, and Repairers
-Electrical and Electronics Drafters
-Electrical and Electronics Engineering Technicians
-Electrical and Electronics Engineers
-Electrical and Electronics Repairers
+Electrical and Electronic Equipment Repairers
 Electricians
 Electricians Helpers
 Electro-Mechanical Technicians
@@ -1338,13 +1316,13 @@ Electromechanical Assemblers
 Electromechanical Equipment Assemblers
 Electron Beam Welder Setters
 Electroneurodiagnostic Technologists
+Electronic
 Electronic Design Automation Engineers
 Electronic Equipment Assemblers
 Electronic Equipment for Motor Vehicles Installers
 Electronic Equipment for Motor Vehicles Repairers
 Electronic Gaming Device Supervisors
 Electronic Home Entertainment Equipment Installers
-Electronic Home Entertainment Equipment Installers and Repairers
 Electronic Home Entertainment Equipment Repairers
 Electronic Musical Instrument Repairers
 Electronic Parts Salespersons
@@ -1352,6 +1330,7 @@ Electronic Publishers
 Electronic Semiconductor Processors
 Electronic Warfare Specialists
 Electronics
+Electronics Assemblers
 Electronics Drafters
 Electronics Engineering Technicians
 Electronics Engineers
@@ -1361,16 +1340,15 @@ Electronics Substation Repairers
 Electronics Transportation Equipment Installers
 Electronics Transportation Equipment Repairers
 Electrostatic Paint Operators
+Elementary
 Elementary School Band Directors
 Elementary School Education Administrators
 Elementary School Principals
 Elementary School Special Education Teachers
 Elementary School Teachers
-Elementary and Middle School Teachers
 Elementary and Secondary School Education Administrators
 Elevator Inspectors
 Elevator Installers
-Elevator Installers and Repairers
 Elevator Mechanics
 Elevator Repairers
 Embalmers
@@ -1382,7 +1360,6 @@ Emcees
 Emergency Management Directors
 Emergency Medical Services (EMS) Drivers
 Emergency Medical Technicians
-Emergency Medical Technicians and Paramedics
 Emergency Operators
 Emergency Preparedness Coordinators
 Employee Benefits Directors
@@ -1395,6 +1372,7 @@ Engine Assemblers
 Engine Designers
 Engine Lathe Operators
 Engine and Other Machine Assemblers
+Engineering
 Engineering Design Managers
 Engineering Managers
 Engineering Psychologists
@@ -1407,9 +1385,9 @@ Enhanced Operators/Maintainers for Air Defense Command, Control, Communications,
 Enologists
 Enroute Controllers
 Entertainers and Performers
-Entertainment
 Entertainment Attendants
 Entertainment Attendants and Related Workers
+Entertainment Occupations
 Entertainment Related Workers
 Envelope Stuffers
 Environmental Compliance Inspectors
@@ -1424,25 +1402,27 @@ Environmental Protection Officers
 Environmental Protection Technicians (Health)
 Environmental Remediation Engineering Technicians
 Environmental Remediation Engineers
-Environmental Science
+Environmental Science Professors
 Environmental Science Technicians (Health)
 Environmental Science and Protection Technicians (Health)
+Environmental Scientists
 Environmental Scientists (Health)
-Environmental Scientists and Geoscientists
 Environmental Scientists and Specialists (Health)
 Environmental Specialists (Health)
 Environmental Studies Professors
 Epidemiologists
 Epidemiology Investigators
 Equal Employment Opportunity Officers
-Equipment
+Equipment Agents
+Equipment Purchasing Agents
+Equipment Repairers
 Ergonomics Technicians
 Escalator Installers
+Escorts
 Escrow Officers
 Estate Planners
 Etcher-Circuit Processors
 Etchers
-Etchers and Engravers
 Ethnoarchaeologists
 Ethnoarchaeology Professors
 Ethnographic Materials Conservators
@@ -1451,16 +1431,16 @@ Ethnology Professors
 Etymology Professors
 Event Planners
 Examiners
-Excavating
 Excavating Machine Operators
+Excavating Operators
 Excavating and Loading Machine and Dragline Operators
 Executive Administrative Assistants
 Executive Assistants
 Executive Chefs
 Executive Secretaries
-Executive Secretaries and Executive Administrative Assistants
 Executors of Estate
 Exercise Physiologists
+Exhibit
 Exhibit Designers
 Expediting Clerks
 Expeditionary Airfield Systems Technicians
@@ -1470,19 +1450,22 @@ Explosives Workers
 Export Managers
 Extension Service Advisors
 Exterminators
+Extraction
 Extraction Workers
-Extruding
 Extruding Machine Operators
 Extruding Machine Setters
 Extruding Machine Tenders
+Extruding, Forming, Pressing, and Compacting Machine Operators
+Extruding, Forming, Pressing, and Compacting Machine Setters
+Extruding, Forming, Pressing, and Compacting Machine Tenders
 Eyeglass Fitters
 Eyeglass Makers
 FIOS Line Installers
+Fabric
 Fabric Awning Repairers
 Fabric Menders
 Fabric Pattern Graders
 Fabric Patternmakers
-Fabric and Apparel Patternmakers
 Fabricators
 Facialists
 Facilities Managers
@@ -1504,13 +1487,11 @@ Family Therapists
 Family Welfare Social Work Professor
 Family Welfare Social Work Professors
 Family and Consumer Sciences Professors
-Family and General Practitioners
 Fan Mail Editors
-Farm
 Farm Equipment Engineers
 Farm Equipment Mechanics
-Farm Equipment Mechanics and Service Technicians
 Farm Equipment Service Technicians
+Farm Farmworkers
 Farm Labor Contractors
 Farm Management Advisors
 Farm Management Professors
@@ -1519,15 +1500,14 @@ Farm Products Buyers and Purchasing Agents
 Farm Products Purchasing Agents
 Farm and Home Management Advisors
 Farmers
-Farming
+Farming Occupations
 Farming Workers
 Farmworkers
-Farmworkers and Laborers
 Fashion Designers
 Fashion Models
+Fast Food
 Fast Food Cooks
 Fast Food Fry Cooks
-Fast Food and Counter Workers
 Fax Machine Operators
 Feed Management Advisers
 Feed Management Advisors
@@ -1541,7 +1521,6 @@ Fiber Optic Central Office Installers
 Fiberglass Boat Builders
 Fiberglass Fabricators
 Fiberglass Laminators
-Fiberglass Laminators and Fabricators
 Fiberglass Ski Makers
 Field Artillery Fire Control Men
 Field Artillery Radar Operators
@@ -1549,21 +1528,21 @@ Field Artillery Senior Sergeants
 Field Auditors
 Field Map Technicians
 File Clerks
-Filers
 Filling Machine Operators
 Filling Machine Tenders
+Film
 Film Archivists
 Film Critics
 Film Editors
 Film Projector Operators
-Film and Video Editors
-Filtering
 Filtering Machine Operators
 Filtering Machine Setters
 Filtering Machine Tenders
 Finance Professors
+Financial
+Financial Advisors
+Financial Agents
 Financial Analysts
-Financial Analysts and Advisors
 Financial Assistance Advisors
 Financial Clerks
 Financial Compliance Examiners
@@ -1574,13 +1553,12 @@ Financial Reserve Clerk Clerks
 Financial Reserve Clerks
 Financial Services Sales Agents
 Financial Specialists
-Fine
-Fine Artists
 Fingernail Sculptor Sculptors
 Fingernail Sculptors
 Fingerprint Clerks
 Finishers
 Fire
+Fire Alarm
 Fire Alarm Installers
 Fire Alarm Systems Installers
 Fire Claims Adjusters
@@ -1590,7 +1568,6 @@ Fire Extinguisher Installers
 Fire Fighting and Prevention Workers
 Fire Hazard Inspectors
 Fire Inspectors
-Fire Inspectors and Investigators
 Fire Investigators
 Fire Lieutenant Lieutenants
 Fire Lieutenants
@@ -1605,29 +1582,24 @@ First Mates
 First-Line Enlisted Military Supervisors
 First-Line Supervisors of Air Crew Members
 First-Line Supervisors of All Other Tactical Operations Specialists
-First-Line Supervisors of Building and Grounds Cleaning and Maintenance Workers
 First-Line Supervisors of Construction Trades Workers
-First-Line Supervisors of Construction Trades and Extraction Workers
 First-Line Supervisors of Correctional Officers
 First-Line Supervisors of Extraction Workers
-First-Line Supervisors of Farming
 First-Line Supervisors of Farming Workers
-First-Line Supervisors of Fire Fighting and Prevention Workers
 First-Line Supervisors of Fishing Workers
 First-Line Supervisors of Food Preparation Workers
-First-Line Supervisors of Food Preparation and Serving Workers
 First-Line Supervisors of Food Serving Workers
 First-Line Supervisors of Forestry Workers
+First-Line Supervisors of Forestry Workers Workers
 First-Line Supervisors of Gaming Workers
 First-Line Supervisors of Groundskeeping Workers
+First-Line Supervisors of Groundskeeping Workers Workers
 First-Line Supervisors of Helpers
 First-Line Supervisors of Helpers, Laborers, and Material Movers
 First-Line Supervisors of Housekeeping Workers
-First-Line Supervisors of Housekeeping and Janitorial Workers
 First-Line Supervisors of Installers
 First-Line Supervisors of Janitorial Workers
 First-Line Supervisors of Laborers
-First-Line Supervisors of Landscaping
 First-Line Supervisors of Landscaping Workers
 First-Line Supervisors of Law Enforcement Workers
 First-Line Supervisors of Lawn Service Workers
@@ -1636,21 +1608,16 @@ First-Line Supervisors of Material-Moving Machine Operators
 First-Line Supervisors of Material-Moving Vehicle Operators
 First-Line Supervisors of Mechanics
 First-Line Supervisors of Non-Retail Sales Workers
-First-Line Supervisors of Office and Administrative Support Workers
 First-Line Supervisors of Operating Workers
 First-Line Supervisors of Personal Service Workers
-First-Line Supervisors of Police and Detectives
 First-Line Supervisors of Production Workers
-First-Line Supervisors of Production and Operating Workers
 First-Line Supervisors of Protective Service Workers
 First-Line Supervisors of Repairers
 First-Line Supervisors of Retail Sales Workers
 First-Line Supervisors of Sales Workers
 First-Line Supervisors of Transportation Machine Operators
 First-Line Supervisors of Transportation Vehicle Operators
-First-Line Supervisors of Transportation and Material-Moving Machine and Vehicle Operators
 First-Line Supervisors of Weapons Specialists/Crew Members
-Fish
 Fish Cutters
 Fish Cutters and Trimmers
 Fish Filleters
@@ -1661,14 +1628,15 @@ Fish Smokers
 Fish Trimmers
 Fish Wardens
 Fish and Game Wardens
+Fisheries
 Fishers
 Fishers and Related Fishing Workers
 Fishing
+Fishing Occupations
 Fishing Workers
-Fishing and Hunting Workers
 Fishing-Tool Technicians
+Fitness
 Fitness Trainers
-Fitness Trainers and Aerobics Instructors
 Flat Sorting Machine Clerks
 Fleet Maintenance Supervisors
 Flight (Airline Pilots) Instructors
@@ -1683,12 +1651,11 @@ Flight Operations Coordinators
 Flight Paramedics
 Flight Test Engineers
 Flight Test Mechanics
-Floor
 Floor Finishers
+Floor Installers
 Floor Insulation Workers
 Floor Layers
 Floor Sanders
-Floor Sanders and Finishers
 Floor Sanding Machine Operators
 Floor Scrapers
 Floral Designers
@@ -1696,36 +1663,36 @@ Florists
 Flower Arrangers
 Fluid Dynamicists
 Fluid Pump Operators
+Food
 Food Baking Machine Operators
 Food Baking Machine Tenders
 Food Batchmakers
 Food Chemists
-Food Concession
 Food Concession Counter Attendants
 Food Cooking Machine Operators
-Food Cooking Machine Operators and Tenders
 Food Cooking Machine Tenders
 Food Drying Machine Operators
 Food Drying Machine Tenders
+Food Preparation
 Food Preparation Workers
-Food Preparation and Serving Related Occupations
 Food Preparation and Serving Related Workers
 Food Processing Workers
 Food Roasting Machine Operators
 Food Roasting Machine Tenders
 Food Safety Scientists
+Food Science
 Food Science Technicians
 Food Scientists
-Food Scientists and Technologists
 Food Service Directors
 Food Service Managers
+Food Serving Related Occupations
 Food Serving Related Workers
 Food Serving Workers
 Food Technologists
-Food and Beverage Serving Workers
 Food and Tobacco Baking Machine Operators and Tenders
 Food and Tobacco Drying Machine Operators and Tenders
-Food and Tobacco Roasting
+Food and Tobacco Roasting, Baking, and Drying Machine Operators
+Food and Tobacco Roasting, Baking, and Drying Machine Tenders
 Food and Tobacco, Roasting, Baking, and Drying Machine Operators and Tenders
 Foot Doctors
 Foot Orthopedists
@@ -1743,13 +1710,10 @@ Forest Ecologists
 Forest Ecology Professors
 Forest Fire Control Officers
 Forest Fire Inspectors
-Forest Fire Inspectors and Prevention Specialists
 Forest Fire Prevention Specialists
 Forest Firefighters
 Forest Technicians
 Forest Workers
-Forest and Conservation Technicians
-Forest and Conservation Workers
 Forester Aides
 Foresters
 Forestry Aides
@@ -1760,18 +1724,19 @@ Forging Roll Operators
 Forklift Mechanics
 Forklift Operators
 Form Tampers
-Forming
 Forming Machine Operators
 Forming Machine Setters
 Forming Machine Tenders
 Forming Roll Operators
 Foster Care Workers
+Foundry Coremakers
 Foundry Equipment Mechanics
+Foundry Mold
 Foundry Mold Makers
-Foundry Mold and Coremakers
 Fraternity House Cooks
 Freezing Equipment Operators
 Freezing Equipment Tenders
+Freight
 Freight Agents
 Freight Conductors
 Freight Elevator Operators
@@ -1780,6 +1745,7 @@ Freight Movers
 Freight Shipping Agents
 Front Desk Receptionists
 Frozen Yogurt Makers
+Fruit
 Fruit Buyers
 Fruit Sorters
 Fruit Sprayers
@@ -1787,6 +1753,7 @@ Fruit and Vegetable Parers
 Fuels Engineers
 Fumigators
 Fundraisers
+Fundraising
 Fundraising Directors
 Fundraising Managers
 Fundraising Officers
@@ -1799,9 +1766,10 @@ Funeral Home Managers
 Funeral Service Managers
 Funeral Service Workers
 Fur Trimmers
-Furnace
 Furnace Operators
 Furnace Tenders
+Furnace, Kiln, Oven, Drier, and Kettle Operators
+Furnace, Kiln, Oven, Drier, and Kettle Tenders
 Furnishings Workers
 Furniture Finishers
 Furniture Sanders
@@ -1813,13 +1781,13 @@ GPS Car Navigation Installers
 Galley Cooks
 Galvanizers
 Gambling Monitors
+Game
 Game Show Hosts
 Game Wardens
 Gaming Book Runners
 Gaming Book Writers
 Gaming Cage Workers
 Gaming Change Persons
-Gaming Change Persons and Booth Cashiers
 Gaming Dealers
 Gaming Investigators
 Gaming Managers
@@ -1827,15 +1795,13 @@ Gaming Service Workers
 Gaming Services Workers
 Gaming Supervisors
 Gaming Surveillance Officers
-Gaming Surveillance Officers and Gaming Investigators
 Gaming and Sports Book Writers and Runners
 Garage Door Mechanics
 Garbage Collectors
-Garment
 Garment Pressers
 Gas
+Gas Compressor
 Gas Compressor Operators
-Gas Compressor and Gas Pumping Station Operators
 Gas Controllers
 Gas Cylinder Processors
 Gas Derrick Operators
@@ -1845,10 +1811,12 @@ Gas Meter Readers
 Gas Plant Dispatchers
 Gas Plant Operators
 Gas Pump Attendants
+Gas Pumping Station
 Gas Pumping Station Operators
 Gas Rotary Drill Operators
 Gas Roustabouts
 Gas Service Unit Operators
+Gas Service Unit Operators Operators
 Gas Station Supervisors
 Gas Turbine Assemblers
 Gas and Oil Servicers
@@ -1861,6 +1829,7 @@ Gear Machinists
 Gem Cutters
 Gemologists
 Genealogists
+General
 General Contractors
 General Dentists
 General Educational Development (GED) Examiners
@@ -1873,17 +1842,16 @@ General Pediatricians
 General Practitioners
 General Repair Workers
 General Superintendents
-General and Operations Managers
 Genetic Counselors
 Geo-Technical Engineers
 Geochemists
 Geodesists
 Geodetic Surveyors
 Geographers
+Geological
 Geological Drafters
 Geological Engineers (Mining Safety Engineers)
 Geological Technicians
-Geological and Petroleum Technicians
 Geology Professors
 Geomatics Professors
 Geomorphologists
@@ -1902,7 +1870,9 @@ Gift Wrappers
 Glass Blowers
 Glass Cutting Machine Operators
 Glass Etchers
+Glass Fibers Extruding and Forming Machine Operators
 Glass Fibers Extruding and Forming Machine Setters
+Glass Fibers Extruding and Forming Machine Tenders
 Glass Scientists
 Glaziers
 Global Engineering Managers
@@ -1925,6 +1895,7 @@ Grain Buyers
 Grain Elevator Operators
 Grain Market Operators
 Grain Samplers
+Granite
 Granite Setters
 Graphic Artists
 Graphic Designers
@@ -1932,14 +1903,13 @@ Grapple Skidder Operators
 Grassland Conservationists
 Gravure Press Operators
 Green Sand Molders
-Greenhouse
 Greenhouse Farmworkers
+Greenhouse Farmworkers and Laborers
 Greenhouse Laborers
 Greenhouse Transplanters
 Greenskeepers
 Griddle Cooks
 Grief Counselors
-Grinding
 Grinding Machine Operators
 Grinding Machine Setters
 Grinding Machine Tenders
@@ -1950,9 +1920,9 @@ Grocery Store Baggers
 Ground Operations Specialists
 Grounds Maintenance Supervisors
 Grounds Maintenance Workers
+Groundskeeping
 Groundskeeping Workers
 Groundwater Monitoring Technicians
-Guidance
 Guidance Counselors
 Guide Dog Trainers
 Gunner's Mates
@@ -1994,12 +1964,16 @@ Head Cooks
 Head Greenskeepers
 Head Start Directors
 Head Start Teachers
+Health
 Health Actuaries
+Health Aides
+Health Diagnosing
 Health Diagnosing Practitioners
 Health Diagnosing and Treating Practitioners
 Health Educators
 Health Engineers
 Health Environmentalists
+Health Information
 Health Information Coders
 Health Information Systems Technicians
 Health Information Technicians
@@ -2015,11 +1989,11 @@ Health Treating Practitioners
 Health and Safety Engineers
 Health and Safety Inspectors
 Healthcare Practitioners
-Healthcare Practitioners and Technical Occupations
 Healthcare Practitioners and Technical Workers
 Healthcare Social Workers
 Healthcare Support Occupations
 Healthcare Support Workers
+Healthcare Technical Occupations
 Healthcare Technical Workers
 Hearing Aid Fitters
 Hearing Aid Specialists
@@ -2032,9 +2006,12 @@ Heating
 Heating Installers
 Heating Mechanics
 Heating and Cooling Systems Engineers
+Heating, Ventilation, and Air Conditioning (HVAC) Mechanic Boiler Operators
+Heating, Ventilation, and Air Conditioning (HVAC) Mechanics
+Heating, Ventilation, and Air Conditioning (HVAC) Sheet Metal Installers
+Heavy
 Heavy Truck Drivers
 Heavy Vehicle and Mobile Equipment Service Technicians and Mechanics
-Heavy and Tractor-Trailer Truck Drivers
 Hedge Trimmers
 Helicopter Engine Specialists
 Helicopter Pilots
@@ -2045,15 +2022,11 @@ Helpers Installation Workers
 Helpers Maintenance Workers
 Helpers Production Workers
 Helpers Repair Workers
-Helpers--Brickmasons
 Helpers--Carpenters
 Helpers--Electricians
 Helpers--Extraction Workers
-Helpers--Installation
 Helpers--Installation Workers
 Helpers--Maintenance Workers
-Helpers--Painters
-Helpers--Pipelayers
 Helpers--Production Workers
 Helpers--Repair Workers
 Helpers--Roofers
@@ -2078,8 +2051,9 @@ Historians
 Historical Records Administrators
 Historical Site Guides
 Historiographers
+Hoist
 Hoist Operators
-Hoist and Winch Operators
+Home Aides
 Home Appliance Repairers
 Home Demonstrators
 Home Economists
@@ -2110,11 +2084,10 @@ Hospital Food Service Workers
 Hospital Orderlies
 Hospital Pharmacists
 Hostlers
-Hosts and Hostesses
 Hot Tar Roofer Helpers
 Hot Tar Roofers
-Hotel
 Hotel Baggage Handlers
+Hotel Clerks
 Hotel Concierges
 Hotel Desk Clerks
 Hotel Front Desk Clerks
@@ -2131,6 +2104,7 @@ Housekeeping Cleaners
 Housekeeping Staffs
 Housekeeping Workers
 Housetrailer Servicers
+Human
 Human Resources Assistants
 Human Resources Generalists
 Human Resources Managers
@@ -2141,7 +2115,7 @@ Human Service Assistants
 Human Services Workers
 Humane Officers
 Hunters
-Hunters and Trappers
+Hunting
 Hurricane Trackers
 Hybrid Car Mechanics
 Hydraulic Elevator Constructors
@@ -2167,7 +2141,6 @@ Immunohematologists
 In-Flight Refueling Craftsmen
 In-Flight Refueling Managers
 In-Store Demonstrators
-Including Painters
 Income Tax Advisors
 Income Tax Preparers
 Incoming Freight Clerks
@@ -2188,7 +2161,6 @@ Industrial Equipment Electrical and Electronics Repairers
 Industrial Fabric Cutters
 Industrial Gas Fitter Helpers
 Industrial Hygienists
-Industrial Machinery Installation
 Industrial Machinery Mechanics
 Industrial Plant Custodians
 Industrial Product Safety Engineers
@@ -2207,9 +2179,12 @@ Infantry Unit Leaders
 Infantry Weapons Officers
 Infantrymen
 Infectious Waste Technicians
+Information
 Information Clerks
 Information Operators
+Information Processing
 Information Research Scientists
+Information Science
 Information Security Analysts
 Information Systems Analysts
 Information Systems Managers
@@ -2225,6 +2200,7 @@ Inorganic Chemistry Professors
 Inorganic Chemists
 Inspectors
 Installation
+Installation Occupations
 Installation Workers
 Installation, Maintenance, and Repair Workers
 Installers
@@ -2240,8 +2216,8 @@ Insulation Cutters
 Insulation Workers
 Insurance Actuaries
 Insurance Analysts
+Insurance Claims
 Insurance Claims Clerks
-Insurance Claims and Policy Processing Clerks
 Insurance Policy Issue Clerks
 Insurance Policy Processing Clerks
 Insurance Sales Agents
@@ -2262,7 +2238,6 @@ Internet Marketing Managers
 Internet Security Specialists
 Internists
 Interpreters
-Interpreters and Translators
 Interviewers
 Intranet Developers
 Inventory Control Clerks
@@ -2291,7 +2266,10 @@ Jingle Writers
 Job Analysis Managers
 Job Analysis Specialists
 Job Analysts
+Job Specialists
 Jockeys
+Joint Policy Officers
+Joint Strategic Plans
 Joint Strategic Plans and Policy Officers
 Journalism Professors
 Judges
@@ -2306,13 +2284,12 @@ Keg Fillers
 Kennel Worker
 Keno Runners
 Kettle Operators
-Kettle Operators and Tenders
 Kettle Tenders
 Key Makers
-Kiln
 Kiln Door Builders
 Kiln Operators
 Kiln Tenders
+Kindergarten
 Kindergarten Special Education Teachers
 Kindergarten Teachers
 Kindergarten and Elementary School Special Education Teachers
@@ -2332,6 +2309,7 @@ Labor Relations Specialists
 Labor Training Managers
 Laboratory Animal Caretakers
 Laboratory Couriers
+Laboratory Technicians
 Laborers
 Laborers and Freight, Stock, and Material Movers
 Laborers and Material Movers
@@ -2346,33 +2324,32 @@ Landing Support Specialists
 Landscape Architects
 Landscape Architecture Professors
 Landscape Designers
+Landscaping
 Landscaping Workers
-Landscaping and Groundskeeping Workers
-Lapping
+Languages
 Laser Beam Machine Operators
 Laser Cutter Operators
 Lasting Machine Operators
 Latin American Studies Professors
 Launch Operators
+Laundry
 Laundry Attendants
 Laundry Equipment Operators
 Laundry Sorters
 Laundry Workers
-Laundry and Dry-Cleaning Workers
 Law Enforcement Workers
 Law Librarians
 Law Secretaries
 Lawn Caretakers
 Lawn Mower Repairers
-Lawn Service
 Lawn Service Workers
 Lawyers
-Lawyers and Judicial Law Clerks
 Lay Health Advocates
 Lead Sawyers
 Lead Team Assemblers
 Leased Housing Unit Managers
 Leasing Property Managers
+Leather
 Leather Repairers
 Leather Workers
 Legal Administrative Assistants
@@ -2388,6 +2365,7 @@ Lens Grinders
 Lens Mounters
 Letter Carriers
 Librarians
+Library
 Library Acquisitions Technicians
 Library Circulation Technicians
 Library Media Specialists
@@ -2404,18 +2382,20 @@ Licensed Mental Health (LMHC) Counselors
 Licensed Mental Health Counselors (LMHC)
 Licensed Occupational Therapist Assistants
 Licensed Physical Therapist Assistants
+Licensed Practical
 Licensed Practical Nurses
-Licensed Practical and Licensed Vocational Nurses
 Licensed Real Estate Brokers
 Licensed Tax Consultants
+Licensed Vocational
 Licensed Vocational Nurses
 Licenses Vocational Nurses
 Lien Searchers
-Life
 Life Insurance Salespersons
+Life Occupations
 Life Science Taxonomists
 Life Science Technicians
 Life Scientists
+Life Technicians
 Life, Physical, and Social Science Technicians
 Lifeguards
 Light Rail Signal Technicians
@@ -2428,7 +2408,8 @@ Lime Filter Operators
 Lime Kiln Operators
 Limousine Drivers
 Line Cooks
-Line Installers and Repairers
+Line Installers
+Line Repairers
 Linguists
 Linoleum Installers
 Liquid Natural Gas Plant Operators
@@ -2436,11 +2417,11 @@ Liquid Waste Treatment Plant Operators
 Literary Agents
 Livestock Buyers
 Loading Machine Operators
+Loading Operators
 Loadmasters
 Loan Clerks
 Loan Counselors
 Loan Interviewers
-Loan Interviewers and Clerks
 Loan Officers
 Loan Processors
 Loan Reviewers
@@ -2448,23 +2429,21 @@ Loan Servicing Officers
 Loan Underwriters
 Lobby Attendants
 Lobbyists
+Lock
 Lock Operators
 Lock Tenders
 Lock and Dam Operators
-Locker Room
 Locker Room Attendants
 Locksmith Helpers
 Locksmiths
-Locksmiths and Safe Repairers
 Locomotive Electricians
 Locomotive Engineers
-Locomotive Engineers and Operators
 Locomotive Firers
+Locomotive Operators
 Lodging Managers
 Loft Workers
 Log Check Scalers
 Log Graders
-Log Graders and Scalers
 Log Haulers
 Log Ropers
 Log Scalers
@@ -2480,9 +2459,9 @@ Logistics Specialists
 Long Distance Operators
 Long Wall Shear Operators
 Looping Machine Operators
-Lounge
 Lounge Hostesses
 Lounge Hosts
+Lounge Hosts and Hostesses
 Lumber Kiln Operators
 Lumber Stacker Operators
 Lumberjacks
@@ -2493,9 +2472,10 @@ Machine Assemblers
 Machine Builders
 Machine Erectors
 Machine Feeders
-Machine Feeders and Offbearers
 Machine Gunners
 Machine Offbearers
+Machine Operators
+Machine Repairers
 Machined Parts Quality Inspectors
 Machinery Dismantlers
 Machinery Maintenance Workers
@@ -2507,7 +2487,6 @@ Magistrate Judges
 Magistrates
 Magnetic Resonance Imaging Technologists
 Maids
-Maids and Housekeeping Cleaners
 Mail Clerks
 Mail Clerks and Mail Machine Operators
 Mail Deliverers
@@ -2517,28 +2496,30 @@ Mail Superintendents
 Mailroom Clerks
 Maintenance
 Maintenance Millwrights
+Maintenance Occupations
 Maintenance Painters
 Maintenance Workers
 Maintenance and Repair Workers
 Maitre D's
 Malariologists
-Management
 Management Analysts
 Management Consultants
 Management Information Systems Directors
 Management Occupations
+Management Professors
 Management Psychologists
 Managers
 Manicurists
-Manicurists and Pedicurists
 Mannequin Decorators
+Manufactured Building
 Manufactured Building Installers
-Manufactured Building and Mobile Home Installers
 Manufacturing Directors
 Manufacturing Engineer
 Manufacturing Engineers
 Mappers
+Mapping
 Mapping Technicians
+Marble
 Marble Ceiling Installers
 Marble Setters
 Marble and Granite Polishers
@@ -2552,7 +2533,6 @@ Marine Electrician Helpers
 Marine Electronics Repairers
 Marine Engineering Professors
 Marine Engineers
-Marine Engineers and Naval Architects
 Marine Firefighters
 Marine Fisheries Technicians
 Marine Mammal Trainers
@@ -2561,7 +2541,6 @@ Marine Photographers
 Marine Pipefitter Helpers
 Marine Structural Designers
 Market Research Analysts
-Market Research Analysts and Marketing Specialists
 Market Research Interviewers
 Market Research Specialists
 Marketing
@@ -2572,38 +2551,40 @@ Marketing Forecasters
 Marketing Managers
 Marketing Professors
 Marketing Specialists
-Marketing and Sales Managers
 Marquetry Workers
+Marriage
 Marriage Counselors
 Marriage Therapists
-Marriage and Family Therapists
 Massage Therapists
 Master Barbers
 Master Electricians
+Material
 Material Control Clerks
 Material Handling Crew Supervisors
 Material Movers
 Material Moving Workers
-Material Recording
+Material Recording Workers
 Material-Moving Machine Operators
 Material-Moving Vehicle Operators
 Materials Engineers
 Materials Scientists
 Mates
 Mathematical Engineering Technicians
+Mathematical Occupations
 Mathematical Science Occupations
 Mathematical Statisticians
 Mathematical Technicians
 Mathematicians
 Maxillofacial Prosthetics Dentists
 Maxillofacial Surgeons
-Meat
 Meat Carvers
 Meat Counter Workers
 Meat Curers
 Meat Cutters
+Meat Cutters and Trimmers
 Meat Graders
 Meat Packers
+Meat Processing Workers
 Meat Trimmers
 Mechanical Door Repairers
 Mechanical Drafters
@@ -2615,6 +2596,7 @@ Mechanical Insulation Workers
 Mechanical Maintenance Instructors
 Mechanical Timepiece Repairers
 Mechanics
+Media
 Media Equipment Workers
 Media Occupations
 Media Workers
@@ -2632,36 +2614,32 @@ Medical Laboratory Technicians
 Medical Laboratory Technologists
 Medical Orderlies
 Medical Photographers
+Medical Records
 Medical Records Administrators
 Medical Records Library Professors
 Medical Records Specialists
 Medical Records Technicians
-Medical Records and Health Information Technicians
 Medical Scientists
 Medical Secretaries
 Medical Services Managers
 Medical Stenographers
+Medical Technicians
 Medical Transcribers
 Medical Transcriptionists
 Medical Writers
-Medical and Clinical Laboratory Technicians
-Medical and Clinical Laboratory Technologists
-Medical and Health Services Managers
 Medicare Correspondence Representatives
 Medicare Interviewers
-Meeting
 Meeting Planners
 Membership Solicitors
 Memorial Marker Designers
+Mental Health
 Mental Health Counselors
 Mental Health Orderlies
 Mental Health Program Managers
 Mental Health Social Workers
 Mental Health Technicians
-Mental Health and Substance Abuse Social Workers
 Merchandise Buyers
 Merchandise Displayers
-Merchandise Displayers and Window Trimmers
 Merchant Mariners
 Mess Attendants
 Mess Cooks
@@ -2671,39 +2649,65 @@ Metal Arts Production Artists
 Metal Casters
 Metal Computer Numerically Controlled Machine Tool Programmers
 Metal Computer-Controlled Machine Tool Operators
-Metal Cutting
+Metal Cutting, Punching, and Press Machine Operators
+Metal Cutting, Punching, and Press Machine Setters
+Metal Cutting, Punching, and Press Machine Tenders
 Metal Die Finishers
+Metal Drilling and Boring Machine Tool Operators
 Metal Drilling and Boring Machine Tool Setters
+Metal Drilling and Boring Machine Tool Tenders
 Metal Engravers
+Metal Extruding and Drawing Machine Operators
 Metal Extruding and Drawing Machine Setters
+Metal Extruding and Drawing Machine Tenders
+Metal Forging Machine Operators
 Metal Forging Machine Setters
+Metal Forging Machine Tenders
+Metal Furnace Casters
 Metal Furnace Operators
+Metal Furnace Pourers
+Metal Furnace Tenders
 Metal Gauge Makers
 Metal Grinders
-Metal Grinding
+Metal Grinding, Lapping, Polishing, and Buffing Machine Tool Operators
+Metal Grinding, Lapping, Polishing, and Buffing Machine Tool Setters
+Metal Grinding, Lapping, Polishing, and Buffing Machine Tool Tenders
+Metal Heat Treating Equipment Operators
 Metal Heat Treating Equipment Setters
+Metal Heat Treating Equipment Tenders
+Metal Lathe and Turning Machine Tool Operators
 Metal Lathe and Turning Machine Tool Setters
+Metal Lathe and Turning Machine Tool Tenders
 Metal Layout Workers
 Metal Milling Machine Operators
+Metal Milling and Planing Machine Operators
 Metal Milling and Planing Machine Setters
+Metal Milling and Planing Machine Tenders
 Metal Mock Up Makers
 Metal Model Makers
-Metal Molding
+Metal Molding, Coremaking, and Casting Machine Operators
+Metal Molding, Coremaking, and Casting Machine Setters
+Metal Molding, Coremaking, and Casting Machine Tenders
+Metal Multiple Machine Tool Operators
 Metal Multiple Machine Tool Setters
+Metal Multiple Machine Tool Tenders
 Metal Numerical Control Programmers
 Metal Numerical Tool Programmers
 Metal Patternmakers
 Metal Pickling Equipment Operators
-Metal Pickling Equipment Operators and Tenders
 Metal Pickling Equipment Tenders
 Metal Pickling Machine Operators
 Metal Pickling Machine Tenders
+Metal Plating and Coating Machine Operators
 Metal Plating and Coating Machine Setters
+Metal Plating and Coating Machine Tenders
 Metal Pourers
 Metal Pourers and Casters
 Metal Punch Press Operators
 Metal Rivet Machine Operators
+Metal Rolling Machine Operators
 Metal Rolling Machine Setters
+Metal Rolling Machine Tenders
 Metal Slitters
 Metal Workers
 Metal Workers and Plastic Workers
@@ -2826,7 +2830,6 @@ Metal and Plastic Turning Machine Tool Operators
 Metal and Plastic Turning Machine Tool Setters
 Metal and Plastic Turning Machine Tool Tenders
 Metal-Refining Furnace Operators
-Metal-Refining Furnace Operators and Tenders
 Metal-Refining Furnace Tenders
 Metallographers
 Metallurgical Engineering Technician
@@ -2840,6 +2843,7 @@ Meteorologists
 Meter Maids
 Microbiologists
 Microfilm Clerks
+Middle School
 Middle School Career/Technical Education Teachers
 Middle School Principals
 Middle School Science Teachers
@@ -2868,26 +2872,35 @@ Mineral Engineering Teachers
 Mineral Engineers
 Mineral Surveyors
 Mineralogists
-Mining
+Mining Derrick Operators
 Mining Engineers (Mining Safety Engineers)
 Mining Helpers
 Mining Machine Operators
 Mining Roof Bolters
+Mining Rotary Drill Operators
 Mining Service Unit Operators
+Mining Service Unit Operators Operators
 Mining and Geological Engineers (Mining Safety Engineers)
+Missile
 Missile Crew Members
 Missile Navigation Systems Sales Engineers
 Missile Officers
 Missile Pad Mechanics
 Missionaries
 Mitochondrial Disorders Counselors
-Mixing
 Mixing Machine Operators
 Mixing Machine Setters
 Mixing Machine Tenders
+Mixing Workers
+Mixing and Blending Machine Operators
 Mixing and Blending Machine Setters
+Mixing and Blending Machine Tenders
 Mixologists
+Mobile Equipment Installers
+Mobile Equipment Mechanics
+Mobile Equipment Repairers
 Mobile Heavy Equipment Mechanics
+Mobile Home
 Mobile Home Installers
 Mobile Home Mechanics
 Mobile Home Servicers
@@ -2908,11 +2921,10 @@ Mortgage Loan Closers
 Mortgage Loan Officers
 Mortician Helpers
 Morticians
-Motel
+Motel Clerks
 Motel Desk Clerks
-Motion Picture
+Motion Picture Camera Editors
 Motion Picture Camera Operators
-Motion Picture Camera Operators and Editors
 Motion Picture Projectionists
 Motion Study Technicians
 Motor Boat Mechanics
@@ -2927,40 +2939,38 @@ Motor Vehicles Electronic Equipment Installers and Repairers
 Motor Vehicles Electronic Equipment Repairers
 Motor Winders
 Motorboat Mechanic Helpers
-Motorboat Mechanics and Service Technicians
+Motorboat Mechanics
 Motorboat Operators
 Motorcycle Deliverers
 Motorcycle Mechanics
 Motorcycle Police
 Motorcycle Service Technicians
 Movie Projectionists
+Moving
 Moving Van Drivers
 Multi-operation Forming Machine Setters
+Multimedia
 Multimedia Animators
 Multimedia Artists
-Multimedia Artists and Animators
 Multimedia Collections Specialists
 Multimedia Production Assistants
 Multimedia Services Coordinators
-Municipal
 Municipal Clerks
+Municipal Fire Fighting
 Municipal Fire Fighting and Prevention Supervisors
+Municipal Fire Prevention Supervisors
 Museum Conservators
 Museum Exhibit Technicians
 Museum Guides
 Museum Technicians
-Museum Technicians and Conservators
 Music Arrangers
 Music Composers
 Music Directors
-Music Directors and Composers
 Music Librarians
 Music Therapists
 Musical Instrument Repairers
-Musical Instrument Repairers and Tuners
 Musical Instrument Tuners
 Musicians
-Musicians and Singers
 Mutuel Tellers
 Mystery Shoppers
 Nail Technicians
@@ -2974,6 +2984,7 @@ Naval Architects
 Naval Engineers
 Naval Surface Fire Support Planners
 Neon Tube Benders
+Network
 Network Administrators
 Network Coordinators
 Network Designers
@@ -2984,7 +2995,6 @@ Network Security Administrators
 Network Security Analysts
 Network Support Technicians
 Network Technicians
-Network and Computer Systems Administrators
 Neuropsychiatrists
 New Accounts Banking Representatives
 New Accounts Clerks
@@ -3002,8 +3012,6 @@ Non-Retail Sales Workers
 Nonfarm Animal Caretakers
 Nonrestaurant Food Servers
 Notaries Public
-Nuclear (CBRN)
-Nuclear (CBRN) Officers
 Nuclear Cardiology Technologists
 Nuclear Control Room Operators
 Nuclear Engineers
@@ -3018,9 +3026,10 @@ Nuclear Technicians
 Nurse Anesthetists
 Nurse Midwives
 Nurse Practitioners
-Nursery
+Nursery Farmworkers
+Nursery Farmworkers and Laborers
+Nursery Laborers
 Nursery School Teachers
-Nursing
 Nursing Aides
 Nursing Assistants
 Nursing Attendants
@@ -3032,7 +3041,6 @@ OB/GYNs
 Oboists
 Obstetrical Anesthesiologists
 Obstetricians
-Obstetricians and Gynecologists
 Occupational Health Specialists
 Occupational Health Technicians
 Occupational Health and Safety (OHST) Technologists
@@ -3047,23 +3055,23 @@ Occupational Therapist Aides
 Occupational Therapists
 Occupational Therapy Aides
 Occupational Therapy Assistants
-Occupational Therapy Assistants and Aides
 Occupational Therapy and Physical Therapist Assistants and Aides
 Ocean Engineers
 Ocean Program Administrators
 Oceanographers
 Oceanography Professors
 Ocular Care Technologists
+Offbearers
+Office
 Office Assistants
 Office Clerks
 Office Machine Operators
 Office Machine Repairers
+Office Repairers
 Office Runners
 Office Secretaries
 Office Support Workers
-Office and Administrative Support Occupations
 Office and Administrative Support Workers
-Officers
 Offset Press Operators
 Oil
 Oil Burner Repairers
@@ -3077,6 +3085,7 @@ Oil Rig Roughnecks
 Oil Rotary Drill Operators
 Oil Roustabouts
 Oil Service Unit Operators
+Oil Service Unit Operators Operators
 Oil Well Cable Tool Operators
 Oil Well Drillers
 Oil Well Pumpers
@@ -3091,14 +3100,15 @@ Operating Engineers
 Operating Engineers and Other Construction Equipment Operators
 Operating Room (OR) Techs
 Operating Workers
+Operations
 Operations Analysts
 Operations Managers
 Operations Research Analysts
 Operations Specialties Managers
-Operators
 Operators Switchboard (Answering Service)
 Ophthalmic Laboratory Technicians
 Ophthalmic Medical Technicians
+Ophthalmic Technicians
 Ophthalmic Technologists
 Ophthalmologists
 Optical Engineering Technicians
@@ -3130,36 +3140,27 @@ Orthopedic Cast Specialists
 Orthopedic Surgeons
 Orthotics Technicians
 Orthotists
-Orthotists and Prosthetists
 Osteologists
 Other Agricultural Managers
 Other Announcers
 Other Community and Social Service Specialists
 Other Construction Equipment Operators
-Other Construction and Related Workers
-Other Education
-Other Food Preparation and Serving Related Workers
-Other Healthcare Practitioners and Technical Occupations
+Other Education Occupations
 Other Healthcare Support Occupations
-Other Installation
+Other Installation Occupations
 Other Judicial Workers
 Other Machine Assemblers
 Other Management Occupations
-Other Office and Administrative Support Workers
-Other Personal Care and Service Workers
 Other Production Occupations
 Other Protective Service Workers
 Other Recreational Protective Service Workers
-Other Sales and Related Workers
 Other Sports Officials
-Other Teachers and Instructors
 Other Transportation Workers
 Outboard Motor Mechanics
 Outdoor Emergency Care Technicians
 Outdoor Power Equipment Mechanics
 Outdoor Power Equipment and Other Small Engine Mechanics
 Outpatient Interviewing Clerks
-Oven
 Oven Operators
 Oven Tenders
 Oxygen Therapists
@@ -3171,14 +3172,14 @@ Packaging Clerks
 Packaging Engineers
 Packaging Machine Operators
 Packaging Machine Tenders
-Packaging and Filling Machine Operators and Tenders
+Packaging and Filling Machine Operators
+Packaging and Filling Machine Tenders
 Packers
 Packers and Packagers
 Paddock Judges
 Paediatricians
+Painters
 Painters Helpers
-Painters and Paperhangers
-Painting
 Painting Machine Operators
 Painting Machine Setters
 Painting Machine Tenders
@@ -3198,7 +3199,6 @@ Paperhangers Helpers
 Parachute Repairers
 Parachute/Combatant Diver Officers
 Paralegals
-Paralegals and Legal Assistants
 Paramedics
 Pararescue Craftsmen
 Parcel Post Clerks
@@ -3219,13 +3219,12 @@ Pastry Finishers
 Pathology Technicians
 Pathology Transcriptionists
 Patient Account Representatives
-Paving
 Paving Equipment Operators
 Paving Stone Installers
 Payloader Operators
+Payroll
 Payroll Clerks
 Payroll Supervisors
-Payroll and Timekeeping Clerks
 Peanut Butter Makers
 Pecan Gatherers
 Peddlers
@@ -3242,7 +3241,6 @@ Penology Professors
 Pension Agents
 Pepper Pickers
 Performance Makeup Artists
-Performers
 Performers Agents
 Performers Business Managers
 Periodontists
@@ -3261,8 +3259,10 @@ Personal Trainers
 Personnel Clerks
 Personnel Managers
 Personnel Recruiters
+Pest Control
 Pest Control Service Sales Agents
 Pest Control Workers
+Petroleum
 Petroleum Engineering Teachers
 Petroleum Engineers
 Petroleum Pump Refinery Operators
@@ -3289,25 +3289,26 @@ Photoengravers
 Photogrammetrists
 Photographer's Models
 Photographers
+Photographic
 Photographic Equipment Repairers
 Photographic Equipment Technicians
 Photographic Process Workers
-Photographic Process Workers and Processing Machine Operators
 Photographic Processing Machine Operators
+Photography
 Photography Professors
 Photography and Prints Curators
 Photojournalists
 Photonics Engineers
 Photovoltaic (PV) Installation Technicians
-Physical
 Physical Biochemists
 Physical Chemistry Professors
 Physical Education (PE) Professors
+Physical Occupations
 Physical Science Technicians
 Physical Scientists
+Physical Technicians
 Physical Therapist Aides
 Physical Therapist Assistants
-Physical Therapist Assistants and Aides
 Physical Therapists
 Physical Therapy Aides
 Physician Assistants
@@ -3333,8 +3334,8 @@ Pit Bosses
 Pit Clerks
 Pizza Delivery Drivers
 Planing Machine Operators Metal and Plastic
-Planning
 Planning Clerks
+Plant
 Plant Managers
 Plant Operators
 Plant Physiologists
@@ -3342,26 +3343,49 @@ Plant Scientists
 Plant and System Operators
 Plasterers
 Plasterers Helpers
-Plasterers and Stucco Masons
 Plastic Computer Numerically Controlled Machine Tool Programmers
 Plastic Computer-Controlled Machine Tool Operators
 Plastic Cup Fabricating Machine Operators
-Plastic Cutting
+Plastic Cutting, Punching, and Press Machine Operators
+Plastic Cutting, Punching, and Press Machine Setters
+Plastic Cutting, Punching, and Press Machine Tenders
+Plastic Drilling and Boring Machine Tool Operators
 Plastic Drilling and Boring Machine Tool Setters
+Plastic Drilling and Boring Machine Tool Tenders
+Plastic Extruding and Drawing Machine Operators
 Plastic Extruding and Drawing Machine Setters
+Plastic Extruding and Drawing Machine Tenders
+Plastic Forging Machine Operators
 Plastic Forging Machine Setters
-Plastic Grinding
+Plastic Forging Machine Tenders
+Plastic Grinding, Lapping, Polishing, and Buffing Machine Tool Operators
+Plastic Grinding, Lapping, Polishing, and Buffing Machine Tool Setters
+Plastic Grinding, Lapping, Polishing, and Buffing Machine Tool Tenders
+Plastic Heat Treating Equipment Operators
 Plastic Heat Treating Equipment Setters
+Plastic Heat Treating Equipment Tenders
 Plastic Jig and Fixture Builders
+Plastic Lathe and Turning Machine Tool Operators
 Plastic Lathe and Turning Machine Tool Setters
+Plastic Lathe and Turning Machine Tool Tenders
 Plastic Layout Workers
+Plastic Milling and Planing Machine Operators
 Plastic Milling and Planing Machine Setters
+Plastic Milling and Planing Machine Tenders
 Plastic Model Makers
-Plastic Molding
+Plastic Molding, Coremaking, and Casting Machine Operators
+Plastic Molding, Coremaking, and Casting Machine Setters
+Plastic Molding, Coremaking, and Casting Machine Tenders
+Plastic Multiple Machine Tool Operators
 Plastic Multiple Machine Tool Setters
+Plastic Multiple Machine Tool Tenders
 Plastic Patternmakers
+Plastic Plating and Coating Machine Operators
 Plastic Plating and Coating Machine Setters
+Plastic Plating and Coating Machine Tenders
+Plastic Rolling Machine Operators
 Plastic Rolling Machine Setters
+Plastic Rolling Machine Tenders
 Plastic Straightening Roll Operators
 Plastic Surgeons
 Plastic Thread Milling Machine Setup Operators
@@ -3388,10 +3412,8 @@ Police Dispatchers
 Police Lieutenants
 Police Officers
 Police Radio Dispatchers
-Police and Sheriff's Patrol Officers
-Policy
+Policy Processing
 Policy Professors
-Polishing
 Polishing Machine Operators
 Polishing Machine Setters
 Polishing Machine Tenders
@@ -3422,9 +3444,9 @@ Postal Service Processing Machine Operators
 Postal Service Window Clerks
 Postal Service Workers
 Postal Supervisors
+Posting
 Posting Clerks
 Postmasters
-Postmasters and Mail Superintendents
 Postsecondary Agricultural Sciences Teachers
 Postsecondary Anthropology Teachers
 Postsecondary Anthropology and Archeology Teachers
@@ -3500,24 +3522,23 @@ Postsecondary Vocational Education Teachers
 Potato Chip Friers
 Potato Chip Packaging Machine Operators
 Potters
-Poultry
 Poultry Cutters
+Poultry Cutters and Trimmers
 Poultry Eviscerators
 Poultry Hangers
+Poultry Processing Workers
 Poultry Scientists
 Poultry Slaughterers
 Poultry Trimmers
-Pourers
 Power Dispatchers
 Power Distribution Engineers
 Power Distributors
-Power Distributors and Dispatchers
+Power Plant Dispatchers
+Power Plant Distributors
 Power Plant Operators
 Power Saw Mechanics
-Power Tool
 Power Tool Repairers
 Power Transformer Repairers
-Powerhouse
 Powerhouse Electrical Repairers
 Powerhouse Electrical and Electronics Repairers
 Powerhouse Electricians
@@ -3529,40 +3550,39 @@ Pre-Kindergarten Teachers
 Precast Concrete Ironworkers
 Precious Metal Workers
 Precious Stone Workers
-Precipitating
 Precipitating Machine Operators
 Precipitating Machine Setters
 Precipitating Machine Tenders
 Precision Equipment Repairers
+Precision Instrument
 Precision Instrument Repairers
 Precision Instrument and Equipment Repairers
 Precision Lens Centerer-Edgers
+Precision Lens Centerers
 Precision Lens Centerers and Edgers
+Precision Lens Edgers
 Precision Lens Grinders
 Precision Lens Polishers
 Predatory Animal Trappers
 Prenatal Genetic Counselors
 Prepress Technicians
-Prepress Technicians and Workers
 Prepress Workers
 Preschool
 Preschool Directors
 Preschool Education Administrators
+Preschool School Teachers
 Preschool Special Education Teachers
 Preschool Teachers
 Preschool and Childcare Center/Program Education Administrators
-Preschool and Kindergarten Teachers
 Prescription Clerks
 Press Secretaries
-Pressers
-Pressing
 Pressing Machine Operators
 Pressing Machine Setters
 Pressing Machine Tenders
 Priests
-Primary
 Primary Care Pediatricians
 Primary Education Professors
+Primary School Teachers
 Print Binding Workers
 Print Binding and Finishing Workers
 Print Finishing Workers
@@ -3570,19 +3590,20 @@ Printed Circuit Board Drafters
 Printing Press Operators
 Printing Worker Supervisors
 Printing Workers
+Prints
 Prison Guard Supervisors
 Prison Guards
+Private Branch Exchange (PBX) Installers
 Private Branch Exchange (PBX) Installers and Repairers
+Private Branch Exchange (PBX) Repairers
 Private Branch Exchange Operators
 Private Chefs
 Private Detectives
-Private Detectives and Investigators
 Private Eyes
 Private Household Cooks
 Private Investigators
 Probate Clerks
 Probation Officers
-Probation Officers and Correctional Treatment Specialists
 Procedure Analysts
 Process Analysts
 Processing Machine Operators
@@ -3591,10 +3612,8 @@ Procurement Assistants
 Procurement Clerks
 Procurement Managers
 Producers
-Producers and Directors
 Product Promoters
 Product Safety Engineers
-Production
 Production Clerks
 Production Control Managers
 Production Control Technologists
@@ -3604,16 +3623,16 @@ Production Machinists
 Production Occupations
 Production Schedulers
 Production Workers
-Professors
 Program Analysts
 Programmable Logic Controller Assemblers
+Programmers
+Programming Methodology
 Programming Methodology and Languages Researchers
 Project Management Professors
 Promotions
 Promotions Directors
 Promotions Managers
 Proofreaders
-Proofreaders and Copy Markers
 Property
 Property Appraisers
 Property Managers
@@ -3628,7 +3647,7 @@ Protective Service Workers First-Line Supervisors
 Protector Plate Attachers
 Protohistorians
 Provosts
-Psychiatric
+Pruners
 Psychiatric Aides
 Psychiatric Nurses
 Psychiatric Nursing Aides
@@ -3656,7 +3675,6 @@ Public Policy Professors
 Public Relations
 Public Relations Managers
 Public Relations Specialists
-Public Relations and Fundraising Managers
 Public Safety Directors
 Public School Speech Therapists
 Public Speaking Professors
@@ -3669,7 +3687,6 @@ Pulpwood Dealers
 Pulverizer Operators
 Pump Operators
 Pumping Station Operators
-Punching
 Purchasing Agents
 Purchasing Agents Farm Products
 Purchasing Clerks
@@ -3684,8 +3701,8 @@ Rabbis
 Race Book Writers
 Race Car Drivers
 Race Starters
+Radar
 Radar Technicians
-Radar and Sonar Technicians
 Radial Drill Press Operators for Plastics
 Radiation Engineers
 Radiation Therapists
@@ -3701,12 +3718,13 @@ Radio Officers
 Radio Operators
 Radio Station Managers
 Radio Time Buyers
-Radio and Telecommunications Equipment Installers and Repairers
-Radio and Television Announcers
+Radio Tower Equipment Installers
+Radio Tower Equipment Repairers
+Radio and Telecommunications Equipment Installers
+Radio and Telecommunications Equipment Repairers
 Radiochemical Technicians
 Radioisotope Technologists
 Radiologic Technologists
-Radiological
 Radiology Equipment Servicers
 Radiophone Operators
 Rail Car Loaders
@@ -3717,18 +3735,17 @@ Rail Signal Mechanics
 Rail Transportation Inspectors
 Rail Transportation Workers
 Rail Yard Engineers
+Rail-Track Laying
 Rail-Track Laying Equipment Operators
-Rail-Track Laying and Maintenance Equipment Operators
 Rail-Track Maintenance Equipment Operators
 Railcar Switchers
+Railroad
 Railroad Bed Tamping Machine Operators
-Railroad Brake
 Railroad Brake Operators
 Railroad Car Inspectors
 Railroad Car Painters
 Railroad Car Repair Supervisors
 Railroad Conductors
-Railroad Conductors and Yardmasters
 Railroad Detectives
 Railroad Engineers
 Railroad Firers
@@ -3739,46 +3756,48 @@ Railroad Yardmasters
 Railway Equipment Operators
 Railway Switch Operators
 Ramp Service Agents
-Ranch
 Ranch Animals Farmworkers
+Ranch Farmworkers
 Ranchers
 Range Ecologists
 Rangelands Conservation Laborers
 Rappers
 Rasper Machine Operators
 Reactor Engineers
-Real Estate
 Real Estate Appraisers
 Real Estate Assessors
 Real Estate Brokers
-Real Estate Brokers and Sales Agents
 Real Estate Clerks
 Real Estate Loan Officers
 Real Estate Managers
 Real Estate Sales Agents
 Real Estate Sales Supervisors
 Rebar Workers
-Receiving
 Receiving Clerks
 Receptionists
-Receptionists and Information Clerks
 Reconstructive Dentists
+Record
 Record Clerks
 Recordkeeping Checkers
 Recordkeeping Measurers
 Recordkeeping Samplers
 Recordkeeping Weighers
+Records
 Records Clerks
 Records Management Directors
 Records and Information Managers
+Recovery Equipment Maintenance Technicians
+Recovery Officers
+Recovery Specialists
+Recreation
 Recreation Attendant Supervisors
 Recreation Attendants
 Recreation Workers
-Recreation and Fitness Workers
 Recreational Protective Service Workers
 Recreational Therapists
 Recreational Vehicle (RV) Repairers
 Recreational Vehicle Service Technicians
+Recyclable Material
 Recyclable Material Collectors
 Recyclable Materials Collectors
 Referees
@@ -3792,8 +3811,9 @@ Refrigerating Machine Operators
 Refrigeration Installers
 Refrigeration Mechanics
 Refrigeration Mechanics and Installers
+Refuse
 Refuse Collectors
-Refuse and Recyclable Material Collectors
+Regional
 Regional Airline Pilots
 Regional Planners
 Regional Sales Managers
@@ -3808,11 +3828,9 @@ Rehabilitation Counselors
 Reinforcing Iron Workers
 Reinforcing Iron and Rebar Workers
 Related Fishing Workers
-Related Materials
 Related Materials Pressers
-Related Repairers
+Related Occupations
 Related Workers
-Relay
 Relay Electrical Repairers
 Relay Electrical and Electronics Repairers
 Relay Electronics Repairers
@@ -3822,16 +3840,16 @@ Religious Activities and Education Directors
 Religious Education Directors
 Religious Workers
 Remotely Piloted Vehicle Engineering Technicians
+Rental
 Rental Clerks
 Rented Housing Unit Managers
-Repair
 Repair Occupations
 Repair Workers
 Repairers
 Reporters
-Reporters and Correspondents
 Reporters and Correspondents News Analysts
 Repossessors
+Research
 Research Archaeologists
 Research Dentists
 Research Medical Pathologists
@@ -3843,13 +3861,14 @@ Reservation Ticket Agents
 Reservation and Transportation Ticket Agents and Travel Clerks
 Residence Life Coordinators
 Residential Advisors
+Resort Clerks
 Resort Desk Clerks
 Respiratory Therapists
 Respiratory Therapy Technicians
-Restaurant
 Restaurant Cooks
 Restaurant Hostesses
 Restaurant Hosts
+Restaurant Hosts and Hostesses
 Restorative Art Embalmers
 Retail Buyers
 Retail Sales Workers
@@ -3865,7 +3884,7 @@ Rheologists
 Rickshaw Drivers
 Rig Supervisors
 Riggers
-Rigging
+Rigging Assemblers
 Rigging Slingers
 Right of Way Agents
 Right-Of-Way Managers
@@ -3884,10 +3903,10 @@ Roof Bolter Helpers
 Roof Bolting Coal Miners
 Roofers
 Roofers Helpers
+Room Attendants
 Room Service Food Servers
 Rope Machine Setters
 Rotary Derrick Operators
-Rotary Drill
 Roulette Dealers
 Route Delivery Clerks
 Route Salespersons
@@ -3900,20 +3919,23 @@ Rural Sociologists
 Russian History Professors
 Russian Language Professors
 Saddle Makers
+Safe
 Safe Repairers
 Safe and Vault Installers
 Safe and Vault Mechanics
+Safety
 Safety Deposit Clerks
 Safety Engineers
 Sail Repairers
 Sailing Instructors
 Sailors
-Sailors and Marine Oilers
 Salad Makers
+Salary
+Sales
+Sales Agents
 Sales Directors
 Sales Engineers
 Sales Managers
-Sales and Related Occupations
 Sales and Related Workers
 Salvage Divers
 Salvage Engineers
@@ -3927,9 +3949,8 @@ Satellite Dish Installers
 Sauciers
 Scale Attendants
 Scalp Treatment Specialists
-Scheduling
+Scheduling Workers
 Scholastic Aptitude Test (SAT) Graders
-School
 School Bus Mechanics
 School Bus Operators
 School Cooks
@@ -3941,6 +3962,8 @@ School Secretaries
 School Social Workers
 School Traffic Guards
 School or Special Client Bus Drivers
+Science Occupations
+Science Technicians
 Scientific Illustrators
 Scientific Photographers
 Scientists Environmental (Health)
@@ -3949,24 +3972,21 @@ Screw Machine Operators
 Scuba Divers
 Sculptors
 Sea-Air-Land Officers
-Searchers
 Seaweed Harvesters
-Secondary
 Secondary School Career/Technical Education Teachers
 Secondary School Education Administrators
 Secondary School Special Education Teachers
 Secondary School Teachers
 Secretaries
 Secretaries and Administrative Assistants
-Securities
+Securities Agents
 Securities Sales Agents
 Securities Tellers
 Securities Traders
+Security
 Security Guard Supervisors
 Security Guards
-Security Guards and Gaming Surveillance Officers
 Security Systems Installers
-Security and Fire Alarm Systems Installers
 Seed Analysts
 Seedling Pullers
 Segmental Pavers
@@ -3980,23 +4000,26 @@ Semiconductor Assemblers
 Semiconductor Development Technicians
 Semiconductor Processors
 Senators
-Separating
 Separating Machine Operators
 Separating Machine Setters
 Separating Machine Tenders
 Separating machine Operators
 Separating machine Setters
 Separating machine Tenders
+Separating, Filtering, Clarifying, Precipitating, and Still Machine Operators
+Separating, Filtering, Clarifying, Precipitating, and Still Machine Setters
+Separating, Filtering, Clarifying, Precipitating, and Still Machine Tenders
 Septic Tank Cleaners
 Septic Tank Servicers
-Septic Tank Servicers and Sewer Pipe Cleaners
 Serology Technicians
 Service Station Attendants
-Service Unit Operators
+Service Technicians
+Service Workers
+Services Agents
 Services Sales Representatives
+Set
 Set Decorators
 Set Designers
-Set and Exhibit Designers
 Severe Emotional Disorders Elementary School Teachers
 Sewage Plant Operators
 Sewage Screen Operators
@@ -4009,13 +4032,13 @@ Shale Planers
 Shampoo Assistants
 Shampooers
 Shapers
-Sharpeners
 Sheep Shearers
 Sheet Metal Computer Numerically Controlled (CNC) Programmers
 Sheet Metal Formers
 Sheet Metal Workers
 Sheet Rock Hangers
 Sheet Rock Tapers
+Sheriff's Patrol
 Sheriff's Patrol Officers
 Shills
 Shingles Roofer Helpers
@@ -4028,17 +4051,16 @@ Ship Unloaders
 Ship and Boat Captains and Operators
 Shipfitter Apprentices
 Shipfitters
-Shipping
 Shipping Clerks
 Shochets
 Shock-Absorption Floor Layers
+Shoe
 Shoe Machine Operators
-Shoe Machine Operators and Tenders
 Shoe Machine Tenders
 Shoe Repairers
 Shoe Shiners
+Shoe Tenders
 Shoe Workers
-Shoe and Leather Workers
 Shoe and Leather Workers and Repairers
 Shoemakers
 Short Order Cooks
@@ -4049,8 +4071,8 @@ Shrub Planters
 Sightseeing Guides
 Sign Painters
 Signal
+Signal Operators
 Signal Repairers
-Signal and Track Switch Repairers
 Silk Screen Etchers
 Silk Winding Machine Operators
 Silver Solderers
@@ -4065,7 +4087,6 @@ Skip Tracers
 Skycaps
 Slate Roofer Helpers
 Slaughterers
-Slaughterers and Meat Packers
 Slicing Machine Operators
 Slicing Machine Setters
 Slicing Machine Tenders
@@ -4082,9 +4103,10 @@ Smelter Operators
 Smoke Jumpers
 Smokehouse Workers
 Snack Bar Attendants
+Social
+Social Occupations
 Social Psychologists
 Social Science Managers
-Social Science Occupations
 Social Science Research Assistants
 Social Science Technicians
 Social Scientists
@@ -4092,23 +4114,22 @@ Social Scientists and Related Workers
 Social Service Assistants
 Social Service Managers
 Social Service Specialists
+Social Technicians
 Social Workers
-Social and Community Service Managers
-Social and Human Service Assistants
 Sociologists
 Software Applications Architects
 Software Applications Developers
 Software Applications Engineers
+Software Developers
 Software Developers Applications
 Software Developers Systems Software
-Software Developers and Programmers
 Software Systems Developers
 Software Systems Engineers
+Soil
 Soil Conservation Technicians
 Soil Conservationists
 Soil Engineers
 Soil Scientists
-Soil and Plant Scientists
 Solar PV Electricians
 Solar PV Installers
 Solar Panel Installation Supervisors
@@ -4116,10 +4137,11 @@ Solar Photovoltaic Electricians
 Solar Photovoltaic Installers
 Solar Thermal Installers
 Solderers
-Soldering
 Soldering Machine Operators
 Soldering Machine Setters
 Soldering Machine Tenders
+Soldering Workers
+Sonar
 Sonar Subsystem Equipment Operators
 Sonar Technicians
 Songwriters
@@ -4129,6 +4151,7 @@ Sound Effects Technicians
 Sound Engineering Technicians
 Sous Chefs
 Souvenir Street Vendors
+Space
 Space Scientists
 Space Systems Operations Craftsmen
 Spanish Literature Professors
@@ -4159,10 +4182,10 @@ Spike Machine Operators
 Spinning Doffers
 Sporting Officials
 Sporting Referees
-Sports
 Sports Book Runners
 Sports Book Writers
 Sports Competitors
+Sports Occupations
 Sports Officials
 Sports Psychologists
 Sports and Related Workers
@@ -4183,7 +4206,6 @@ Stained Glass Joiners
 State Troopers
 Statement Processors
 Stationary Engineers
-Stationary Engineers and Boiler Operators
 Statistical Analysts
 Statistical Assistants
 Statistical Clerks
@@ -4204,12 +4226,10 @@ Still Machine Tenders
 Stitchers
 Stock Brokers
 Stock Clerks
-Stock Clerks and Order Fillers
 Stock Movers
 Stone Spreader Operators
 Stonemasons
 Stonemasons Helpers
-Storage
 Storage Managers
 Store Detectives
 Store Gift Wrap Associates
@@ -4217,6 +4237,7 @@ Store Receiving Clerks
 Stratigraphers
 Street Cleaning Equipment Operators
 Street Vendors
+Streetcar
 Streetcar Operators
 Streetcar Repairers
 Structural Architects
@@ -4226,7 +4247,6 @@ Structural Engineers
 Structural Iron Workers
 Structural Iron and Steel Workers
 Structural Metal Fabricators
-Structural Metal Fabricators and Fitters
 Structural Metal Fitters
 Structural Steel Workers
 Stucco Masons
@@ -4235,37 +4255,34 @@ Stucco Workers
 Student Admissions Clerks
 Student Development Advisors
 Subscription Clerks
+Substance Abuse
 Substance Abuse Counselors
 Substance Abuse Social Workers
-Substance Abuse and Behavioral Disorder Counselors
-Substation
 Substation Electrical Repairers
 Substation Electrical and Electronics Repairers
 Substation Electronics Repairers
 Substation Operators
 Substitute Teachers
+Subway
 Subway Car Repairers
 Subway Operators
-Subway and Streetcar Operators
 Sugar Pressers
 Superintendents
 Supervising Fire Marshals
-Supervisors of Building and Grounds Cleaning and Maintenance Workers
-Supervisors of Construction and Extraction Workers
-Supervisors of Farming
-Supervisors of Food Preparation and Serving Workers
-Supervisors of Installation
-Supervisors of Office and Administrative Support Workers
-Supervisors of Personal Care and Service Workers
+Supervisors of Farming Workers
+Supervisors of Fishing Workers
+Supervisors of Forestry Workers Workers
+Supervisors of Installation Workers
+Supervisors of Maintenance Workers
 Supervisors of Production Workers
 Supervisors of Protective Service Workers
+Supervisors of Repair Workers Workers
 Supervisors of Sales Workers
-Supervisors of Transportation and Material Moving Workers
-Supplies
+Supplies Agents
+Supplies Purchasing Agents
 Surface Hydrologists
 Surface Ship USW Supervisors
-Surfaces
-Surfacing
+Surfaces Assemblers
 Surfacing Equipment Operators
 Surgeons
 Surgical Instrument Mechanics
@@ -4278,8 +4295,8 @@ Survey Questionnaire Designers
 Survey Research Professors
 Survey Researchers
 Survey Statisticians
+Surveying
 Surveying Technicians
-Surveying and Mapping Technicians
 Surveyors
 Swager Operators
 Swedish Masseuses
@@ -4288,7 +4305,9 @@ Switch Couplers
 Switch Operators
 Switchboard Operators (Answering Service)
 Synchronous Motor Assemblers
+Synthetic Fibers Extruding and Forming Machine Operators
 Synthetic Fibers Extruding and Forming Machine Setters
+Synthetic Fibers Extruding and Forming Machine Tenders
 Synthetic Filament Extruders
 Synthetic and Glass Fibers Extruding Machine Operators
 Synthetic and Glass Fibers Extruding Machine Setters
@@ -4299,6 +4318,7 @@ Synthetic and Glass Fibers Extruding and Forming Machine Tenders
 Synthetic and Glass Fibers Forming Machine Operators
 Synthetic and Glass Fibers Forming Machine Setters
 Synthetic and Glass Fibers Forming Machine Tenders
+System
 System Operators
 Systems Architects
 Systems Assemblers
@@ -4310,7 +4330,6 @@ Tailors
 Talk Show Hosts
 Tamping Equipment Operators
 Tamping Machine Operators
-Tank Car
 Tank Car Loaders
 Tank Officers
 Tap Dancers
@@ -4326,7 +4345,6 @@ Tax Examiners and Collectors
 Tax Investigators
 Tax Preparers
 Taxi Drivers
-Taxi Drivers and Chauffeurs
 Taxicab Dispatchers
 Teacher Assistants
 Teachers
@@ -4345,8 +4363,8 @@ Telecommunications Equipment Installers
 Telecommunications Equipment Installers and Repairers
 Telecommunications Equipment Repairers
 Telecommunications Line Installers
-Telecommunications Line Installers and Repairers
 Telecommunications Line Repairers
+Telecommunications Repairers
 Telemarketer Supervisors
 Telemarketers
 Telemarketing Sales Representatives
@@ -4358,6 +4376,7 @@ Telephone Switchboard Operators
 Telescope Repairers
 Television
 Television Announcers
+Television Camera Editors
 Television Camera Operators
 Television News Video Editors
 Television Station Managers
@@ -4365,8 +4384,6 @@ Television Writers
 Teller Supervisors
 Tellers
 Template Makers
-Tenders
-Tenders]
 Terra Cotta Roofer Helpers
 Terra Cotta Roofers
 Terrazzo Finisher Helpers
@@ -4374,12 +4391,11 @@ Terrazzo Finishers
 Terrazzo Grinders
 Terrazzo Setters
 Terrazzo Workers
-Terrazzo Workers and Finishers
 Testers
-Textile
 Textile Bleaching Machine Operators
 Textile Bleaching Machine Tenders
-Textile Bleaching and Dyeing Machine Operators and Tenders
+Textile Bleaching and Dyeing Machine Operators
+Textile Bleaching and Dyeing Machine Tenders
 Textile Conservators
 Textile Cutting Machine Operators
 Textile Cutting Machine Setters
@@ -4392,8 +4408,12 @@ Textile Dyeing Machine Tenders
 Textile Knitting Machine Operators
 Textile Knitting Machine Setters
 Textile Knitting Machine Tenders
+Textile Knitting and Weaving Machine Operators
 Textile Knitting and Weaving Machine Setters
+Textile Knitting and Weaving Machine Tenders
+Textile Machine Operators
 Textile Machine Setters
+Textile Machine Tenders
 Textile Pressers
 Textile Twisting Machine Operators
 Textile Twisting Machine Setters
@@ -4401,10 +4421,12 @@ Textile Twisting Machine Tenders
 Textile Weaving Machine Operators
 Textile Weaving Machine Setters
 Textile Weaving Machine Tenders
-Textile Winding
 Textile Winding Machine Operators
 Textile Winding Machine Setters
 Textile Winding Machine Tenders
+Textile Winding, Twisting, and Drawing Out Machine Operators
+Textile Winding, Twisting, and Drawing Out Machine Setters
+Textile Winding, Twisting, and Drawing Out Machine Tenders
 Textile Workers
 Textile, Apparel, and Furnishings Workers
 Theater Ushers
@@ -4421,7 +4443,9 @@ Third Rail Installers
 Thoracic Surgeons
 Ticket Collectors
 Ticket Takers
-Tile Installers and Finishers
+Tile
+Tile Finishers
+Tile Installers
 Tile Setters
 Tile and Marble Setters
 Tile and Marble Setters Helpers
@@ -4431,14 +4455,16 @@ Timber Hands
 Timber Management Professors
 Timber Management Specialists
 Timber Management Technicians
+Time
 Time Study Statisticians
 Time Study Technicians
 Time and Attendance Clerks
 Timekeepers
+Timekeeping
 Timekeeping Clerks
+Timing Adjusters
 Timing Device Adjusters
 Timing Device Assemblers
-Timing Device Assemblers and Adjusters
 Tin Recovery Workers
 Tinsmiths
 Tire Balancers
@@ -4447,7 +4473,6 @@ Tire Changers
 Tire Fixers
 Tire Molders
 Tire Repairers
-Tire Repairers and Changers
 Title Abstractors
 Title Examiners
 Title Officers
@@ -4462,6 +4487,7 @@ Tobacco Drying Machine Tenders
 Tobacco Roasting Machine Operators
 Tobacco Roasting Machine Tenders
 Toll Collectors
+Tool
 Tool Crib Attendants
 Tool Filers
 Tool Grinders
@@ -4471,19 +4497,17 @@ Tool Polishing Machine Operators
 Tool Sharpeners
 Tool and Die Designers
 Tool and Die Engineers
-Tool and Die Makers
-Tools
+Tools Agents
 Tools Purchasing Agents
 Top Executives
 Topographers
 Torts Law Professors
+Tour
 Tour Escorts
 Tour Guides
-Tour Guides and Escorts
-Tour and Travel Guides
 Tow Truck Dispatchers
+Tower
 Tower Equipment Installers
-Tower Equipment Installers and Repairers
 Tower Equipment Repairers
 Tower Operators
 Toxicologists
@@ -4491,9 +4515,11 @@ Trace Evidence Technicians
 Track Patrol
 Track Repairers
 Track Surfacing Machine Operators
+Track Switch
 Track Switch Repairers
 Tractor Operators
 Tractor Trailer Mechanics
+Tractor-Trailer
 Tractor-Trailer Truck Drivers
 Traditional Chinese Herbalists
 Traffic Clerks
@@ -4512,6 +4538,7 @@ Train Engineers
 Train Reservation Clerks
 Training
 Training Managers
+Training Occupations
 Training Specialists
 Training Workers
 Training and Development Managers
@@ -4519,17 +4546,19 @@ Training and Development Specialists
 Tram Operators
 Transcription Typists
 Transfer Table Operators
+Transit
 Transit Authority Police
 Transit Bus Drivers
 Transit Police
 Transit and Intercity Bus Drivers
-Transit and Railroad Police
 Translators
 Transportation
 Transportation Attendants
 Transportation Equipment Electrical Installers
 Transportation Equipment Electrical Repairers
+Transportation Equipment Electrical and Electronics Installers
 Transportation Equipment Electrical and Electronics Installers and Repairers
+Transportation Equipment Electrical and Electronics Repairers
 Transportation Equipment Electronics Installers
 Transportation Equipment Electronics Repairers
 Transportation Equipment Painters
@@ -4544,9 +4573,9 @@ Transportation Technicians
 Transportation Ticket Agents
 Transportation Vehicle Operators
 Transportation Workers
-Transportation and Material Moving Occupations
 Trappers
 Trash Collectors
+Travel
 Travel Agents
 Travel Clerks
 Travel Guides
@@ -4558,7 +4587,6 @@ Tree Specialists
 Tree Surgeons
 Tree Trimmer Helpers
 Tree Trimmers
-Tree Trimmers and Pruners
 Trench Pipe Layers
 Tribal Council Members
 Tribal Judges
@@ -4566,13 +4594,12 @@ Trim Saw Operators
 Trimmers
 Trolley Car Operators
 Trolley Car Overhaulers
-Truck
 Truck Body Repairers
+Truck Drivers
 Truck Loaders
 Truck Mechanics
 Tugboat Engineers
 Tutors
-Twisting
 Two-Way Radio Technicians
 Typists
 Ultrasonic Welding Machine Operators
@@ -4588,9 +4615,9 @@ Unemployment Benefits Claims Takers
 Union Representatives
 University Administrators
 Upholsterers
+Urban
 Urban Planners
 Urban Planning Professors
-Urban and Regional Planners
 Used Car Salespersons
 Ushers
 Utilities Managers
@@ -4600,11 +4627,15 @@ Vacuum Cleaner Repairers
 Valet Parkers
 Valets
 Vascular Technologists
+Vault
+Vegetable
 Vegetation Pesticide Applicators
 Vegetation Pesticide Handlers
 Vegetation Pesticide Sprayers
 Vehicle Damage Appraisers
-Vehicle and Mobile Equipment Mechanics
+Vehicle Installers
+Vehicle Mechanics
+Vehicle Repairers
 Vehicle and Mobile Equipment Mechanics, Installers, and Repairers
 Vending
 Vending Machine Assemblers
@@ -4613,7 +4644,6 @@ Vending Machine Repairers
 Vending Machine Servicers
 Veneer Graders
 Venipuncturists
-Ventilation
 Vergers
 Vest Makers
 Veterans Rehabilitation Counselors
@@ -4621,17 +4651,16 @@ Veterans Service Officers
 Veterinarian Helpers
 Veterinarians
 Veterinary Assistants
-Veterinary Assistants and Laboratory Animal Caretakers
 Veterinary Attendants
 Veterinary Laboratory Technicians
 Veterinary Medicine Scientists
 Veterinary Surgery Technologists
 Veterinary Technicians
 Veterinary Technologists
-Veterinary Technologists and Technicians
 Veterinary X-Ray Operators
 Vibratory Pile Drivers
 Video
+Video Camera Editors
 Video Camera Operators
 Video Control Operators
 Video Editors
@@ -4645,11 +4674,10 @@ Vocational Rehabilitation Counselors
 Voice-Over Artists
 Volcanologists
 Wafer Fabricators
+Wage
 Wage and Salary Administrators
 Waiters
-Waiters and Waitresses
 Waitresses
-Wall
 Wall Covering Installers
 Wall Insulation Workers
 Wall Tapers
@@ -4663,7 +4691,6 @@ Warehouse Supervisors
 Warrant Clerks
 Warrant Servers
 Warranty Clerks
-Washing
 Washing Equipment Operators
 Washing Equipment Tenders
 Washing Machine Installers
@@ -4701,12 +4728,15 @@ Weighers
 Weighing Station Operators
 Welder Helpers
 Welders
-Welding
 Welding Engineers
 Welding Machine Operators
 Welding Machine Setters
 Welding Machine Tenders
 Welding Robot Operators
+Welding Workers
+Welding, Soldering, and Brazing Machine Operators
+Welding, Soldering, and Brazing Machine Setters
+Welding, Soldering, and Brazing Machine Tenders
 Well Service Derrick Workers
 Well Servicing Rig Operators
 Wellhead Pumpers
@@ -4725,14 +4755,17 @@ Wide Area Network Administrators
 Wig Stylists
 Wild Oyster Harvesters
 Wildfire Prevention Specialists
+Wildlife
 Wildlife Biologists
 Wildlife Conservation Professors
 Wildlife Officers
 Wildlife Technicians
 Wildlife Veterinarians
 Wildlife and Game Protectors
+Winch
 Winch Derrick Operators
 Winch Operators
+Wind
 Wind Energy Technicians
 Wind Tunnel Technicians
 Wind Turbine Erectors
@@ -4775,30 +4808,16 @@ Woodworking Machine Setters
 Woodworking Machine Tenders
 Wool Pressers
 Word Processors
-Word Processors and Typists
 Workforce Development Specialists
 Writers
-Writers and Authors
-Writers and Editors
 X-Ray Technicians
 Yard Conductors
 Yard Riggers
 Yeast Makers
 Yellow Pages Space Salespersons
 Yoga Instructors
-Youth
 Youth Ministry Directors
 Youth Program Directors
+Youth Social Workers
 Zookeepers
 Zoologists
-Zoologists and Wildlife Biologists
-and Brazing Machine Setters
-and Buffing Machine Tool Setters
-and Casting Machine Setters
-and Compacting Machine Setters
-and Drawing Out Machine Setters
-and Polishing Machine Setters
-and Press Machine Setters
-and Service Unit Operators
-and Spraying Machine Setters
-and Still Machine Setters
