@@ -18,6 +18,7 @@ import tempfile
 # site-packages
 import requests
 import prettytable
+import inflection
 
 # global constants
 BASE_PATH = os.path.dirname(os.path.abspath( __file__ ))
@@ -25,7 +26,7 @@ CONFIG_PATH = os.path.join("config", "config.ini")
 CREDENTIALS_PATH = os.path.join("config", "credentials.ini")
 TWITTERGC_PATH = os.path.join("config", "twitter_global_config.json")
 PERSIST_PATH = os.path.join("data", "persistence.sqlite3")
-TWITTER_RESOURCES = "statuses,help,application,friendships,account"
+TWITTER_RESOURCES = "statuses,help,application,account,trends"
 
 # local
 sys.path.insert(0, os.path.join(BASE_PATH, "lib"))
@@ -191,14 +192,14 @@ def useTweet():
 def checkTwitterResource(resourceKey, proposedUsage=1):
     persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
     resourceData = persistence.fetchone()
-    if (resourceData == None):
-        sys.stderr.write("Invalid Twitter resource: %s\n" % (resourceKey))
-        return False
 
-    if int(time.time()) - resourceData[1] > 0:
+    if resourceData == None or int(time.time()) - resourceData[1] > 0:
         getTwitterRateLimits()
         persistence.execute("SELECT * FROM rateLimits WHERE resource=?", [resourceKey])
         resourceData = persistence.fetchone()
+        if (resourceData == None):
+            sys.stderr.write("Invalid Twitter resource: %s\n" % (resourceKey))
+            return False
 
     if (resourceData[3] - proposedUsage > 0):
         return True
@@ -226,6 +227,17 @@ def useTwitterResource(resourceKey, usage=1):
     persistenceConnection.commit()
 
     return newVal
+
+
+def getTrends():
+    location = config.getint("services", "twitter_trends_woeid")
+    trends = []
+    if (checkTwitterResource("/trends/place")):
+        trendsRaw = twitterApi.GetTrendsWoeid(location)
+        useTwitterResource("/trends/place")
+        for t in trendsRaw:
+            trends.append(t.name)
+    return trends
 
 
 def shutdown():
@@ -487,6 +499,15 @@ def printQueue():
     print(tab)
 
 
+def deleteRequest(tweetID=None):
+    if tweetID == None:
+        sys.stderr.write("No tweet ID provided. :-/\n")
+        return
+    persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
+    persistenceConnection.commit()
+    printQueue()
+
+
 def takeSpecificRequest(tweetID=None, data=None):
     if (tweetID != None and type(tweetID) == int):
         persistence.execute("SELECT * FROM queuedRequests WHERE tweet=?", [tweetID])
@@ -544,6 +565,8 @@ def takeSpecificRequest(tweetID=None, data=None):
         persistence.execute("DELETE FROM queuedRequests WHERE tweet=?", [tweetID])
         persistenceConnection.commit()
 
+    printQueue()
+
 
 
 def updateQueue():
@@ -561,6 +584,43 @@ def updateQueue():
     twitterApi.UpdateProfile(location=locString)
 
 
+def randomTrendTweet():
+    trends = getTrends()
+    if len(trends) == 0:
+        sys.stderr.write("Couldn't get any trending topics. :-/\n")
+        return
+    trend = random.choice(trends)
+    if trend[0] == "#":
+        text = trend[1:]
+        text = inflection.titleize(text)
+        text = titlecase.titlecase(text)
+    else:
+        text = trend
+    image = SimulatorGeneratorImage.getImageFor(
+        text,
+        safeSearchLevel=config.get("services", "google_safesearch"), 
+        referer="http://twitter.com/SimGenerator"
+    )
+    year = random.randint(config.getint("settings", "minyear"), datetime.date.today().year)
+    artFile = "output-%s.png" % datetime.datetime.now().strftime("%Y-%m-%d-%H%M.%f")
+    artFile = os.path.join(tempfile.gettempdir(), artFile)
+    SimulatorGeneratorImage.createBoxArt(
+        text, 
+        year, 
+        image,
+        artFile,
+        maxSize=(
+            str(twitterGlobalConfig["photo_sizes"]["large"]["w"] - 1),
+            str(twitterGlobalConfig["photo_sizes"]["large"]["h"] - 1),
+        ),
+        deleteInputFile=True
+    )
+    tweetString = text
+    if trend[0] == "#":
+        tweetString = trend + " " + tweetString
+
+    tweet(tweetString, year, artFile)
+
 
 if __name__ == '__main__':
     setup()
@@ -573,8 +633,12 @@ if __name__ == '__main__':
         updateQueue()
     elif (len(sys.argv) > 2 and sys.argv[1] == "take"):
         takeSpecificRequest(tweetID=int(sys.argv[2]))
+    elif (len(sys.argv) > 2 and sys.argv[1] == "del"):
+        deleteRequest(tweetID=int(sys.argv[2]))
     elif (len(sys.argv) > 1 and sys.argv[1] == "pq"):
         printQueue()
+    elif (len(sys.argv) > 1 and sys.argv[1] == "trend"):
+        randomTrendTweet()
     elif (len(sys.argv) > 1 and sys.argv[1] == "cb"):
         randomJobTweet(source="CB")
     else:
