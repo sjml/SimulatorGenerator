@@ -233,10 +233,9 @@ def shutdown():
         persistence.close()
 
 
-def getRandomJobTitle():
+def getRandomCBJobTitle():
     # TODO: store off the category, don't repeat job titles, rotate categories
     #   http://api.careerbuilder.com/CategoryCodes.aspx
-    # TODO: Alternately, forget CareerBuilder and have this use BLS job titles.
 
     cb_apiKey = creds.get("careerbuilder", "apikey")
     js_params = {
@@ -271,6 +270,19 @@ def getRandomJobTitle():
     job = job.replace("'", "\\'").replace('"', '\\"')
 
     print("%i iteration(s) found random job title: %s" % (count, job))
+    return job
+
+
+def getRandomBLSJobTitle():
+    with open(os.path.join("data", "bls", "bls_normalized.txt")) as jobList:
+        jobs = map(str.rstrip, jobList.readlines())
+
+    job = ""
+    # NOTE: in the year 10,000 AD, this will need to be updated
+    maxLength = twitter.CHARACTER_LIMIT - (len(" Simulator ") + 4 + twitterGlobalConfig["characters_reserved_per_media"])
+    while (len(job) == 0 or len(job) > maxLength):
+        job = random.choice(jobs)
+    job = job.replace("'", "\\'").replace('"', '\\"')
     return job
 
 
@@ -344,8 +356,12 @@ def manualJobTweet(job, year=None):
     tweet(titlecase.titlecase(job), year, artFile)
 
 
-def randomJobTweet():
-    job = getRandomJobTitle()
+def randomJobTweet(source="BLS"):
+    if source == "BLS":
+        job = getRandomBLSJobTitle()
+    elif source == "CB":
+        job = getRandomCBJobTitle()
+
     image = SimulatorGeneratorImage.getImageFor(
         job,
         safeSearchLevel=config.get("services", "google_safesearch"), 
@@ -559,7 +575,9 @@ if __name__ == '__main__':
         takeSpecificRequest(tweetID=int(sys.argv[2]))
     elif (len(sys.argv) > 1 and sys.argv[1] == "pq"):
         printQueue()
+    elif (len(sys.argv) > 1 and sys.argv[1] == "cb"):
+        randomJobTweet(source="CB")
     else:
-        randomJobTweet()
+        randomJobTweet(source="BLS")
 
     shutdown()

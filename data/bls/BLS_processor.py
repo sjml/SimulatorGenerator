@@ -533,5 +533,12 @@ for job in rawJobsUnique:
 jobs = list(set(jobs))
 jobs.sort()
 
+# singularize
+for j in range(len(jobs)):
+    jobSplit = jobs[j].split(" ")
+    for i in range(len(jobSplit)):
+        jobSplit[i] = inflection.singularize(jobSplit[i])
+    jobs[j] = " ".join(jobSplit)
+
 with open("bls_normalized.txt", "w") as normalizedFile:
     normalizedFile.write('\n'.join(jobs))
