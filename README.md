@@ -11,7 +11,7 @@ Twitter
 -------
 You can see it in action [on twitter](http://twitter.com/SimGenerator). 
 
-It also has the ability to take requests, **but this functionality is currently turned off due to abuse**! Tweet at it using the phrase "make one about" and it will respond back within a couple minutes. (NOTE: sometimes Twitter gets angry at it, so it doesn't consistently fulfill requests.)
+It also has the ability to take requests, **but this functionality is currently turned off due to abuse**. If it were on (or if you were running it yourself), you could tweet at it using the phrase "make one about" and it will respond back within a couple minutes. (NOTE: sometimes Twitter gets angry at it, so it doesn't consistently fulfill requests.)
 
 * "@SimGenerator Make one about Ron Paul, please." 
 * "Hey, @SimGenerator, make one about a sweet ninja." 
