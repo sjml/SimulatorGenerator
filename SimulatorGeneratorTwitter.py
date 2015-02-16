@@ -581,6 +581,8 @@ def updateQueue():
     locString = "Request queue: %i" % queueCount
     if len(locString) > 30:
         locString = "Request queue: very, very long"
+    if queueCount == 0:
+        locString = "Request queue: EMPTY!"
     twitterApi.UpdateProfile(location=locString)
 
 

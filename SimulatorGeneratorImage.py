@@ -178,6 +178,7 @@ def createBoxArt(jobTitle, year, inputFile, outputFile, maxSize=None, textPositi
         "-pointsize", "300",
         "-gravity", align,
         "-interline-spacing", "75",
+        # "-annotate", "+0+2", "'%s'" % jobTitle.encode("utf8"),
         ("label:%s" % jobTitle).encode("utf8"),
         "-shear", "10x0", # since this font doesn't have true oblique / italics
         "-trim", # remove the extra space added by the newline wrapping

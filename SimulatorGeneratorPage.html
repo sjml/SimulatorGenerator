@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Simulator Generator 2014</title>
+</head>
+<body>
+    <input type="text" id="jobInput" />
+    <input type="button" id="jobSubmit" value="Make it!" onclick="makeSim();" />
+    <div id="isResults"></div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      function makeSim (job) {
+          var inputText = $("#jobInput").val();
+          $.ajax({
+            url: "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&callback=?",
+            data: {
+              v: 1.0,
+              q: inputText,
+              imgType: "photo",
+              imgsz: "small|medium|large|xlarge|xxlarge|huge",
+              rsz: 8,
+              safe: "moderate",
+            },
+            dataType: "jsonp",
+            success: function(data) {
+              if (data.responseData.results.length > 0) {
+                var imgResultData = [];
+                for (var i = 0; i < data.responseData.results.length; i++) {
+                  var img = {};
+                  img.url = data.responseData.results[i].url;
+                  img.w = data.responseData.results[i].width;
+                  img.h = data.responseData.results[i].height;
+                  img.size = img.w * img.h;
+                  if (img.size > 22500) {
+                    imgResultData.push(img);
+                  }
+                }
+                
+                var randomImage = imgResultData[Math.round(Math.random() * (imgResultData.length - 1))];
+
+                var reqUrl = "http://shaneliesegang.com/SimGenerator/img_req.php?job=" + inputText + "&img=" + randomImage.url;
+                var output = "<img src=\"" + reqUrl + "\"/>";
+                $("#isResults").html(output);
+              }
+              else {
+                // rate limited
+              }
+            }
+          });
+      }
+    </script>
+</body>
+</html>

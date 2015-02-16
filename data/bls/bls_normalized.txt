@@ -1,6 +1,6 @@
 3D Animator
 4th Grade Math Teacher
-7th Grade Social Study Teacher
+7th Grade Social Studies Teacher
 911 Operator
 ATM Servicer
 Able Seaman
@@ -137,7 +137,7 @@ Aircraft Recovery Specialist
 Aircraft Rigging Assembler
 Aircraft Riveter
 Aircraft Seat Upholsterer
-Aircraft Service Techician
+Aircraft Service Technician
 Aircraft Service Technician
 Aircraft Structure Assembler
 Aircraft Surface Assembler
@@ -256,12 +256,12 @@ Artist
 Artist Agent
 Artist Business Manager
 Art Occupation
-Asbesto Abatement Worker
+Asbestos Abatement Worker
 Asphalt Blender
 Asphalt Paving Machine Operator
 Asphalt Plant Operator
 Asphalt Roller Operator
-Assault Amphibiou Vehicle (AAV) Officer
+Assault Amphibious Vehicle (AAV) Officer
 Assault Boat Coxswain
 Assayer
 Assembler
@@ -547,10 +547,10 @@ Cabinet Builder
 Cabinetmaker
 Cable Television Installer
 Caddy Master
-Cafeterium Attendant
-Cafeterium Cook
-Cafeterium Counter Attendant
-Cafeterium Server
+Cafeteria Attendant
+Cafeteria Cook
+Cafeteria Counter Attendant
+Cafeteria Server
 Cage Cashier
 Calculu Professor
 Calligrapher
@@ -945,8 +945,8 @@ Consumer Science
 Contact Len Fitter
 Contact Len Optician
 Contemporary English Literature Professor
-Continuou Mining Machine Lode Miner
-Continuou Mining Machine Operator
+Continuous Mining Machine Lode Miner
+Continuous Mining Machine Operator
 Contracting Manager
 Contractor
 Control Center Officer
@@ -1145,12 +1145,12 @@ Detective
 Development
 Development Manager
 Development Specialist
-Diabete Educator
+Diabetes Educator
 Diagnostic Medical Sonographer
 Diagnostic Related Technician
 Diagnostic Related Technologist
-Dialysi Engineer
-Dialysi Technician
+Dialysis Engineer
+Dialysis Technician
 Diamond Polisher
 Diamond Setter
 Die
@@ -1170,7 +1170,7 @@ Dimmer Board Operator
 Dining Car Server
 Dining Room Attendant
 Dining Room Host
-Dining Room and Cafeterium Attendant and Bartender Helper
+Dining Room and Cafeteria Attendant and Bartender Helper
 Dinkey Engine Firer
 Dinkey Operator
 Diplomatic Interpreter
@@ -1221,7 +1221,7 @@ Dressmaker
 Drier Operator
 Drier Tender
 Drill Press Operator for Metal
-Driver' License Examiner
+Driver's License Examiner
 Driver/Sale Worker
 Drug
 Drug Abuse Social Worker
@@ -1409,7 +1409,7 @@ Environmental Scientist
 Environmental Scientist (Health)
 Environmental Scientist and Specialist (Health)
 Environmental Specialist (Health)
-Environmental Study Professor
+Environmental Studies Professor
 Epidemiologist
 Epidemiology Investigator
 Equal Employment Opportunity Officer
@@ -1446,7 +1446,7 @@ Expediting Clerk
 Expeditionary Airfield System Technician
 Expeditor
 Explosive Technician
-Explosife Worker
+Explosive Worker
 Export Manager
 Extension Service Advisor
 Exterminator
@@ -1800,26 +1800,26 @@ Garage Door Mechanic
 Garbage Collector
 Garment Presser
 Ga
-Ga Compressor
-Ga Compressor Operator
-Ga Controller
-Ga Cylinder Processor
-Ga Derrick Operator
-Ga Furnace Installer
-Ga Meter Installer
-Ga Meter Reader
-Ga Plant Dispatcher
-Ga Plant Operator
-Ga Pump Attendant
-Ga Pumping Station
-Ga Pumping Station Operator
-Ga Rotary Drill Operator
-Ga Roustabout
-Ga Service Unit Operator
-Ga Service Unit Operator Operator
-Ga Station Supervisor
-Ga Turbine Assembler
-Ga and Oil Servicer
+Gas Compressor
+Gas Compressor Operator
+Gas Controller
+Gas Cylinder Processor
+Gas Derrick Operator
+Gas Furnace Installer
+Gas Meter Installer
+Gas Meter Reader
+Gas Plant Dispatcher
+Gas Plant Operator
+Gas Pump Attendant
+Gas Pumping Station
+Gas Pumping Station Operator
+Gas Rotary Drill Operator
+Gas Roustabout
+Gas Service Unit Operator
+Gas Service Unit Operator Operator
+Gas Station Supervisor
+Gas Turbine Assembler
+Gas and Oil Servicer
 Gasoline Pump Installer
 Gastroenterologist
 Gate Agent
@@ -1925,7 +1925,7 @@ Groundskeeping Worker
 Groundwater Monitoring Technician
 Guidance Counselor
 Guide Dog Trainer
-Gunner' Mate
+Gunner's Mate
 Gunsmith
 Gynecologist
 Gyroscope Engineering Technician
@@ -1958,8 +1958,8 @@ Harmonic Analyst
 Harvesting Contractor
 Hat Blocking Machine Operator
 Hay Baler
-Hazardou Material Removal Worker
-Hazardou Substance Scientist
+Hazardous Material Removal Worker
+Hazardous Substance Scientist
 Head Cook
 Head Greenskeeper
 Head Start Director
@@ -2159,7 +2159,7 @@ Industrial Engineer
 Industrial Engineer (Health and Safety)
 Industrial Equipment Electrical and Electronic Repairer
 Industrial Fabric Cutter
-Industrial Ga Fitter Helper
+Industrial Gas Fitter Helper
 Industrial Hygienist
 Industrial Machinery Mechanic
 Industrial Plant Custodian
@@ -2178,7 +2178,7 @@ Infantry Officer
 Infantry Unit Leader
 Infantry Weapon Officer
 Infantryman
-Infectiou Waste Technician
+Infectious Waste Technician
 Information
 Information Clerk
 Information Operator
@@ -2205,7 +2205,7 @@ Installation Worker
 Installation, Maintenance, and Repair Worker
 Installer
 Institution Cook
-Institution and Cafeterium Cook
+Institutional Cafeteria Cook
 Institutional Commodity Analyst
 Instructional Aide
 Instructional Coordinator
@@ -2257,7 +2257,7 @@ Janitor and Cleaner
 Java Programming Professor
 Jewel Bearing Facer
 Jeweler
-Jeweler and Preciou Stone and Metal Worker
+Jeweler and Precious Stone and Metal Worker
 Jewelry Polisher
 Jewish History Professor
 Jig Bore Tool Maker
@@ -2330,7 +2330,7 @@ Language
 Laser Beam Machine Operator
 Laser Cutter Operator
 Lasting Machine Operator
-Latin American Study Professor
+Latin American Studies Professor
 Launch Operator
 Laundry
 Laundry Attendant
@@ -2360,7 +2360,7 @@ Legal Secretary
 Legal Support Worker
 Legal Technician
 Legislator
-Leisure Study Professor
+Leisure Studies Professor
 Len Grinder
 Len Mounter
 Letter Carrier
@@ -2412,7 +2412,7 @@ Line Installer
 Line Repairer
 Linguist
 Linoleum Installer
-Liquid Natural Ga Plant Operator
+Liquid Natural Gas Plant Operator
 Liquid Waste Treatment Plant Operator
 Literary Agent
 Livestock Buyer
@@ -2943,18 +2943,17 @@ Motorboat Mechanic
 Motorboat Operator
 Motorcycle Deliverer
 Motorcycle Mechanic
-Motorcycle Polouse
+Motorcycle Police
 Motorcycle Service Technician
 Movie Projectionist
 Moving
 Moving Van Driver
 Multi-operation Forming Machine Setter
-Multimedium
-Multimedium Animator
-Multimedium Artist
-Multimedium Collection Specialist
-Multimedium Production Assistant
-Multimedium Service Coordinator
+Multimedia Animator
+Multimedia Artist
+Multimedia Collection Specialist
+Multimedia Production Assistant
+Multimedia Service Coordinator
 Municipal Clerk
 Municipal Fire Fighting
 Municipal Fire Fighting and Prevention Supervisor
@@ -2977,7 +2976,7 @@ Nail Technician
 Nanny
 Narcotic Investigator
 National Airline Pilot
-Natural Ga Engineer
+Natural Gas Engineer
 Natural Science Manager
 Naturopathic Physician
 Naval Architect
@@ -3010,7 +3009,7 @@ Nickel Plater
 Nitric Acid Plant Operator
 Non-Retail Sale Worker
 Nonfarm Animal Caretaker
-Nonrestaurant Food Server
+Non-Restaurant Food Server
 Notary Public
 Nuclear Cardiology Technologist
 Nuclear Control Room Operator
@@ -3089,9 +3088,9 @@ Oil Service Unit Operator Operator
 Oil Well Cable Tool Operator
 Oil Well Driller
 Oil Well Pumper
-Oil and Ga Derrick Operator
-Oil and Ga Rotary Drill Operator
-Oil and Ga Roustabout
+Oil and Gas Derrick Operator
+Oil and Gas Rotary Drill Operator
+Oil and Gas Roustabout
 Olive Pitter
 Ombudsman
 Oncology Social Worker
@@ -3202,7 +3201,7 @@ Paralegal
 Paramedic
 Pararescue Craftsman
 Parcel Post Clerk
-Park Polouse
+Park Police
 Parking Enforcement Officer
 Parking Enforcement Worker
 Parking Lot Attendant
@@ -3287,7 +3286,7 @@ Photo Lab Specialist
 Photo Retoucher
 Photoengraver
 Photogrammetrist
-Photographer' Model
+Photographer's Model
 Photographer
 Photographic
 Photographic Equipment Repairer
@@ -3407,11 +3406,11 @@ Podiatric Technician
 Podiatrist
 Poker Dealer
 Pole Framer
-Polouse
-Polouse Dispatcher
-Polouse Lieutenant
-Polouse Officer
-Polouse Radio Dispatcher
+Police
+Police Dispatcher
+Police Lieutenant
+Police Officer
+Police Radio Dispatcher
 Policy Processing
 Policy Professor
 Polishing Machine Operator
@@ -3452,8 +3451,8 @@ Postsecondary Anthropology Teacher
 Postsecondary Anthropology and Archeology Teacher
 Postsecondary Archeology Teacher
 Postsecondary Architecture Teacher
-Postsecondary Area Ethnic and Cultural Study Teacher
-Postsecondary Area Study Teacher
+Postsecondary Area Ethnic and Cultural Studies Teacher
+Postsecondary Area Studies Teacher
 Postsecondary Art Drama and Music Teacher
 Postsecondary Art Teacher
 Postsecondary Art Communication and Humanity Teacher
@@ -3467,7 +3466,7 @@ Postsecondary Computer Science Teacher
 Postsecondary Conservation Science Teacher
 Postsecondary Criminal Justice Teacher
 Postsecondary Criminal Justice and Law Enforcement Teacher
-Postsecondary Cultural Study Teacher
+Postsecondary Cultural Studies Teacher
 Postsecondary Drama Teacher
 Postsecondary Earth Science Teacher
 Postsecondary Economic Teacher
@@ -3480,8 +3479,8 @@ Postsecondary English Language Teacher
 Postsecondary English Language and Literature Teacher
 Postsecondary English Literature Teacher
 Postsecondary Environmental Science Teacher
-Postsecondary Ethnic Study Teacher
-Postsecondary Fitness Study Teacher
+Postsecondary Ethnic Studies Teacher
+Postsecondary Fitness Studies Teacher
 Postsecondary Foreign Language Teacher
 Postsecondary Foreign Language and Literature Teacher
 Postsecondary Foreign Literature Teacher
@@ -3510,8 +3509,8 @@ Postsecondary Physical Science Teacher
 Postsecondary Physic Teacher
 Postsecondary Political Science Teacher
 Postsecondary Psychology Teacher
-Postsecondary Recreation Study Teacher
-Postsecondary Recreation and Fitness Study Teacher
+Postsecondary Recreation Studies Teacher
+Postsecondary Recreation and Fitness Studies Teacher
 Postsecondary Religion Teacher
 Postsecondary Social Science Teacher
 Postsecondary Social Work Teacher
@@ -3548,8 +3547,8 @@ Practitioner
 Pre-Kindergarten Special Education Teacher
 Pre-Kindergarten Teacher
 Precast Concrete Ironworker
-Preciou Metal Worker
-Preciou Stone Worker
+Precious Metal Worker
+Precious Stone Worker
 Precipitating Machine Operator
 Precipitating Machine Setter
 Precipitating Machine Tender
@@ -3557,12 +3556,12 @@ Precision Equipment Repairer
 Precision Instrument
 Precision Instrument Repairer
 Precision Instrument and Equipment Repairer
-Precision Len Centerer-Edger
-Precision Len Centerer
-Precision Len Centerer and Edger
-Precision Len Edger
-Precision Len Grinder
-Precision Len Polisher
+Precision Lens Centerer-Edger
+Precision Lens Centerer
+Precision Lens Centerer and Edger
+Precision Lens Edger
+Precision Lens Grinder
+Precision Lens Polisher
 Predatory Animal Trapper
 Prenatal Genetic Counselor
 Prepress Technician
@@ -3749,7 +3748,7 @@ Railroad Conductor
 Railroad Detective
 Railroad Engineer
 Railroad Firer
-Railroad Polouse
+Railroad Police
 Railroad Signal Operator
 Railroad Switch Operator
 Railroad Yardmaster
@@ -3835,12 +3834,11 @@ Relay Electrical Repairer
 Relay Electrical and Electronic Repairer
 Relay Electronic Repairer
 Relay Technician
-Religiou Activity Director
-Religiou Activity and Education Director
-Religiou Education Director
-Religiou Worker
+Religious Activity Director
+Religious Activity and Education Director
+Religious Education Director
+Religious Worker
 Remotely Piloted Vehicle Engineering Technician
-Rental
 Rental Clerk
 Rented Housing Unit Manager
 Repair Occupation
@@ -4038,8 +4036,8 @@ Sheet Metal Former
 Sheet Metal Worker
 Sheet Rock Hanger
 Sheet Rock Taper
-Sheriff' Patrol
-Sheriff' Patrol Officer
+Sheriff's Patrol
+Sheriff's Patrol Officer
 Shill
 Shingle Roofer Helper
 Shingle Roofer
@@ -4149,7 +4147,7 @@ Sorter
 Sound Editor
 Sound Effect Technician
 Sound Engineering Technician
-Sou Chef
+Sous Chef
 Souvenir Street Vendor
 Space
 Space Scientist
@@ -4195,7 +4193,6 @@ Spraying Machine Operator
 Spraying Machine Setter
 Spraying Machine Tender
 Sprinkler Fitter
-Sprinklerfitter
 Stacker Operator
 Staffing Coordinator
 Stage Electrician Helper
@@ -4304,7 +4301,7 @@ Swimming Pool Plasterer
 Switch Coupler
 Switch Operator
 Switchboard Operator (Answering Service)
-Synchronou Motor Assembler
+Synchronous Motor Assembler
 Synthetic Fiber Extruding and Forming Machine Operator
 Synthetic Fiber Extruding and Forming Machine Setter
 Synthetic Fiber Extruding and Forming Machine Tender
@@ -4384,8 +4381,8 @@ Television Writer
 Teller Supervisor
 Teller
 Template Maker
-Terra Cottum Roofer Helper
-Terra Cottum Roofer
+Terra Cotta Roofer Helper
+Terra Cotta Roofer
 Terrazzo Finisher Helper
 Terrazzo Finisher
 Terrazzo Grinder
@@ -4547,9 +4544,9 @@ Tram Operator
 Transcription Typist
 Transfer Table Operator
 Transit
-Transit Authority Polouse
+Transit Authority Police
 Transit Bus Driver
-Transit Polouse
+Transit Police
 Transit and Intercity Bus Driver
 Translator
 Transportation
@@ -4636,7 +4633,7 @@ Vehicle Damage Appraiser
 Vehicle Installer
 Vehicle Mechanic
 Vehicle Repairer
-Vehicle and Mobile Equipment Mechanics, Installers, and Repairer
+Vehicle and Mobile Equipment Mechanic, Installer, and Repairer
 Vending
 Vending Machine Assembler
 Vending Machine Filler
@@ -4782,8 +4779,8 @@ Wire Drawing Machine Tender
 Wire Fence Builder
 Wire Temperer
 Wireless Internet Installer
-Women' Apparel Salesperson
-Women' Study Professor
+Women's Apparel Salesperson
+Women's Studies Professor
 Wood Cabinet Finisher
 Wood Carver
 Wood Casket Assembler
