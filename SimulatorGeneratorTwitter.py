@@ -14,6 +14,7 @@ import traceback
 import pickle
 import sqlite3
 import tempfile
+import urllib
 
 # site-packages
 import requests
@@ -27,6 +28,7 @@ CREDENTIALS_PATH = os.path.join("config", "credentials.ini")
 TWITTERGC_PATH = os.path.join("config", "twitter_global_config.json")
 PERSIST_PATH = os.path.join("data", "persistence.sqlite3")
 TWITTER_RESOURCES = "statuses,help,application,account,trends"
+INNOCENCE_PATH = "http://bot-innocence.herokuapp.com/muted"
 
 # local
 sys.path.insert(0, os.path.join(BASE_PATH, "lib"))
@@ -237,6 +239,12 @@ def getTrends():
         useTwitterResource("/trends/place")
         for t in trendsRaw:
             trends.append(t.name)
+
+    response = urllib.urlopen(INNOCENCE_PATH)
+    if response.getcode() == 200:
+        mutedTopics = json.loads(response.read())
+        trends = filter(lambda x: x not in mutedTopics, trends)
+
     return trends
 
 
